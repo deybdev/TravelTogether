@@ -1,11 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Lexend', sans-serif;
     list-style: none;
 }
 
@@ -23,7 +22,6 @@ section{
 
 #home{
     position: relative;
-    aspect-ratio: 1505.68/1003.00;
     background: url(../assets/bg.jpg) lightgray 50% / cover no-repeat;
     overflow: hidden;
 }
@@ -42,7 +40,7 @@ section{
 }
 
 .nav-container{
-    margin: 2.5rem 3rem 0;
+    margin: 2rem 2.4rem 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -51,6 +49,27 @@ section{
 .nav-container li,a,i {
     text-decoration: none;
     color: white;
+}
+
+.nav-menu li a{
+    position: relative;
+    display: inline-block;
+}
+
+.nav-menu li a::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: -7px;
+    left: 0;
+    background-color: #ffffff;
+    transition: transform 0.25s ease-out;
+}
+
+.nav-menu li a:hover::after{
+    transform: scaleX(1);
 }
 
 .nav-logo{
@@ -65,7 +84,7 @@ section{
 }
 
 .nav-actions button{
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1.8rem;
     border: #ffffff 2px solid;
     border-radius: 5px;
     background: none;
@@ -80,6 +99,7 @@ section{
     color: #119FA3;
 }
 
+.search-btn i,
 .user-logo i,
 .nav-close i,
 .toggle-menu i{
