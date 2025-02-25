@@ -100,7 +100,6 @@ section{
     color: #119FA3;
 }
 
-.search-btn i,
 .user-logo i,
 .nav-close i,
 .toggle-menu i{
@@ -138,6 +137,13 @@ section{
 }
 
 .home-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.home-texts{
     width: 31vw;
     height: 65vh;
     flex-shrink: 0;
@@ -149,50 +155,26 @@ section{
     align-items: flex-start;
 }
 
-.home-content h1{
+.home-texts h1{
     font-size: 2rem;
     font-weight: 700;
 }
 
-.home-content p{
+.home-texts p{
     width: 29vw;
     font-size: 14px;
     font-weight: 12px;
 }
 
+.home-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.home-image img{
+    width: 800px;
+}
 
 
 
@@ -205,7 +187,7 @@ section{
         margin: 2rem 1.5rem 0;
     }
 
-    .home-content{
+    .home-texts{
         width: 50vw;
         margin-left: 1.5rem;
     }
@@ -270,7 +252,6 @@ section{
     }
 
 
-    .search-btn i,
     .toggle-menu i,
     .nav-close i,
     .user-logo i{
@@ -281,7 +262,7 @@ section{
         display: none;
     }
 
-    .home-content{
+    .home-texts{
         line-height: 1.3;
         text-align: center;
         width: 100%;
@@ -290,9 +271,13 @@ section{
         padding: 0 1.5rem;
     }
 
-    .home-content p{
+    .home-texts h1{
+        font-size: 1.5rem;
+    }
+
+    .home-texts p{
         width: 100%;
-        font-size: 14px;
+        font-size: .6rem;
         padding: 0 1rem;
     }
 
