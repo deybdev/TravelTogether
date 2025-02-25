@@ -100,6 +100,7 @@ section{
     color: #119FA3;
 }
 
+.search-btn i,
 .user-logo i,
 .nav-close i,
 .toggle-menu i{
@@ -122,6 +123,7 @@ section{
 
 }
 
+.search-btn,
 .toggle-menu,
 .nav-close,
 .user-logo{
@@ -145,7 +147,7 @@ section{
 
 .home-texts{
     width: 31vw;
-    height: 65vh;
+    height: 76vh;
     flex-shrink: 0;
     color: #ffffff;
     margin-left: 5rem;
@@ -174,6 +176,36 @@ section{
 
 .home-image img{
     width: 800px;
+}
+
+.search-container {
+    position: relative;
+    width: 100%;
+}
+
+.search-container input {
+    opacity: 0.8;
+    margin-top: 10px;
+    width: 100%;
+    padding: 8px 15px 8px 50px; /* Extra space for the icon */
+    border: none;
+    border-radius: 25px;
+    font-size: 15px;
+    outline: none;
+}
+
+.search-container i {
+    position: absolute;
+    left: 15px;
+    top: 60%;
+    cursor: pointer;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #888;
+}
+
+.search-container input:focus {
+    opacity: 1;
 }
 
 
@@ -245,6 +277,7 @@ section{
         right: 15px;
     }
 
+    .search-btn,    
     .toggle-menu,
     .nav-close,
     .user-logo{
@@ -252,6 +285,7 @@ section{
     }
 
 
+    .search-btn i,
     .toggle-menu i,
     .nav-close i,
     .user-logo i{
@@ -279,6 +313,10 @@ section{
         width: 100%;
         font-size: .6rem;
         padding: 0 1rem;
+    }
+
+    .search-container{
+        display: none;
     }
 
 }
