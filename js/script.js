@@ -2,9 +2,12 @@
 const navMenu = document.querySelector('.nav-menu');
 const navToggle = document.querySelector('.toggle-menu');
 const navClose = document.querySelector('.nav-close');
+const searchBar = document.querySelector('.nav-search');
+
 
 navToggle.addEventListener('click', () => {
   navMenu.classList.add('show-menu');
+  searchBar.classList.remove('show-search');
 });
 
 navClose.addEventListener('click', () => {
@@ -13,7 +16,6 @@ navClose.addEventListener('click', () => {
 
 // SEARCH BUTTON FOR MOBILE DEVICES
 const searchButton = document.querySelector('.search-btn');
-const searchBar = document.querySelector('.nav-search');
 const searchClose = document.querySelector('.close-search');
 
 searchButton.addEventListener('click', () => {
