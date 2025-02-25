@@ -187,7 +187,7 @@ section{
     opacity: 0.8;
     margin-top: 10px;
     width: 100%;
-    padding: 8px 15px 8px 50px; /* Extra space for the icon */
+    padding: 8px 15px 8px 50px;
     border: none;
     border-radius: 25px;
     font-size: 15px;
@@ -211,15 +211,18 @@ section{
 .nav-search {
     position: absolute;
     top: -50px;
-    right: 12%; /* Adjust this to align within the navbar */
+    right: 12%;
     transform: translateY(-50%);
     display: flex;
     align-items: center;
+    justify-content: center;
     background: white;
     padding: 8px 12px;
     border-radius: 25px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     transition: top 0.3s;
+    width: 80%;
+    max-width: 400px;
 }
 
 .nav-search input {
@@ -227,7 +230,8 @@ section{
     outline: none;
     font-size: 13px;
     padding: 6px 15px;
-    width: 20rem;
+    width: 100%;
+    max-width: 400px;
 }
 
 /* Close button */
