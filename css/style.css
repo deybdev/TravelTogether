@@ -208,6 +208,38 @@ section{
     opacity: 1;
 }
 
+.nav-search {
+    position: absolute;
+    top: -50px;
+    right: 12%; /* Adjust this to align within the navbar */
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 8px 12px;
+    border-radius: 25px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: top 0.3s;
+}
+
+.nav-search input {
+    border: none;
+    outline: none;
+    font-size: 13px;
+    padding: 6px 15px;
+    width: 20rem;
+}
+
+/* Close button */
+.nav-search .close-search {
+    cursor: pointer;
+    margin-left: 10px;
+    color: #888;
+}
+
+.show-search{
+    top: 12%;
+}
 
 
 
