@@ -4,7 +4,6 @@ const navToggle = document.querySelector('.toggle-menu');
 const navClose = document.querySelector('.nav-close');
 const searchBar = document.querySelector('.nav-search');
 
-
 navToggle.addEventListener('click', () => {
   navMenu.classList.add('show-menu');
   searchBar.classList.remove('show-search');
@@ -30,5 +29,31 @@ searchClose.addEventListener('click', () => {
   searchBar.classList.remove('show-search');
 });
 
+// LOGIN CONTAINER FUNCTION
+const signInBtn = document.querySelector('.login-btn');
+const signInBtn1 = document.querySelector('.user-logo');
+const loginContainer = document.querySelector('.login-container');
+const closeBtn = document.querySelector('.login-container-close');
+
+signInBtn1.addEventListener('click', () => {
+  loginContainer.classList.add('show-login-container');
+
+  setTimeout(() => {
+    loginContainer.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+  }, 750);
+});
+
+signInBtn.addEventListener('click', () => {
+  loginContainer.classList.add('show-login-container');
+
+  setTimeout(() => {
+    loginContainer.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+  }, 750);
+});
+
+closeBtn.addEventListener('click', () => {
+  loginContainer.classList.remove('show-login-container');
+  loginContainer.style.backgroundColor = 'transparent';
+});
 
 
