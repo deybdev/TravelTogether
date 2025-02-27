@@ -14,16 +14,21 @@ html{
 
 section{
     width: 100%;
-    height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 #home{
+    height: 100vh;
     position: relative;
     background: url(../assets/bg.jpg) lightgray 50% / cover no-repeat;
     overflow: hidden;
+}
+
+.section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .gradient-home{
@@ -41,15 +46,20 @@ section{
 }
 
 .nav-container{
-    margin: 2rem 5rem 0;
+    position: fixed;
+    width: 100%;
+    padding: 1.3rem 6rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #ffffff;
+    z-index: 2;
+    top: 0;
 }
 
 .nav-container li,a,i {
     text-decoration: none;
-    color: white;
+    color: #119396;
 }
 
 .nav-menu li a{
@@ -65,7 +75,7 @@ section{
     height: 2px;
     bottom: -7px;
     left: 0;
-    background-color: #ffffff;
+    background-color: #119396;
     transition: transform 0.25s ease-out;
 }
 
@@ -84,20 +94,23 @@ section{
     column-gap: 1rem;
 }
 
-.login-btn{
+.nav-actions i{
+    color: #119396;
+}
+
+.button-btn{
     padding: 0.5rem 1.8rem;
-    border: #ffffff 2px solid;
+    border:  #119396 2px solid;
     border-radius: 5px;
-    background: none;
-    color: #ffffff;
+    background:  #119396;
+    color:  #ffffff;
     font-weight: 500;
     cursor: pointer;
     transition: 0.4s;
 }
 
-.login-btn:hover{
-    background: #ffffff;
-    color: #119FA3;
+.button-btn:hover{
+    background: #086364;
 }
 
 .search-btn i,
@@ -147,7 +160,7 @@ section{
 
 .home-texts{
     width: 31vw;
-    height: 76vh;
+    margin-top: 220px;
     flex-shrink: 0;
     color: #ffffff;
     margin-left: 5rem;
@@ -160,12 +173,14 @@ section{
 .home-texts h1{
     font-size: 2rem;
     font-weight: 700;
+    line-height: 1.3;
 }
 
 .home-texts p{
     width: 29vw;
     font-size: 14px;
     font-weight: 12px;
+    line-height: 1.6;
 }
 
 .home-image {
@@ -184,6 +199,7 @@ section{
 }
 
 .search-container input {
+    z-index: -1;
     opacity: 0.8;
     margin-top: 10px;
     width: 100%;
@@ -241,7 +257,7 @@ section{
 }
 
 .show-search{
-    top: 12%;
+    top: 160%;
 }
 
 .searchbar-btn{
@@ -392,42 +408,103 @@ section{
     color: #0056b3;
 }
 
+#section-title{
+    max-width: 50%;
+    margin: 5rem 0 4rem;
+    text-align: center;
+}
+
+#section-title h2{
+    font-size: 2rem;
+    font-weight: 700;
+    color: #119FA3;
+}
+
+#section-title p{
+    color: #119FA3;
+    font-size: .9rem;
+}
 
 
+.destination-container {
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 0 1rem;
+    overflow: hidden;
+}
 
+.destination-img {
+    border-radius: 10px 10px 7px 7px;
+    border: 1px solid #119FA3;
+    width: 280px;
+    overflow: hidden;
+    padding-bottom: 20px;
+    position: relative;
+}
 
+.destination-img img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
 
+.destination-img h4 {
+    padding: 2px 0;
+    margin: 2px 10px;
+    font-size: 1rem;
+}
 
+.destination-desc {
+    font-size: .9rem;
+    margin: 2px 10px;
+    color: #464242;
+    max-height: 50px;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
 
+.destination-img.expanded .destination-desc {
+    max-height: 500px;
+}
 
+.read-more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    margin-top: 10px;
+    color: #119FA3;
+    cursor: pointer;
+}
 
+.read-more i {
+    margin-left: 5px;
+}
 
+.left-line, .right-line {
+    flex: 1;
+    margin: 0px 10px;
+    height: 1px;
+    background-color: #119FA3;
+}
 
+.read-more:hover {
+    opacity: 0.7;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.destination-btn{
+    margin-top: 22px;
+}
 
 
 
 
 /* Responsive */
 @media screen and (max-width: 1100px){
-    .nav-container{
-        margin: 2rem 1.5rem 0;
-    }
 
     .home-texts{
         width: 50vw;
@@ -446,6 +523,20 @@ section{
     .nav-list{
         font-size: .9rem;
     }
+
+    #section-title{
+        max-width: 80%;
+        margin: 2rem;
+        text-align: center;
+    }
+    
+    #section-title h2{
+        font-size: 1.5rem;
+    }
+    
+    #section-title p{
+        font-size: .7rem;
+    }
 }
 
 
@@ -453,12 +544,12 @@ section{
 @media screen and (max-width: 768px) {
 
     .nav-container{
-        margin: 1rem .7rem 0;
+        padding: 1rem .5rem;
     }
 
     .nav-logo{
         font-weight: 700;
-        font-size: 14px;
+        font-size: 15px;
     }
 
     .nav-menu{
@@ -471,6 +562,14 @@ section{
         width: 100%;
         padding-block: 4.5rem 4rem;
         transition: top .4s;
+    }
+
+    .nav-menu li a, i{
+        color: #ffffff;
+    }
+
+    .nav-menu li a:after{
+        background-color: #ffffff;
     }
 
     .nav-list{
@@ -534,30 +633,31 @@ section{
     }
 
     .login-content{
-        width: 300px;
+        width: 330px;
     }
 
-    .login-input input{
-        padding: 13px;
+    .destination-container{
+        width: 100%;
+        margin: 0;
+        gap: .8rem;
+    }
+
+    .destination-container img {
+        width: 280px;
+        height: 230px;
+    }
+
+    .destination-desc{
+        max-height: 58px;
         font-size: .7rem;
     }
 
-    .login-container .button-login{
-        padding: 10px;
+    .read-more{
         font-size: .8rem;
     }
 
-    .other-methods p{
-        font-size: 10px;
-    }
-
-    .methods-icon button{
-        font-size: 20px;
-        padding: 8px 10px;
-    }
-
-    .terms p, a{
-        font-size: 12px;
+    .read-more i{
+        color: #119FA3;
     }
 
 }

@@ -40,6 +40,8 @@ signInBtn1.addEventListener('click', () => {
 
   setTimeout(() => {
     loginContainer.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+    searchBar.classList.remove('show-search');
+
   }, 750);
 });
 
@@ -55,5 +57,24 @@ closeBtn.addEventListener('click', () => {
   loginContainer.classList.remove('show-login-container');
   loginContainer.style.backgroundColor = 'transparent';
 });
+
+const readMoreBtns = document.querySelectorAll('.read-more');
+
+readMoreBtns.forEach(button => {
+    button.addEventListener('click', function(event) {
+        event.stopPropagation();
+        
+        const destinationImg = this.closest('.destination-img');
+        
+        destinationImg.classList.toggle('expanded');
+        
+        if (destinationImg.classList.contains('expanded')) {
+            this.innerHTML = '<div class="left-line"></div>Read Less <i class="ri-arrow-up-wide-line"></i><div class="right-line"></div>';
+        } else {
+            this.innerHTML = '<div class="left-line"></div>Read More <i class="ri-arrow-down-wide-line"></i><div class="right-line"></div>';
+        }
+    });
+});
+
 
 
