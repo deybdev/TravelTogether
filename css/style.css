@@ -57,7 +57,9 @@ section{
     top: 0;
 }
 
-.nav-container li,a,i {
+.nav-container li,
+.nav-container a,
+.nav-container i {
     text-decoration: none;
     color: #119396;
 }
@@ -98,8 +100,7 @@ section{
     color: #119396;
 }
 
-.button-btn{
-    padding: 0.5rem 1.8rem;
+.button-btn1{
     border:  #119396 2px solid;
     border-radius: 5px;
     background:  #119396;
@@ -109,8 +110,28 @@ section{
     transition: 0.4s;
 }
 
-.button-btn:hover{
-    background: #086364;
+.button-btn2{
+    border:  #119396 2px solid;
+    border-radius: 5px;
+    background:  #ffffff;
+    color:  #119396;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.button-btn1:hover{
+    background:  #ffffff;
+    color:  #119396;
+}
+
+.button-btn2:hover{
+    background:  #119396;
+    color:  #ffffff;
+}
+
+.social-btn i{
+    color: #fff;
 }
 
 .search-btn i,
@@ -134,6 +155,11 @@ section{
     align-items: center;
     justify-content: center;
 
+}
+
+.login-btn{
+    padding: 0.5rem 1.8rem;
+    
 }
 
 .search-btn,
@@ -375,11 +401,16 @@ section{
     margin: 0 10px;
 }
 
+.other-methods button{
+    color: #fff;
+}
+
 .methods-icon button {
     margin: 10px 10px;
     padding: 10px 12px;
     font-size: 24px;
     border: none;
+    color: #fff;
     background-color: blue;
     cursor: pointer;
     border-radius: 50%;
@@ -426,6 +457,7 @@ section{
 }
 
 
+.hotel-container,
 .destination-container {
     z-index: 1;
     display: flex;
@@ -437,15 +469,16 @@ section{
     overflow: hidden;
 }
 
+.hotel-card,
 .destination-img {
     border-radius: 10px 10px 7px 7px;
     border: 1px solid #119FA3;
     width: 280px;
-    overflow: hidden;
     padding-bottom: 20px;
     position: relative;
 }
 
+.hotel-card img,
 .destination-img img {
     width: 100%;
     height: 220px;
@@ -456,6 +489,32 @@ section{
     padding: 2px 0;
     margin: 2px 10px;
     font-size: 1rem;
+    white-space: nowrap;       
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;            
+}
+
+.destination-img .entrance-fee{
+    margin: 0 10px;
+    color: #119396;
+}
+
+.destination-img .entrance-fee span{
+    margin-left: 5px;
+}
+
+.location{
+    margin: 3px 10px;
+}
+
+.location a, .location i{
+    color: #0056b3;
+    font-size: 0.8rem;
+}
+
+.location:hover{
+    text-decoration: underline;
 }
 
 .destination-desc {
@@ -498,8 +557,106 @@ section{
 
 .destination-btn{
     margin-top: 22px;
+    padding: 0.5rem 1.8rem;
 }
 
+.saved-destination {
+   position: absolute;
+   top: 0;
+   right: 0;
+   margin: 10px;
+}
+
+.saved-destination i{
+    font-weight: 100;
+    font-size: 25px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+
+/* HOTEL DEALS START */
+
+.hotel-card{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin: 10px 0;
+}
+
+.hotel-card h4{
+    font-size: 1.2rem;
+    margin: 8px 7px 0px;
+    color: #119FA3;
+    white-space: nowrap;
+    overflow: hidden;         
+    text-overflow: ellipsis;    
+    max-width: 100%;            
+}
+
+.hotel-rate{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 1px 7px;
+    flex-grow: 1;
+    justify-content: flex-end;
+}
+
+.hotel-rate .price p{
+    justify-content: end;
+    font-size: 0.8rem;
+    color: #119FA3;
+    text-align: right;
+}
+
+.hotel-rate .price p span{
+    font-size: 1rem;
+    color: #3A94C8;
+    font-weight: 600;
+
+}
+
+.average-hotel-rate{
+    display: flex;
+    color: #119FA3;
+    align-items: center;
+    gap: 2px;
+    margin-left: 10px;
+    font-size: 0.9rem;
+}
+
+.average-hotel-rate i{
+    color: #FFC402;
+}
+
+.hotel-card-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin: 0 10px;  
+}
+
+.hotel-card-btn button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    gap: 5px;
+    margin-top: 5px;
+}
+
+.hotel-card-btn button i{
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.hotel-card-btn:hover{
+    color: #119FA3;
+}
+/* HOTEL DEALS END */
 
 
 
