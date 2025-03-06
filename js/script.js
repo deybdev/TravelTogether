@@ -58,23 +58,39 @@ closeBtn.addEventListener('click', () => {
   loginContainer.style.backgroundColor = 'transparent';
 });
 
-const readMoreBtns = document.querySelectorAll('.read-more');
+// Generalized READ MORE functionality
+const readMoreBtns = document.querySelectorAll('.read-more, .review-read-more');
 
 readMoreBtns.forEach(button => {
     button.addEventListener('click', function(event) {
         event.stopPropagation();
         
-        const destinationImg = this.closest('.destination-img');
+        const isDestination = this.closest('.destination-img');
+        const isReview = this.closest('.review-card');
         
-        destinationImg.classList.toggle('expanded');
-        
-        if (destinationImg.classList.contains('expanded')) {
-            this.innerHTML = '<div class="left-line"></div>Read Less <i class="ri-arrow-up-wide-line"></i><div class="right-line"></div>';
-        } else {
-            this.innerHTML = '<div class="left-line"></div>Read More <i class="ri-arrow-down-wide-line"></i><div class="right-line"></div>';
+        if (isDestination) {
+            const destinationImg = isDestination;
+            destinationImg.classList.toggle('expanded');
+            
+            if (destinationImg.classList.contains('expanded')) {
+                this.innerHTML = '<div class="left-line"></div>Read Less <i class="ri-arrow-up-wide-line"></i><div class="right-line"></div>';
+            } else {
+                this.innerHTML = '<div class="left-line"></div>Read More <i class="ri-arrow-down-wide-line"></i><div class="right-line"></div>';
+            }
+        } else if (isReview) {
+            const reviewText = isReview.querySelector('.review-desc');
+            reviewText.classList.toggle('expanded');
+            
+            if (reviewText.classList.contains('expanded')) {
+                this.innerHTML = 'Read Less';
+            } else {
+                this.innerHTML = 'Read More';
+            }
         }
     });
 });
+
+
 
 
 
