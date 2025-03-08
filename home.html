@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelTogether</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css">
+
+</head>
+<body>
+    <!-- HOME SECTION START -->
+    <nav class="nav-container">
+        <a href="#" class="nav-logo">TRAVEL TOGETHER</a>
+
+        <div class="nav-menu" id="nav-menu">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="#" class="nav-link" style="font-weight: 800;">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/destination.html" class="nav-link">Destinations</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#bookings" class="nav-link">Booking</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#reviews" class="nav-link">Reviews</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contacts" class="nav-link">Contact</a>
+                </li>
+            </ul>
+
+            <!--CLOSE BUTTON-->
+            <div class="nav-close">
+                <i class="ri-close-line"></i>
+            </div>
+        </div>
+        
+        <!--LOGIN, SIGNUP and Menu Buttons-->
+        <div class="nav-actions">
+            <div class="search-btn"><i class="ri-search-line"></i></div>
+            <div class="nav-search" id="navSearch">
+                <input type="text" id="navbarSearch" placeholder="Search Destinations . . .">
+                <button class="searchbar-btn">Search</button>
+                <i class="ri-close-line close-search" id="closeSearch"></i>
+            </div>
+            <button class="button-btn1 login-btn">Sign In</button>
+            <div class="user-logo"><i class="ri-user-line"></i></div>
+            <div class="toggle-menu" id="toggle-menu"><i class="ri-menu-line"></i></div>
+        </div>
+
+        <!-- LOGIN CONTAINER -->
+        <div class="login-container">
+            <div class="login-content">
+                <div class="login-container-close">
+                    <i class="ri-close-line"></i>
+                </div>
+                <h2 class="login-title">Sign in or create an account</h2>
+                <form action="">
+                    <div class="login-input">
+                        <input type="email" name="email" id="email" placeholder="Please enter your email address" required>
+                        <button class="button-login" type="submit">Continue</button>
+                    </div>
+                    <div class="other-methods">
+                        <p><i class="left-line"></i>Other Methods<i class="right-line"></i></p>
+                        <div class="methods-icon">
+                            <button class="social-btn"><i class="ri-facebook-circle-fill"></i></button>
+                            <button class="social-btn"><i class="ri-google-fill"></i></button>
+                        </div>
+                    </div>
+                    <div class="terms">
+                        <p>By signing in or registering, you are deemed to have agreed to the Travel Together <a href="#">Terms and Conditions</a> and <a href="#">Privacy Statement</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <section id="home">
+        <div class="gradient-home">
+            <div class="home-content">
+                <div class="home-texts">
+                    <h1 class="slogan">Plan, Book, Explore Your Perfect Manila Trip Starts Here!</h1>
+                    <p class="home-text">Sign up today and unlock a hassle-free way to discover Manila’s best attractions with ease and convenience!</p>
+                    <div class="search-container">
+                        <input type="text" name="search" id="search" placeholder="Search Destinations">
+                        <i class="ri-search-line"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOME SECTION END -->
+    <!-- DESTINATIONS START -->
+
+     <section  class="section" id="home-destinations">
+        <div id="section-title">
+            <h2 id="section-main-title">Find Your Best Destination</h2>
+            <p id="section-sub-title">We have more than 25 famous spots you can choose from</p>
+        </div>
+
+        <div class="destination-container">
+            <div class="destination-img">
+                <div class="saved-destination"><i class="ri-heart-line"></i></div>
+                <img src="/assets/destinations/casa.jpg" alt="">
+                <h4>Casa Manila</h4>
+                <p class="entrance-fee">₱<span>Free</span></p>
+                <div class="location"><a href="https://www.google.com/maps/dir/?api=1&destination=CasaManila" target="_blank"><i class="ri-map-pin-line"></i> See in google maps</a></div>
+                <p class="destination-desc">The museum is the imposing stone-and-wood structure c. 1850, one of the grand houses in Barrio San Luis (one of the four original villages of Intramuros) is located across historic San Agustin church and bounded by Calle Real, General Luna, Cabildo and Urdaneta streets. The other two are the Los Hidalgos, c. 1650 and Cuyugan Mansion, c. 1890.</p>
+                <span class="read-more"><div class="left-line"></div>Read More <i class="ri-arrow-down-wide-line"></i><div class="right-line"></div></span>
+            </div>
+            <div class="destination-img">
+                <div class="saved-destination"><i class="ri-heart-line"></i></div>
+                <img src="/assets/destinations/fort.jpg" alt="">
+                <h4>Fort Santiago</h4>
+                <p class="entrance-fee">₱<span>Free</span></p>
+                <div class="location"><a href="https://www.google.com/maps/dir/?api=1&destination=FortSantiago" target="_blank"><i class="ri-map-pin-line"></i> See in google maps</a></div>
+                <p class="destination-desc">Fort Santiago is one of the oldest fortifications in Manila built by the Spaniards in 1571 from what was once a palisaded structure of logs and earth built by Rajah Soliman on the native settlement called Maynila. The colonizers recognized that the tongue of land where the Pasig River flowed into the Manila Bay was a very strategic location.  The fort was destroyed in 1574 during the Chinese attack led by Limahong.  The stone fort was built between 1589 and 1592 and was repaired and extended after being damaged by the 1645 earthquake.</p>
+                <span class="read-more"><div class="left-line"></div>Read More <i class="ri-arrow-down-wide-line"></i><div class="right-line"></div></span>
+            </div>
+            <div class="destination-img">
+                <div class="saved-destination"><i class="ri-heart-line"></i></div>
+                <img src="/assets/destinations/intra.jpg" alt="">
+                <h4>Intramuros</h4>
+                <p class="entrance-fee">₱<span>Free</span></p>
+                <div class="location"><a href="https://www.google.com/maps/dir/?api=1&destination=Intramuros" target="_blank"><i class="ri-map-pin-line"></i> See in google maps</a></div>
+                <p class="destination-desc">Intramuros Old Town, Manila City's historic walled district, invites you to step back in time and explore the Philippines' rich past. Established over 400 years ago by Spanish colonizers, it served as their political and military stronghold in Asia. Today, Intramuros Old Town is one of the best places to visit in Manila City, offering visitors a glimpse into the country's storied history through its preserved architecture and cultural landmarks.</p>
+                <span class="read-more"><div class="left-line"></div>Read More <i class="ri-arrow-down-wide-line"></i><div class="right-line"></div></span>
+            </div>
+            <div class="destination-img">
+                <div class="saved-destination"><i class="ri-heart-line"></i></div>
+                <img src="/assets/destinations/luneta.jpg" alt="">
+                <h4>Rizal Park</h4>
+                <p class="entrance-fee">₱<span>Free</span></p>
+                <div class="location"><a href="https://www.google.com/maps/dir/?api=1&destination=RizalPark" target="_blank"><i class="ri-map-pin-line"></i> See in google maps</a></div>
+                <p class="destination-desc">Hailed as one of the largest urban parks in Asia, Rizal Park, Luneta is one of Manila's iconic destinations as the "birthplace of Philippine nationalism". It is the final resting place of Philippine national hero, Dr. Jose Rizal, where one can witness the changing of the guards, and a sacred site for many Filipinos martyred during the Spanish colonial era. Today, it is a favorite place for Filipino families and tourists to gather, learn about Philippine history, culture and heritage through its numerous gardens, plazas, and monuments.</p>
+                <span class="read-more"><div class="left-line"></div>Read More <i class="ri-arrow-down-wide-line"></i><div class="right-line"></div></span>
+            </div>
+        </div>
+        <button class="button-btn1 destination-btn">See All</button>
+     </section>
+
+    <!-- DESTINATIONS END -->
+    <!-- HOTELS START -->
+
+    <section class="section" id="home-bookings">
+        <div id="section-title">
+            <h2 id="section-main-title">Best Hotel Deals</h2>
+            <p id="section-sub-title">Find your perfect stay with our hotel booking platform. Choose from hundreds of cozy, luxurious, and affordable rooms — all in one place!</p>
+        </div>
+        <div class="hotel-container">
+            <div class="hotel-card">
+                <img src="/assets/hotels/hotel1.jpg" alt="Hotel1">
+                <h4>Eton Tower Makati</h4>
+                <div class="average-hotel-rate"><p class="rate-count">7.3 </p><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i> <p class="rate-count">(4,872)</p></div>
+                <div class="hotel-rate">
+                    <div class="price">
+                        <p>From <span>PHP 2,578</span></p>
+                    </div>
+                </div>
+                <div class="hotel-card-btn">
+                    <button class="button-btn2">More Info</button>
+                    <button class="button-btn1">Check Availability<p class="ri-arrow-right-double-fill"></p></button>
+                </div>
+            </div>
+
+            <div class="hotel-card">
+                <img src="/assets/hotels/hotel2.jpg" alt="Hotel1">
+                <h4>Hotel 101</h4>
+                <div class="average-hotel-rate"><p class="rate-count">7.3 </p><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i> <p class="rate-count">(4,872)</p></div>
+                <div class="hotel-rate">
+                    <div class="price">
+                        <p>From <span>PHP 3,874</span></p>
+                    </div>
+                </div>
+                <div class="hotel-card-btn">
+                    <button class="button-btn2">More Info</button>
+                    <button class="button-btn1">Check Availability<p class="ri-arrow-right-double-fill"></p></button>
+                </div>
+            </div>
+
+            <div class="hotel-card">
+                <img src="/assets/hotels/hotel3.jpg" alt="Hotel1">
+                <h4>Lub d Philippines Makati</h4>
+                <div class="average-hotel-rate"><p class="rate-count">7.3 </p><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i> <p class="rate-count">(4,872)</p></div>
+                <div class="hotel-rate">
+                    <div class="price">
+                        <p>From <span>PHP 1,927</span></p>
+                    </div>
+                </div>
+                <div class="hotel-card-btn">
+                    <button class="button-btn2">More Info</button>
+                    <button class="button-btn1">Check Availability<p class="ri-arrow-right-double-fill"></p></button>
+                </div>
+            </div>
+
+            <div class="hotel-card">
+                <img src="/assets/hotels/hotel4.jpg" alt="Hotel Room">
+                <div class="hotel-card-content">
+                    <h3>Discover great deals on hotels around manila</h3>
+                    <button class="hotel-card-button button-btn3">GO NOW</button>
+                </div>
+            </div>
+        </div>
+     </section>
+
+    <!-- HOTELS END -->
+    <!-- REVIEWS START -->
+
+    <section class="section" id="home-reviews">
+        <div id="section-title">
+            <h2 id="section-main-title">Honest Reviews, Smart Choices</h2>
+            <p id="section-sub-title">Find your perfect stay with our hotel booking platform. Choose from hundreds of cozy, luxurious, and affordable rooms — all in one place!</p>
+        </div>
+        <div class="review-container">
+            <div class="review-card">
+                <img src="/assets/reviews/review1.jpg" alt="Review">
+                <div class="review-date">
+                    <p>Feb <br><span>17</span></p>
+                </div>
+                <p class="reviewer-name"><span>By: </span>Jhana S.</p>
+                <h3 class="place-review">Intramuros</h3>
+                <p class="review-desc">"Lovely architecture, be prepared to be chased by aggressive tricycle drivers offering a tour.
+                    We tried to walk ourselves which was challenging as despite the advertised 'No vehicle' roads, the reality was there were still cars, tricycles, garbage trucks and motorcycles."</p>
+                <button class="review-read-more button-btn1">Read More</button>
+            </div>
+
+            <div class="review-card">
+                <img src="/assets/reviews/review2.jpg" alt="Review">
+                <div class="review-date">
+                    <p>Dec <br><span>20</span></p>
+                </div>
+                <p class="reviewer-name"><span>By: </span>Lauren C.</p>
+                <h3 class="place-review">Fort Santiago</h3>
+                <p class="review-desc">"I went to visit Fort Santiago because I was in the old town and it was ranked so highly on TripAdvisor. It was 75 pesos to enter and all I saw was construction work being done. You can only walk down one main path which is also littered with horse carts asking to give you a 'tour'. When you finally reach the top part of the fort... It's drenched in this awful smell from the nearby polluted river. Definitely a pass until they can clean it up."</p>
+                <button class="review-read-more button-btn1">Read More</button>
+            </div>
+
+            <div class="review-card">
+                <img src="/assets/reviews/review3.jpg" alt="Review">
+                <div class="review-date">
+                    <p>Mar <br><span>12</span></p>
+                </div>
+                <p class="reviewer-name"><span>By: </span>John A.</p>
+                <h3 class="place-review">Casa Manila</h3>
+                <p class="review-desc">"Casa Manila is a beautifully preserved museum in Intramuros that offers an immersive glimpse into the opulent lifestyle of the Filipino elite during the Spanish colonial era. The house, designed in classic Bahay na Bato style, is filled with antique furniture, intricate wooden carvings, and elegant chandeliers that transport visitors back to the 19th century."</p>
+                <button class="review-read-more button-btn1">Read More</button>
+            </div>
+
+            <div class="review-card">
+                <img src="/assets/reviews/review4.jpg" alt="Review">
+                <div class="review-date">
+                    <p>Jan <br><span>1</span></p>
+                </div>
+                <p class="reviewer-name"><span>By: </span>Dave C</p>
+                <h3 class="place-review">Rizal Park</h3>
+                <p class="review-desc">"Beautiful and tranquil despite being located in the middle of a busy road. A park of historical significance. From ponds and open lawns to monuments and a whole pantheon of Filipino heroes. There is a lot to see."</p>
+                <button class="review-read-more button-btn1">Read More</button>
+            </div>
+            <button class="button-btn1 destination-btn">Read More Like This <i class="ri-arrow-right-long-line"></i></button>
+        </div>
+        
+     </section>
+
+    <!-- REVIEWS END -->
+
+    <!-- SUBFOOTER START -->
+     <section class="section" id="subfooter">
+        <div id="section-title">
+            <h2 id="section-main-title">Your Next Adventure Starts Here!</h2>
+            <p id="section-sub-title">Uncover the hidden gems of Manila and beyond. From personalized itineraries to seamless bookings, we make every journey unforgettable. Your dream destination is just a click away,  let’s travel together!</p>
+        </div>
+
+        <div class="subfooter-container">
+            <img src="/assets/subfoot1.png" alt="">
+            <img src="/assets/subfoot2.png" alt="">
+        </div>
+     </section>
+    <!-- SUBFOOTER END -->
+    <script src="/js/script.js"></script>
+</body>
+</html>

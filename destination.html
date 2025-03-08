@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destination</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css">
+</head>
+<body>
+    <nav class="nav-container">
+        <a href="#" class="nav-logo">TRAVEL TOGETHER</a>
+
+        <div class="nav-menu" id="nav-menu">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="/home.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#destinations" class="nav-link" style="font-weight: 800;">Destinations</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#bookings" class="nav-link">Booking</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#reviews" class="nav-link">Reviews</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contacts" class="nav-link">Contact</a>
+                </li>
+            </ul>
+
+            <!--CLOSE BUTTON-->
+            <div class="nav-close">
+                <i class="ri-close-line"></i>
+            </div>
+        </div>
+        
+        <!--LOGIN, SIGNUP and Menu Buttons-->
+        <div class="nav-actions">
+            <div class="search-btn"><i class="ri-search-line"></i></div>
+            <div class="nav-search" id="navSearch">
+                <input type="text" id="navbarSearch" placeholder="Search Destinations . . .">
+                <button class="searchbar-btn">Search</button>
+                <i class="ri-close-line close-search" id="closeSearch"></i>
+            </div>
+            <button class="button-btn1 login-btn">Sign In</button>
+            <div class="user-logo"><i class="ri-user-line"></i></div>
+            <div class="toggle-menu" id="toggle-menu"><i class="ri-menu-line"></i></div>
+        </div>
+
+        <!-- LOGIN CONTAINER -->
+        <div class="login-container">
+            <div class="login-content">
+                <div class="login-container-close">
+                    <i class="ri-close-line"></i>
+                </div>
+                <h2 class="login-title">Sign in or create an account</h2>
+                <form action="">
+                    <div class="login-input">
+                        <input type="email" name="email" id="email" placeholder="Please enter your email address" required>
+                        <button class="button-login" type="submit">Continue</button>
+                    </div>
+                    <div class="other-methods">
+                        <p><i class="left-line"></i>Other Methods<i class="right-line"></i></p>
+                        <div class="methods-icon">
+                            <button class="social-btn"><i class="ri-facebook-circle-fill"></i></button>
+                            <button class="social-btn"><i class="ri-google-fill"></i></button>
+                        </div>
+                    </div>
+                    <div class="terms">
+                        <p>By signing in or registering, you are deemed to have agreed to the Travel Together <a href="#">Terms and Conditions</a> and <a href="#">Privacy Statement</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- DESTINATION START -->
+
+    <section class="destination">
+        <div class="dest-link">
+            <a href="#">Manila</a>
+            <a href="#">Thinks to Do</a>
+        </div>
+
+        <div class="destination-main">
+            <img src="/assets/dest-img1.jpg" alt="">
+            <div class="destination-main-content">
+                <h2>Things To Do in Manila</h2>
+                <p>Explore the top must-see sights and exciting activities in Manila! From historic landmarks to hidden gems, discover everything this vibrant city has to offer and make the most of your adventure.</p>
+            </div>
+        </div>
+
+        <div class="destination-form">
+            <form action="">
+                <div class="select-category custom-select">
+                    <select name="category">
+                        <option value="" disabled selected>Category</option>
+                        <option value="1">Historical Sites</option>
+                        <option value="2">Theme Parks</option>
+                        <option value="3">Religious Sites</option>
+                        <option value="4">Siteseeing</option>
+                        <option value="5">Museum</option>
+                        <option value="6">Theater</option>
+                        <option value="7">Market</option>
+                    </select>
+                    <i class="ri-arrow-down-s-line"></i>
+                </div>
+                <div class="select-price custom-select">
+                    <select name="price">
+                        <option value="" disabled selected>Price Range</option>
+                        <option value="1">₱0 - ₱99</option>
+                        <option value="2">₱100 - ₱199</option>
+                        <option value="3">₱200 - ₱399</option>
+                        <option value="4">₱400 - ₱599</option>
+                        <option value="5">₱6000 - ₱899</option>
+                        <option value="6">₱900 - ₱2000</option>
+                        <option value="7">₱2000 up</option>
+                    </select>
+                    <i class="ri-arrow-down-s-line"></i>
+                </div>
+                <div class="search-acts">
+                    <input type="text">
+                    <button class="search-acts-btn"><i class="ri-search-line"></i></button>
+                </div>
+            </form>
+        </div>
+        
+
+        <div class="destination-wrapper">
+            
+            <div class="destination-img dest-resp">
+                <div class="saved-destination"><i class="ri-heart-line"></i></div>
+                <img src="/assets/destinations/casa.jpg" alt="">
+                <h4>Casa Manila</h4>
+                <p class="entrance-fee">₱<span>Free</span></p>
+                <div class="location"><a href="https://www.google.com/maps/dir/?api=1&destination=CasaManila" target="_blank"><i class="ri-map-pin-line"></i> See in google maps</a></div>
+                <p class="destination-desc">The museum is the imposing stone-and-wood structure c. 1850, one of the grand houses in Barrio San Luis (one of the four original villages of Intramuros) is located across historic San Agustin church and bounded by Calle Real, General Luna, Cabildo and Urdaneta streets. The other two are the Los Hidalgos, c. 1650 and Cuyugan Mansion, c. 1890.</p>
+                <span class="read-more"><div class="left-line"></div>Read More <i class="ri-arrow-down-wide-line"></i><div class="right-line"></div></span>
+            </div>
+            <div class="destination-img dest-resp">
+                <div class="saved-destination"><i class="ri-heart-line"></i></div>
+                <img src="/assets/destinations/casa.jpg" alt="">
+                <h4>Casa Manila</h4>
+                <p class="entrance-fee">₱<span>Free</span></p>
+                <div class="location"><a href="https://www.google.com/maps/dir/?api=1&destination=CasaManila" target="_blank"><i class="ri-map-pin-line"></i> See in google maps</a></div>
+                <p class="destination-desc">The museum is the imposing stone-and-wood structure c. 1850, one of the grand houses in Barrio San Luis (one of the four original villages of Intramuros) is located across historic San Agustin church and bounded by Calle Real, General Luna, Cabildo and Urdaneta streets. The other two are the Los Hidalgos, c. 1650 and Cuyugan Mansion, c. 1890.</p>
+                <span class="read-more"><div class="left-line"></div>Read More <i class="ri-arrow-down-wide-line"></i><div class="right-line"></div></span>
+            </div>
+            <div class="destination-img dest-resp">
+                <div class="saved-destination"><i class="ri-heart-line"></i></div>
+                <img src="/assets/destinations/casa.jpg" alt="">
+                <h4>Casa Manila</h4>
+                <p class="entrance-fee">₱<span>Free</span></p>
+                <div class="location"><a href="https://www.google.com/maps/dir/?api=1&destination=CasaManila" target="_blank"><i class="ri-map-pin-line"></i> See in google maps</a></div>
+                <p class="destination-desc">The museum is the imposing stone-and-wood structure c. 1850, one of the grand houses in Barrio San Luis (one of the four original villages of Intramuros) is located across historic San Agustin church and bounded by Calle Real, General Luna, Cabildo and Urdaneta streets. The other two are the Los Hidalgos, c. 1650 and Cuyugan Mansion, c. 1890.</p>
+                <span class="read-more"><div class="left-line"></div>Read More <i class="ri-arrow-down-wide-line"></i><div class="right-line"></div></span>
+            </div>
+            <div class="destination-img dest-resp">
+                <div class="saved-destination"><i class="ri-heart-line"></i></div>
+                <img src="/assets/destinations/casa.jpg" alt="">
+                <h4>Casa Manila</h4>
+                <p class="entrance-fee">₱<span>Free</span></p>
+                <div class="location"><a href="https://www.google.com/maps/dir/?api=1&destination=CasaManila" target="_blank"><i class="ri-map-pin-line"></i> See in google maps</a></div>
+                <p class="destination-desc">The museum is the imposing stone-and-wood structure c. 1850, one of the grand houses in Barrio San Luis (one of the four original villages of Intramuros) is located across historic San Agustin church and bounded by Calle Real, General Luna, Cabildo and Urdaneta streets. The other two are the Los Hidalgos, c. 1650 and Cuyugan Mansion, c. 1890.</p>
+                <span class="read-more"><div class="left-line"></div>Read More <i class="ri-arrow-down-wide-line"></i><div class="right-line"></div></span>
+            </div>
+            <div class="destination-img dest-resp">
+                <div class="saved-destination"><i class="ri-heart-line"></i></div>
+                <img src="/assets/destinations/casa.jpg" alt="">
+                <h4>Casa Manila</h4>
+                <p class="entrance-fee">₱<span>Free</span></p>
+                <div class="location"><a href="https://www.google.com/maps/dir/?api=1&destination=CasaManila" target="_blank"><i class="ri-map-pin-line"></i> See in google maps</a></div>
+                <p class="destination-desc">The museum is the imposing stone-and-wood structure c. 1850, one of the grand houses in Barrio San Luis (one of the four original villages of Intramuros) is located across historic San Agustin church and bounded by Calle Real, General Luna, Cabildo and Urdaneta streets. The other two are the Los Hidalgos, c. 1650 and Cuyugan Mansion, c. 1890.</p>
+                <span class="read-more"><div class="left-line"></div>Read More <i class="ri-arrow-down-wide-line"></i><div class="right-line"></div></span>
+            </div>
+
+
+        </div>
+
+    </section>
+
+    <!-- DESTINATION EMD -->
+
+    <section class="section" id="subfooter">
+        <div id="section-title">
+            <h2 id="section-main-title">Your Next Adventure Starts Here!</h2>
+            <p id="section-sub-title">Uncover the hidden gems of Manila and beyond. From personalized itineraries to seamless bookings, we make every journey unforgettable. Your dream destination is just a click away,  let’s travel together!</p>
+        </div>
+
+        <div class="subfooter-container">
+            <img src="/assets/subfoot1.png" alt="">
+            <img src="/assets/subfoot2.png" alt="">
+        </div>
+     </section>
+
+
+    <script src="/js/script.js"></script>
+
+</body>
+</html>
