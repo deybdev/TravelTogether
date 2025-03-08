@@ -911,7 +911,6 @@ html{
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    margin-bottom: -15px;
 }
 
 .search-acts {
@@ -1197,6 +1196,39 @@ html{
 
     .dest-link a{
         font-size: .6rem;
+    }
+
+    .destination-wrapper{
+        gap: .5rem;
+    }
+    
+    .destination-wrapper .dest-resp{
+        width: 48%;
+        height: 250px;
+    }
+
+    .destination-wrapper .dest-resp img{
+        height: 120px;
+    }
+
+    .destination-wrapper .dest-resp h4{
+        font-size: .8rem;
+    }
+
+    .dest-resp .entrance-fee{
+        font-size: .7rem;
+        margin-top: -2px;
+        margin-bottom: -2px;
+    }
+
+    .dest-resp .location a{  
+        font-size: .6rem;
+        margin-left: -2px;
+    }
+
+    .dest-resp .destination-desc{
+        font-size: .6rem;
+        max-height: 35px;
     }
 
 }
