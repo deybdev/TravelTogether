@@ -1204,7 +1204,7 @@ html{
     
     .destination-wrapper .dest-resp{
         width: 48%;
-        height: 250px;
+        height: auto;
     }
 
     .destination-wrapper .dest-resp img{
@@ -1229,6 +1229,10 @@ html{
     .dest-resp .destination-desc{
         font-size: .6rem;
         max-height: 35px;
+    }
+
+    .dest-resp .read-more{
+        font-size: .6rem;
     }
 
 }
