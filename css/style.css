@@ -308,7 +308,7 @@ html{
 }
 
 .login-container {
-    z-index: 1;
+    z-index: 100;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1198,40 +1198,42 @@ html{
         font-size: .6rem;
     }
 
-    .destination-wrapper{
-        gap: .5rem;
+    .destination-container{
+        gap: .2rem;
     }
     
-    .destination-wrapper .dest-resp{
+    .destination-container .destination-img{
         width: 48%;
         height: auto;
     }
 
-    .destination-wrapper .dest-resp img{
+    .destination-container .destination-img img{
         height: 120px;
+        object-fit: cover;
+        width: 250px;
     }
 
-    .destination-wrapper .dest-resp h4{
+    .destination-container .destination-img h4{
         font-size: .8rem;
     }
 
-    .dest-resp .entrance-fee{
+    .destination-img .entrance-fee{
         font-size: .7rem;
         margin-top: -2px;
         margin-bottom: -2px;
     }
 
-    .dest-resp .location a{  
+    .destination-img .location a{  
         font-size: .6rem;
         margin-left: -2px;
     }
 
-    .dest-resp .destination-desc{
+    .destination-img .destination-desc{
         font-size: .6rem;
         max-height: 35px;
     }
 
-    .dest-resp .read-more{
+    .destination-img .read-more{
         font-size: .6rem;
     }
 
