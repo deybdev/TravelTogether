@@ -1307,6 +1307,16 @@ html{
         font-size: .6rem;
     }
 
+    .slider-dots .dot{
+        width: 5px;
+        height: 5px;
+    }
+
+    .arrow{
+        padding: 10px;
+        font-size: 20px;
+    }
+
 }
 
 /* DEFAULT */
