@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css">
+    <title>Destination</title>
+</head>
+<body>
+    <nav class="nav-container">
+        <a href="#" class="nav-logo">TRAVEL TOGETHER</a>
+
+        <div class="nav-menu" id="nav-menu">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="/home.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#destinations" class="nav-link" style="font-weight: 800;">Destinations</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#bookings" class="nav-link">Booking</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#reviews" class="nav-link">Reviews</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contacts" class="nav-link">Contact</a>
+                </li>
+            </ul>
+
+            <!--CLOSE BUTTON-->
+            <div class="nav-close">
+                <i class="ri-close-line"></i>
+            </div>
+        </div>
+        
+        <!--LOGIN, SIGNUP and Menu Buttons-->
+        <div class="nav-actions">
+            <div class="search-btn"><i class="ri-search-line"></i></div>
+            <div class="nav-search" id="navSearch">
+                <input type="text" id="navbarSearch" placeholder="Search Destinations . . .">
+                <button class="searchbar-btn">Search</button>
+                <i class="ri-close-line close-search" id="closeSearch"></i>
+            </div>
+            <button class="button-btn1 login-btn">Sign In</button>
+            <div class="user-logo"><i class="ri-user-line"></i></div>
+            <div class="toggle-menu" id="toggle-menu"><i class="ri-menu-line"></i></div>
+        </div>
+
+        <!-- LOGIN CONTAINER -->
+        <div class="login-container">
+            <div class="login-content">
+                <div class="login-container-close">
+                    <i class="ri-close-line"></i>
+                </div>
+                <h2 class="login-title">Sign in or create an account</h2>
+                <form action="">
+                    <div class="login-input">
+                        <input type="email" name="email" id="email" placeholder="Please enter your email address" required>
+                        <button class="button-login" type="submit">Continue</button>
+                    </div>
+                    <div class="other-methods">
+                        <p><i class="left-line"></i>Other Methods<i class="right-line"></i></p>
+                        <div class="methods-icon">
+                            <button class="social-btn"><i class="ri-facebook-circle-fill"></i></button>
+                            <button class="social-btn"><i class="ri-google-fill"></i></button>
+                        </div>
+                    </div>
+                    <div class="terms">
+                        <p>By signing in or registering, you are deemed to have agreed to the Travel Together <a href="#">Terms and Conditions</a> and <a href="#">Privacy Statement</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <section class="destination">
+        <div class="dest-link">
+            <a href="#"><i class="ri-home-7-line"></i> Home ></a>
+            <a href="#"><i class="ri-map-pin-line"></i> Manila ></a>
+            <a href="activities.html"><i class="ri-basketball-line"></i> Things to Do</a>
+        </div>
+
+        <div class="destination-main-slider">
+            <div class="destination-main">
+              <div class="image-slider">
+                <img src="/assets/manila-img1.jpg" class="slider-image active" alt="">
+                <img src="/assets/manila-img2.jpg" class="slider-image" alt="">
+                <img src="/assets/manila-img3.jpg" class="slider-image" alt="">
+                <img src="/assets/manila-img4.jpg" class="slider-image" alt="">
+                <img src="/assets/manila-img5.jpg" class="slider-image" alt="">
+              </div>
+        
+          
+              <!-- Arrows -->
+              <button class="arrow left"><i class="ri-arrow-left-s-line"></i></button>
+              <button class="arrow right"><i class="ri-arrow-right-s-line"></i></button>
+          
+              <!-- Dots -->
+              <div class="slider-dots">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+                <span class="dot" data-index="2"></span>
+                <span class="dot" data-index="3"></span>
+                <span class="dot" data-index="4"></span>
+              </div>
+            </div>
+          </div>          
+        
+
+
+    </section>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>
