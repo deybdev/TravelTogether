@@ -831,8 +831,12 @@ html{
     font-weight: 500;
     text-decoration: none;
 }
+.destination-main-slider {
+    position: relative;
+    width: 100%;
+}
 
-.destination-main{
+.destination-main {
     position: relative;
     display: flex;
     align-items: center;
@@ -841,6 +845,28 @@ html{
     height: 490px;
     overflow: hidden;
     z-index: 0;
+}
+
+.image-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.slider-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.7s ease-in-out;
+}
+
+.slider-image.active {
+    opacity: 1;
 }
 
 .destination-main::after {
@@ -854,25 +880,68 @@ html{
     z-index: 2;
 }
 
-.destination-main img{
-    width: 100%;
-    object-fit: cover;
+.destination-main-content {
+    position: relative;
+    text-align: center;
+    margin: 0 10rem;
+    color: #ffffff;
+    z-index: 3;
 }
 
-.destination-main-content h2{
+.destination-main-content h2 {
     font-size: 3rem;
 }
 
-.destination-main-content p{
+.destination-main-content p {
     font-size: 0.9rem;
 }
 
-.destination-main-content{
+/* Arrows */
+.arrow {
     position: absolute;
+    opacity: .5;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 4;
+}
+
+.arrow.left {
+    left: 20px;
+}
+
+.arrow.right {
+    right: 20px;
+}
+
+/* Dots */
+.slider-dots {
     text-align: center;
-    margin: 0 15rem;
-    color: #ffffff;
-    z-index: 3;
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 4;
+}
+
+.slider-dots .dot {
+    height: 9px;
+    width: 9px;
+    margin: 0 5px;
+    display: inline-block;
+    background-color: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.slider-dots .dot.active {
+    background-color: #ffffff;
 }
 
 .destination-form{
@@ -938,6 +1007,7 @@ html{
     border-radius: 0 20px 20px 0;
     cursor: pointer;
 }
+
 
 
 
