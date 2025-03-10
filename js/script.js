@@ -58,7 +58,7 @@ closeBtn.addEventListener('click', () => {
   loginContainer.style.backgroundColor = 'transparent';
 });
 
-// Generalized READ MORE functionality
+// READ MORE
 const readMoreBtns = document.querySelectorAll('.read-more, .review-read-more');
 
 readMoreBtns.forEach(button => {
@@ -90,8 +90,45 @@ readMoreBtns.forEach(button => {
     });
 });
 
+// SLIDING IMAGES FUNCTION
+const images = document.querySelectorAll('.slider-image');
+const dots = document.querySelectorAll('.dot');
+const arrows = document.querySelectorAll('.arrow');
 
+let currentIndex = 0;
+let autoSlideInterval;
 
+function showImage(index) {
+  images.forEach((img, i) => img.classList.toggle('active', i === index));
+  dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+  currentIndex = index;
+}
 
+function changeSlide(step) {
+  showImage((currentIndex + step + images.length) % images.length);
+  resetAutoSlide();
+}
 
+arrows.forEach(arrow => {
+  arrow.addEventListener('click', () => changeSlide(arrow.classList.contains('right') ? 1 : -1));
+});
 
+dots.forEach((dot, i) => {
+  dot.addEventListener('click', () => {
+    showImage(i);
+    resetAutoSlide();
+  });
+});
+
+function startAutoSlide() {
+  autoSlideInterval = setInterval(() => changeSlide(1), 5000);
+}
+
+function resetAutoSlide() {
+  clearInterval(autoSlideInterval);
+  startAutoSlide();
+}
+
+// Initialize
+showImage(currentIndex);
+startAutoSlide();

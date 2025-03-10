@@ -838,7 +838,7 @@ html{
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 390px;
+    height: 490px;
     overflow: hidden;
     z-index: 0;
 }
@@ -1125,7 +1125,7 @@ html{
     }
 
     .destination-main{
-        height: 200px;
+        height: 250px;
     }
 
     .destination-wrapper{
@@ -1199,7 +1199,7 @@ html{
     }
 
     .destination-container{
-        gap: .2rem;
+        gap: .8rem;
     }
     
     .destination-container .destination-img{
