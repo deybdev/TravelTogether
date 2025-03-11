@@ -1,3 +1,27 @@
+// FADE IN SCROLL EFFECT FOR CONTAINERS
+const cont = document.querySelectorAll('.default-container, #section-title' );
+
+document.addEventListener('scroll', () => {
+  cont.forEach((container) => {
+    if (isInView(container) && !container.classList.contains('show')) {
+      container.classList.add('show');
+    }else if (!isInView(container) && container.classList.contains('show')) {
+      container.classList.remove('show');
+    }
+  });
+});
+
+function isInView(element) {
+  const rect = element.getBoundingClientRect();
+  return (
+    rect.bottom > 0 &&
+    rect.top < (window.innerHeight - 150 || document.documentElement.clientHeight - 150)
+  );
+}
+
+
+
+
 //MENU BUTTON FOR MOBILE DEVICES
 const navMenu = document.querySelector('.nav-menu');
 const navToggle = document.querySelector('.toggle-menu');
@@ -65,8 +89,8 @@ readMoreBtns.forEach(button => {
     button.addEventListener('click', function(event) {
         event.stopPropagation();
         
-        const isDestination = this.closest('.destination-img');
-        const isReview = this.closest('.review-card');
+        const isDestination = this.closest('.dest');
+        const isReview = this.closest('.review');
         
         if (isDestination) {
             const destinationImg = isDestination;

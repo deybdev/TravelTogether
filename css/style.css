@@ -8,13 +8,9 @@
     list-style: none;
 }
 
-html{
-    scroll-behavior: smooth;
-}
-
 
 #home{
-    height: 100vh;
+    height: 89vh;
     position: relative;
     background: url(../assets/bg.jpg) lightgray 50% / cover no-repeat;
     overflow: hidden;
@@ -217,10 +213,6 @@ html{
     flex: 1;
     display: flex;
     justify-content: center;
-}
-
-.home-image img{
-    width: 800px;
 }
 
 .search-container {
@@ -449,6 +441,14 @@ html{
     max-width: 50%;
     margin: 5rem 0 5rem;
     text-align: center;
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: 1s ease;
+}
+
+#section-title.show{
+    opacity: 1;
+    transform: translateX(0);
 }
 
 #section-title h2{
@@ -462,10 +462,7 @@ html{
     font-size: .9rem;
 }
 
-
-.review-container,
-.hotel-container,
-.destination-container {
+.default-container {
     z-index: 1;
     display: flex;
     flex-wrap: wrap;
@@ -474,11 +471,17 @@ html{
     justify-content: center;
     padding: 0 1rem;
     overflow: hidden;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: 1s ease;
 }
 
-.review-card,
-.hotel-card,
-.destination-img {
+.default-container.show{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.default-card {
     margin-top: 10px;
     border-radius: 10px 10px 7px 7px;
     border: 1px solid #119FA3;
@@ -491,21 +494,17 @@ html{
     height: auto;
 }
 
-.review-card:hover,
-.hotel-card:hover,
-.destination-img:hover {
+.default-card:hover {
     transform: translateY(-10px);
 }
 
-.review-card img,
-.hotel-card img,
-.destination-img img {
+.default-card img {
     width: 100%;
     height: 210px;
     object-fit: cover;
 }
 
-.destination-img h4 {
+.default-card h4 {
     padding: 2px 0;
     margin: 2px 10px;
     font-size: 1rem;
@@ -515,12 +514,12 @@ html{
     max-width: 100%;            
 }
 
-.destination-img .entrance-fee{
+.default-card .entrance-fee{
     margin: 0 10px;
     color: #119396;
 }
 
-.destination-img .entrance-fee span{
+.default-card .entrance-fee span{
     margin-left: 5px;
 }
 
@@ -549,7 +548,7 @@ html{
     transition: max-height 0.3s ease;
 }
 
-.destination-img.expanded .destination-desc {
+.default-card.expanded .destination-desc {
     max-height: 500px;
 }
 
@@ -601,23 +600,10 @@ html{
 
 /* HOTEL DEALS START */
 
-.hotel-card{
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    margin: 10px 0;
-    height: auto;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, .25);
-}
-
-.hotel-card h4{
+.hotel h4{
     font-size: 1.2rem;
-    margin: 8px 7px 0px;
+    font-weight: 700;
     color: #119FA3;
-    white-space: nowrap;
-    overflow: hidden;         
-    text-overflow: ellipsis;    
-    max-width: 100%;            
 }
 
 .hotel-rate{
@@ -640,7 +626,6 @@ html{
     font-size: 1rem;
     color: #3A94C8;
     font-weight: 600;
-
 }
 
 .average-hotel-rate{
@@ -652,9 +637,27 @@ html{
     font-size: 0.9rem;
 }
 
-.average-hotel-rate i{
+
+.star-rates i{
     color: #FFC402;
 }
+
+.star-rates .blank-star {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+}
+
+.star-rates .blank-star i{
+    color: #888;    
+}
+
+.star-rates {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
 
 .hotel-card-btn{
     display: flex;
@@ -673,29 +676,25 @@ html{
     margin-top: 5px;
 }
 
-.hotel-card-btn button i{
-    color: #ffffff;
-    font-size: 14px;
-}
 
 .hotel-card-btn:hover{
     color: #119FA3;
 }
 
-.hotel-card:last-child {
+.hotel-card {
     padding: 0;
-    height: 359px;
+    height: 339px;
     position: relative;
     overflow: hidden;
 }
 
-.hotel-card:last-child img {
+.hotel-card img {
     height: 368px;
     width: 100%;
     object-fit: cover;
 }
 
-.hotel-card:last-child::after {
+.hotel-card::after {
     content: '';
     position: absolute;
     top: 0;
@@ -706,7 +705,7 @@ html{
     z-index: 2;
 }
 
-.hotel-card:last-child h3 {
+.hotel-card h3 {
     color: #fff;
     position: absolute;
     text-align: center;
@@ -716,7 +715,7 @@ html{
     z-index: 3;
 }
 
-.hotel-card:last-child button{
+.hotel-card button{
     font-weight: 600;
     font-size: 16px;
     border-radius: 50px;
@@ -731,10 +730,6 @@ html{
 
 /* REVIEW START */
 
-.review-card{
-    padding-bottom: 10px;
-}
-
 .review-date{
     background-color: #119396;
     border-radius: 7px;
@@ -748,6 +743,15 @@ html{
     text-align: center;
 }
 
+.review .star-rates{
+    display: flex;
+    align-items: center;
+    margin: 2px 10px;
+    justify-content: flex-start;
+    font-size: 12px;
+}
+
+
 .reviewer-name{
     margin: 5px 10px 5px;
     font-size: 0.9rem;
@@ -758,7 +762,7 @@ html{
     display: flex;
     align-items: center;
     gap: 5px;
-    margin: 12px 10px 5px ;
+    margin: 3px 10px 5px ;
 }
 
 .review-desc{
@@ -1008,14 +1012,31 @@ html{
     cursor: pointer;
 }
 
-
-
-
-
-
-
 /* DESTINATION END */
 
+/* MANILA START */
+
+.manila-desc-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    padding: 4rem 0 4rem 4rem;
+}
+
+.manila-desc-container h2{
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #119FA3;
+}
+
+.manila-desc-container p{
+    width: 50%;
+    font-weight: 400;
+    text-align: justify;
+}
+/* MANILA END */
 
 
 
@@ -1170,13 +1191,13 @@ html{
         width: 330px;
     }
 
-    .destination-container{
+    .default-container{
         width: 100%;
         margin: 0;
         gap: .8rem;
     }
 
-    .destination-container img {
+    .default-container img {
         width: 280px;
         height: 230px;
     }
@@ -1200,11 +1221,6 @@ html{
 
     .destination-wrapper{
         gap: 1rem;
-    }
-
-    .destination-wrapper .dest-resp{
-        width: 100%;
-        align-items: center;
     }
 
     .destination-form form {
@@ -1260,9 +1276,7 @@ html{
         margin: 0 5rem;
     }
 
-    .review-card:hover,
-    .hotel-card:hover,
-    .destination-img:hover {
+    .default-card:hover {
         transform: none;
     }
 
@@ -1274,42 +1288,42 @@ html{
         font-size: .6rem;
     }
 
-    .destination-container{
+    .default-container{
         gap: .8rem;
     }
     
-    .destination-container .destination-img{
+    .default-container .default-card{
         width: 48%;
         height: auto;
     }
 
-    .destination-container .destination-img img{
+    .default-container .default-card img{
         height: 120px;
         object-fit: cover;
-        width: 250px;
+        width: 100%;
     }
 
-    .destination-container .destination-img h4{
+    .default-container .default-card h4{
         font-size: .8rem;
     }
 
-    .destination-img .entrance-fee{
+    .default-card .entrance-fee{
         font-size: .7rem;
         margin-top: -2px;
         margin-bottom: -2px;
     }
 
-    .destination-img .location a{  
+    .default-card .location a{  
         font-size: .6rem;
         margin-left: -2px;
     }
 
-    .destination-img .destination-desc{
+    .default-card .destination-desc{
         font-size: .6rem;
         max-height: 35px;
     }
 
-    .destination-img .read-more{
+    .default-card .read-more{
         font-size: .6rem;
     }
 
@@ -1321,6 +1335,105 @@ html{
     .arrow{
         padding: 10px;
         font-size: 20px;
+    }
+
+    .manila-desc-container{
+        align-items: center;
+        width: 100%;
+        padding: 2rem;
+    }
+    
+    .manila-desc-container h2{
+        font-size: 1.5rem;
+    }
+    
+    .manila-desc-container p{
+        width: 100%;
+        font-size: 1.1rem;
+    }
+
+    .default-card.hotel-card {
+        height: 225px;
+        font-size: .8rem;
+    }
+
+    .default-card.hotel-card img{
+        height: 233px;
+    }
+
+    .hotel-card-btn button{
+        font-size: 8px;
+        padding: 5px 15px;
+        gap:0 ;
+        margin-top: 10px;
+        margin-bottom: -11px;
+    }
+    
+    .hotel-rate .price p{
+        justify-content: end;
+        font-size: .5rem;
+        color: #119FA3;
+        text-align: right;
+    }
+    
+    .hotel-rate .price p span{
+        font-size: .8rem;
+        color: #3A94C8;
+        font-weight: 600;
+    
+    }
+    
+    .average-hotel-rate{
+        display: flex;
+        color: #119FA3;
+        align-items: center;
+        gap: 2px;
+        margin-left: 10px;
+        font-size: 0.7rem;
+    }
+        
+    .review-date{
+        font-weight: 300;
+        font-size: .5rem;
+    }
+    
+    .reviewer-name{
+        font-size: 0.7rem;
+    }
+    
+    .place-review{
+        font-size: 0.8rem;
+    }
+    
+    .review-desc{
+        color: #686868;
+        font-size: 9px;
+        max-height: 57px;
+        text-align: justify;
+        transition: max-height 0.3 ease;
+    }
+    
+    .review-desc.expanded {
+        max-height: none;
+    }
+    
+    
+    .review-read-more{
+        border-radius: 20px;
+        font-weight: 200;
+        font-size: .7rem;
+        padding: 5px 20px;
+        letter-spacing: 1.5px;
+        margin: 10px 7px 0;
+    }
+    
+    .review-more{
+        padding: 5px 20px;
+        font-weight: 400;
+    }
+
+    .review .star-rates{
+        font-size: 10px;
     }
 
 }

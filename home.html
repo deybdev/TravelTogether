@@ -19,10 +19,10 @@
                     <a href="#" class="nav-link" style="font-weight: 800;">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="/destination.html" class="nav-link">Destinations</a>
+                    <a href="/manila.html" class="nav-link">Destinations</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#bookings" class="nav-link">Booking</a>
+                    <a href="booking.html" class="nav-link">Booking</a>
                 </li>
                 <li class="nav-item">
                     <a href="#reviews" class="nav-link">Reviews</a>
@@ -42,7 +42,7 @@
         <div class="nav-actions">
             <div class="search-btn"><i class="ri-search-line"></i></div>
             <div class="nav-search" id="navSearch">
-                <input type="text" id="navbarSearch" placeholder="Search Destinations . . .">
+                <input type="text" id="navbarSearch" placeholder="Search Destinations, Hotels and Activities. . .">
                 <button class="searchbar-btn">Search</button>
                 <i class="ri-close-line close-search" id="closeSearch"></i>
             </div>
@@ -101,8 +101,8 @@
             <p id="section-sub-title">We have more than 25 famous spots you can choose from</p>
         </div>
 
-        <div class="destination-container">
-            <div class="destination-img">
+        <div class="default-container">
+            <div class="default-card dest">
                 <div class="saved-destination"><i class="ri-heart-line"></i></div>
                 <img src="/assets/destinations/casa.jpg" alt="">
                 <h4>Casa Manila</h4>
@@ -111,7 +111,8 @@
                 <p class="destination-desc">The museum is the imposing stone-and-wood structure c. 1850, one of the grand houses in Barrio San Luis (one of the four original villages of Intramuros) is located across historic San Agustin church and bounded by Calle Real, General Luna, Cabildo and Urdaneta streets. The other two are the Los Hidalgos, c. 1650 and Cuyugan Mansion, c. 1890.</p>
                 <span class="read-more"><div class="left-line"></div>Read More <i class="ri-arrow-down-wide-line"></i><div class="right-line"></div></span>
             </div>
-            <div class="destination-img">
+
+            <div class="default-card dest">
                 <div class="saved-destination"><i class="ri-heart-line"></i></div>
                 <img src="/assets/destinations/fort.jpg" alt="">
                 <h4>Fort Santiago</h4>
@@ -120,7 +121,8 @@
                 <p class="destination-desc">Fort Santiago is one of the oldest fortifications in Manila built by the Spaniards in 1571 from what was once a palisaded structure of logs and earth built by Rajah Soliman on the native settlement called Maynila. The colonizers recognized that the tongue of land where the Pasig River flowed into the Manila Bay was a very strategic location.  The fort was destroyed in 1574 during the Chinese attack led by Limahong.  The stone fort was built between 1589 and 1592 and was repaired and extended after being damaged by the 1645 earthquake.</p>
                 <span class="read-more"><div class="left-line"></div>Read More <i class="ri-arrow-down-wide-line"></i><div class="right-line"></div></span>
             </div>
-            <div class="destination-img">
+
+            <div class="default-card dest">
                 <div class="saved-destination"><i class="ri-heart-line"></i></div>
                 <img src="/assets/destinations/intra.jpg" alt="">
                 <h4>Intramuros</h4>
@@ -129,7 +131,7 @@
                 <p class="destination-desc">Intramuros Old Town, Manila City's historic walled district, invites you to step back in time and explore the Philippines' rich past. Established over 400 years ago by Spanish colonizers, it served as their political and military stronghold in Asia. Today, Intramuros Old Town is one of the best places to visit in Manila City, offering visitors a glimpse into the country's storied history through its preserved architecture and cultural landmarks.</p>
                 <span class="read-more"><div class="left-line"></div>Read More <i class="ri-arrow-down-wide-line"></i><div class="right-line"></div></span>
             </div>
-            <div class="destination-img">
+            <div class="default-card dest">
                 <div class="saved-destination"><i class="ri-heart-line"></i></div>
                 <img src="/assets/destinations/luneta.jpg" alt="">
                 <h4>Rizal Park</h4>
@@ -150,11 +152,23 @@
             <h2 id="section-main-title">Best Hotel Deals</h2>
             <p id="section-sub-title">Find your perfect stay with our hotel booking platform. Choose from hundreds of cozy, luxurious, and affordable rooms — all in one place!</p>
         </div>
-        <div class="hotel-container">
-            <div class="hotel-card">
+        <div class="default-container">
+            <div class="default-card hotel">
                 <img src="/assets/hotels/hotel1.jpg" alt="Hotel1">
                 <h4>Eton Tower Makati</h4>
-                <div class="average-hotel-rate"><p class="rate-count">7.3 </p><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i> <p class="rate-count">(4,872)</p></div>
+                <div class="average-hotel-rate">
+                    <p class="rate-count">7.3 </p>
+                    <div class="star-rates">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <span class="blank-star">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                        </span>
+                    </div>
+                    <p class="rate-count">(4,872)</p>
+                </div>
                 <div class="hotel-rate">
                     <div class="price">
                         <p>From <span>PHP 2,578</span></p>
@@ -166,10 +180,19 @@
                 </div>
             </div>
 
-            <div class="hotel-card">
+            <div class="default-card hotel">
                 <img src="/assets/hotels/hotel2.jpg" alt="Hotel1">
                 <h4>Hotel 101</h4>
-                <div class="average-hotel-rate"><p class="rate-count">7.3 </p><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i> <p class="rate-count">(4,872)</p></div>
+                <div class="average-hotel-rate">
+                    <p class="rate-count">7.3 </p>
+                    <div class="star-rates">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <span class="blank-star"><i class="ri-star-fill"></i><i class="ri-star-fill"></i></span>
+                    </div>
+                    <p class="rate-count">(4,872)</p>
+                </div>
                 <div class="hotel-rate">
                     <div class="price">
                         <p>From <span>PHP 3,874</span></p>
@@ -181,10 +204,19 @@
                 </div>
             </div>
 
-            <div class="hotel-card">
+            <div class="default-card hotel">
                 <img src="/assets/hotels/hotel3.jpg" alt="Hotel1">
                 <h4>Lub d Philippines Makati</h4>
-                <div class="average-hotel-rate"><p class="rate-count">7.3 </p><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i> <p class="rate-count">(4,872)</p></div>
+                <div class="average-hotel-rate">
+                    <p class="rate-count">7.3 </p>
+                    <div class="star-rates">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <span class="blank-star"><i class="ri-star-fill"></i><i class="ri-star-fill"></i></span>
+                    </div>
+                    <p class="rate-count">(4,872)</p>
+                </div>
                 <div class="hotel-rate">
                     <div class="price">
                         <p>From <span>PHP 1,927</span></p>
@@ -196,7 +228,7 @@
                 </div>
             </div>
 
-            <div class="hotel-card">
+            <div class="hotel-card default-card">
                 <img src="/assets/hotels/hotel4.jpg" alt="Hotel Room">
                 <div class="hotel-card-content">
                     <h3>Discover great deals on hotels around manila</h3>
@@ -214,47 +246,71 @@
             <h2 id="section-main-title">Honest Reviews, Smart Choices</h2>
             <p id="section-sub-title">Find your perfect stay with our hotel booking platform. Choose from hundreds of cozy, luxurious, and affordable rooms — all in one place!</p>
         </div>
-        <div class="review-container">
-            <div class="review-card">
+        <div class="default-container">
+            <div class="default-card review">
                 <img src="/assets/reviews/review1.jpg" alt="Review">
                 <div class="review-date">
                     <p>Feb <br><span>17</span></p>
                 </div>
                 <p class="reviewer-name"><span>By: </span>Jhana S.</p>
+                <div class="star-rates">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <span class="blank-star"><i class="ri-star-fill"></i><i class="ri-star-fill"></i></span>
+                </div>
                 <h3 class="place-review">Intramuros</h3>
                 <p class="review-desc">"Lovely architecture, be prepared to be chased by aggressive tricycle drivers offering a tour.
                     We tried to walk ourselves which was challenging as despite the advertised 'No vehicle' roads, the reality was there were still cars, tricycles, garbage trucks and motorcycles."</p>
                 <button class="review-read-more button-btn1">Read More</button>
             </div>
 
-            <div class="review-card">
+            <div class="default-card review">
                 <img src="/assets/reviews/review2.jpg" alt="Review">
                 <div class="review-date">
                     <p>Dec <br><span>20</span></p>
                 </div>
                 <p class="reviewer-name"><span>By: </span>Lauren C.</p>
+                <div class="star-rates">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <span class="blank-star"><i class="ri-star-fill"></i><i class="ri-star-fill"></i></span>
+                </div>
                 <h3 class="place-review">Fort Santiago</h3>
                 <p class="review-desc">"I went to visit Fort Santiago because I was in the old town and it was ranked so highly on TripAdvisor. It was 75 pesos to enter and all I saw was construction work being done. You can only walk down one main path which is also littered with horse carts asking to give you a 'tour'. When you finally reach the top part of the fort... It's drenched in this awful smell from the nearby polluted river. Definitely a pass until they can clean it up."</p>
                 <button class="review-read-more button-btn1">Read More</button>
             </div>
 
-            <div class="review-card">
+            <div class="default-card review">
                 <img src="/assets/reviews/review3.jpg" alt="Review">
                 <div class="review-date">
                     <p>Mar <br><span>12</span></p>
                 </div>
                 <p class="reviewer-name"><span>By: </span>John A.</p>
+                <div class="star-rates">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <span class="blank-star"><i class="ri-star-fill"></i><i class="ri-star-fill"></i></span>
+                </div>
                 <h3 class="place-review">Casa Manila</h3>
                 <p class="review-desc">"Casa Manila is a beautifully preserved museum in Intramuros that offers an immersive glimpse into the opulent lifestyle of the Filipino elite during the Spanish colonial era. The house, designed in classic Bahay na Bato style, is filled with antique furniture, intricate wooden carvings, and elegant chandeliers that transport visitors back to the 19th century."</p>
                 <button class="review-read-more button-btn1">Read More</button>
             </div>
 
-            <div class="review-card">
+            <div class="default-card review">
                 <img src="/assets/reviews/review4.jpg" alt="Review">
                 <div class="review-date">
                     <p>Jan <br><span>1</span></p>
                 </div>
                 <p class="reviewer-name"><span>By: </span>Dave C</p>
+                <div class="star-rates">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <span class="blank-star"><i class="ri-star-fill"></i><i class="ri-star-fill"></i></span>
+                </div>
                 <h3 class="place-review">Rizal Park</h3>
                 <p class="review-desc">"Beautiful and tranquil despite being located in the middle of a busy road. A park of historical significance. From ponds and open lawns to monuments and a whole pantheon of Filipino heroes. There is a lot to see."</p>
                 <button class="review-read-more button-btn1">Read More</button>
