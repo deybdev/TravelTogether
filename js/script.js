@@ -157,7 +157,6 @@ function resetAutoSlide() {
 showImage(currentIndex);
 startAutoSlide();
 
-
 document.addEventListener('DOMContentLoaded', () => {
   const checkinBtn = document.getElementById('checkin-btn');
   const showCalendar = document.getElementById('calendar');
@@ -165,6 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const daysContainer = document.getElementById('days');
   const prevButton = document.getElementById('prev');
   const nextButton = document.getElementById('next');
+  const dateRangeText = document.getElementById('date-range-text');  // Add reference to the p element
   const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   let currentDate = new Date(), today = new Date(), selectedStartDate = null, selectedEndDate = null;
 
@@ -225,6 +225,8 @@ document.addEventListener('DOMContentLoaded', () => {
       // If an end date is not selected, set the end date and mark the range
       selectedEndDate = currentCellDate;
       markRange();
+      updateDateRangeText();  // Update the date range display
+      hideCalendar();  // Hide the calendar after selection
     } else {
       // If the user clicks on a date before the start date or invalid range, reset the selection
       selectedStartDate = currentCellDate;
@@ -252,6 +254,23 @@ document.addEventListener('DOMContentLoaded', () => {
         else if (currentCellDate > selectedStartDate && currentCellDate < selectedEndDate) dayDiv.classList.add('in-range');
       }
     });
+  };
+
+  const updateDateRangeText = () => {
+    // Function to format date as "Month 13, 2025"
+    const formatDate = (date) => {
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      return date.toLocaleDateString('en-US', options);  // Format as "March 13, 2025"
+    };
+
+    if (selectedStartDate && selectedEndDate) {
+      // Update the text content of the date range
+      dateRangeText.textContent = `${formatDate(selectedStartDate)} to ${formatDate(selectedEndDate)}`;
+    }
+  };
+
+  const hideCalendar = () => {
+    showCalendar.classList.remove('show'); // Hide the calendar
   };
 
   prevButton.addEventListener('click', () => {
@@ -285,3 +304,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
   renderCalendar(currentDate);
 });
+

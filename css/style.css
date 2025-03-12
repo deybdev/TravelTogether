@@ -1126,10 +1126,9 @@
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     overflow: hidden;
     width: 560px;
-    height: 450px;
-    padding: 20px;
+    height: auto;
     position: absolute;
-    top: 20%;
+    top: 16%;
     right: 30%;
     opacity: 0;
     visibility: hidden;
@@ -1142,11 +1141,19 @@
     transition: opacity 0.3s ease-out, visibility 0s ease-out 0s;
 }
 
+.calendar .main-header{
+    padding: 20px 0;
+    text-align: center;
+    font-size: .9rem;
+    color: #ffffff;
+    background-color: #119396;
+}
+
 .calendar .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 10px 20px 20px;
+    margin: 10px 20px 15px;
 }
 
 .calendar .btn {
@@ -1167,6 +1174,13 @@
     display: flex;
     flex-wrap: wrap;
     color: #000;
+    padding: 10px ;
+    margin: 15px 15px;
+}
+
+.weekdays div{
+    margin-bottom: -25px;
+    color: #119FA3;
 }
 
 .weekdays div,
@@ -1174,7 +1188,6 @@
     width: 14.28%;
     text-align: center;
     padding: 10px 0;
-    margin: 4px 0;
 }
 
 .days div:hover:not(.disabled) {
@@ -1183,6 +1196,7 @@
 
 .days div {
     cursor: pointer;
+    margin: 5px 0;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -1198,17 +1212,17 @@
 }
 
 .end-date {
-    background-color: #119FA3; /* Tomato red for end date */
+    background-color: #119FA3;
     color: white;
 }
 
 .in-range {
-    background-color: #dbfdff; /* Light turquoise for range dates */
+    background-color: #f0f0f0;
     color: #000;
 }
 
 .selected {
-    background-color: #119FA3; /* Blue for selected dates */
+    background-color: #119FA3;  
     color: white;
 }
 
@@ -1695,6 +1709,29 @@ select {
         width: 100%;
         padding: 10px;
     }
+
+    .calendar i{
+        color: #119396;
+    }
+
+    .calendar {
+        width: 100%;
+        height: auto;
+        top: 20%;
+        right: 0;
+
+        border-radius: 0;
+    }
+
+    .days div:hover:not(.disabled) {
+        color: #fff;
+    }
+
+    .weekdays,
+    .days {
+        margin: 0;
+    }
+
 
 
 
