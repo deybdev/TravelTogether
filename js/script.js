@@ -156,3 +156,132 @@ function resetAutoSlide() {
 // Initialize
 showImage(currentIndex);
 startAutoSlide();
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const checkinBtn = document.getElementById('checkin-btn');
+  const showCalendar = document.getElementById('calendar');
+  const monthYear = document.getElementById('month-year');
+  const daysContainer = document.getElementById('days');
+  const prevButton = document.getElementById('prev');
+  const nextButton = document.getElementById('next');
+  const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  let currentDate = new Date(), today = new Date(), selectedStartDate = null, selectedEndDate = null;
+
+  const renderCalendar = (date) => {
+    const year = date.getFullYear(), month = date.getMonth(), firstDay = new Date(year, month, 1).getDay(), lastDay = new Date(year, month + 1, 0).getDate();
+    const totalDays = 42; // 6 rows * 7 columns
+
+    monthYear.textContent = `${months[month]} ${year}`;
+    daysContainer.innerHTML = '';
+    
+    let dayCount = 1;
+
+    // Render Previous Month Dates (for the first row to align with the correct starting day)
+    const prevMonthLastDay = new Date(year, month, 0).getDate();
+    for (let i = firstDay; i > 0; i--) {
+      const prevMonthDate = new Date(year, month, 1 - i), dayDiv = document.createElement('div');
+      dayDiv.textContent = prevMonthDate.getDate();
+      dayDiv.classList.add('fade', 'other-month', 'disabled');
+      daysContainer.appendChild(dayDiv);
+      dayCount++;
+    }
+
+    // Render Current Month Dates
+    for (let i = 1; i <= lastDay; i++) {
+      const currentCellDate = new Date(year, month, i), dayDiv = document.createElement('div');
+      dayDiv.textContent = i;
+      if (currentCellDate.toDateString() === today.toDateString()) dayDiv.classList.add('today');
+      if (currentCellDate < today) dayDiv.classList.add('disabled');
+      dayDiv.addEventListener('click', () => handleDayClick(currentCellDate, dayDiv));
+      daysContainer.appendChild(dayDiv);
+      dayCount++;
+    }
+
+    // Render Next Month Dates to fill the remaining slots (if any)
+    for (let i = 1; dayCount <= totalDays; i++) {
+      const dayDiv = document.createElement('div');
+      dayDiv.textContent = i;
+      dayDiv.classList.add('fade', 'other-month', 'disabled');
+      daysContainer.appendChild(dayDiv);
+      dayCount++;
+    }
+
+    // Hide Previous Button if Current Month
+    prevButton.style.visibility = (year === today.getFullYear() && month === today.getMonth()) ? 'hidden' : 'visible';
+  };
+
+  const handleDayClick = (currentCellDate, dayDiv) => {
+    // If the clicked date is before today, don't do anything
+    if (dayDiv.classList.contains('disabled')) return;
+
+    // If no start date is selected or an end date is already selected, set the start date
+    if (!selectedStartDate || selectedEndDate) {
+      selectedStartDate = currentCellDate;
+      selectedEndDate = null;
+      resetSelection(); // Reset other selections
+      dayDiv.classList.add('selected');
+    } else if (!selectedEndDate && currentCellDate > selectedStartDate) {
+      // If an end date is not selected, set the end date and mark the range
+      selectedEndDate = currentCellDate;
+      markRange();
+    } else {
+      // If the user clicks on a date before the start date or invalid range, reset the selection
+      selectedStartDate = currentCellDate;
+      selectedEndDate = null;
+      resetSelection(); // Reset other selections
+      dayDiv.classList.add('selected');
+    }
+  };
+
+  const resetSelection = () => {
+    // Reset all date selections
+    const allDayDivs = Array.from(daysContainer.getElementsByTagName('div'));
+    allDayDivs.forEach(dayDiv => {
+      dayDiv.classList.remove('selected', 'start-date', 'end-date', 'in-range');
+    });
+  };
+
+  const markRange = () => {
+    // Mark the selected start date, end date, and the in-range dates
+    Array.from(daysContainer.getElementsByTagName('div')).forEach((dayDiv) => {
+      const dayNumber = parseInt(dayDiv.textContent), currentCellDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), dayNumber);
+      if (!dayDiv.classList.contains('other-month') && !dayDiv.classList.contains('disabled')) {
+        if (currentCellDate.getTime() === selectedStartDate.getTime()) dayDiv.classList.add('start-date');
+        else if (currentCellDate.getTime() === selectedEndDate.getTime()) dayDiv.classList.add('end-date');
+        else if (currentCellDate > selectedStartDate && currentCellDate < selectedEndDate) dayDiv.classList.add('in-range');
+      }
+    });
+  };
+
+  prevButton.addEventListener('click', () => {
+    currentDate.setMonth(currentDate.getMonth() - 1);
+    renderCalendar(currentDate);
+  });
+
+  nextButton.addEventListener('click', () => {
+    currentDate.setMonth(currentDate.getMonth() + 1);
+    renderCalendar(currentDate);
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!daysContainer.contains(e.target) && !monthYear.contains(e.target)) {
+      selectedStartDate = null;
+      selectedEndDate = null;
+      resetSelection();  // Reset selection when clicking outside the calendar
+      renderCalendar(currentDate);
+    }
+  });
+
+  checkinBtn.addEventListener('click', () => {
+    showCalendar.classList.add('show');
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!showCalendar.contains(e.target) && !checkinBtn.contains(e.target)) {
+      showCalendar.classList.remove('show');
+    }
+  });
+
+  renderCalendar(currentDate);
+});

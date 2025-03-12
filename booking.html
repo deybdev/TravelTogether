@@ -3,9 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <title>Booking</title>
 </head>
 <body>
+
+    <style>
+        
+    </style>
+
+    <nav class="nav-container">
+        <a href="#" class="nav-logo">TRAVEL TOGETHER</a>
+
+        <div class="nav-menu" id="nav-menu">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/manila.html" class="nav-link">Destinations</a>
+                </li>
+                <li class="nav-item">
+                    <a href="booking.html" class="nav-link" style="font-weight: 800;">Booking</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#reviews" class="nav-link">Reviews</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contacts" class="nav-link">Contact</a>
+                </li>
+            </ul>
+
+            <!--CLOSE BUTTON-->
+            <div class="nav-close">
+                <i class="ri-close-line"></i>
+            </div>
+        </div>
+        
+        <!--LOGIN, SIGNUP and Menu Buttons-->
+        <div class="nav-actions">
+            <div class="search-btn"><i class="ri-search-line"></i></div>
+            <div class="nav-search" id="navSearch">
+                <input type="text" id="navbarSearch" placeholder="Search Destinations, Hotels and Activities. . .">
+                <button class="searchbar-btn">Search</button>
+                <i class="ri-close-line close-search" id="closeSearch"></i>
+            </div>
+            <button class="button-btn1 login-btn">Sign In</button>
+            <div class="user-logo"><i class="ri-user-line"></i></div>
+            <div class="toggle-menu" id="toggle-menu"><i class="ri-menu-line"></i></div>
+        </div>
+
+        <!-- LOGIN CONTAINER -->
+        <div class="login-container">
+            <div class="login-content">
+                <div class="login-container-close">
+                    <i class="ri-close-line"></i>
+                </div>
+                <h2 class="login-title">Sign in or create an account</h2>
+                <form action="">
+                    <div class="login-input">
+                        <input type="email" name="email" id="email" placeholder="Please enter your email address" required>
+                        <button class="button-login" type="submit">Continue</button>
+                    </div>
+                    <div class="other-methods">
+                        <p><i class="left-line"></i>Other Methods<i class="right-line"></i></p>
+                        <div class="methods-icon">
+                            <button class="social-btn"><i class="ri-facebook-circle-fill"></i></button>
+                            <button class="social-btn"><i class="ri-google-fill"></i></button>
+                        </div>
+                    </div>
+                    <div class="terms">
+                        <p>By signing in or registering, you are deemed to have agreed to the Travel Together <a href="#">Terms and Conditions</a> and <a href="#">Privacy Statement</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- BOOKING SECTION START -->
+
+    <div class="destination-main-slider">
+        <div class="destination-main booking-main">
+          <div class="image-slider">
+            <img src="/assets/hotel-img1.jpg" class="slider-image active" alt="">
+          </div>
+          <div class="destination-main-content">
+            <h2>Things To Do in Manila</h2>
+            <p>Explore the top must-see sights and exciting activities in Manila! From historic landmarks to hidden gems, discover everything this vibrant city has to offer and make the most of your adventure.</p>
+          </div>
+        </div>
+    </div> 
     
+    <div class="booking-search-container">
+        <div class="checkin" id="checkin-btn">
+            <h5>Check In & Check Out</h5>
+            <div class="date-info">
+                <i class="ri-calendar-line"></i>
+                <p id="date-range-text">--/--/---- to --/--/----</p> <!-- Display selected range -->
+            </div>
+            <!-- Hidden input for flatpickr -->
+            <input type="text" id="date-range" style="display: none;"> 
+        </div>
+        <div class="guests">
+            <h5>Guests and Rooms</h5>
+            <div class="user-room-info">
+                <i class="ri-group-line"></i>
+                <p>2 Adults, 1 Room</p>
+            </div>
+        </div>
+        <button class="button-btn1 search-hotel-btn"><i class="ri-search-line"></i> Search</button>
+    </div>
+
+    <!-- CALENDAR START -->
+
+        <div class="calendar" id="calendar">
+            <div class="header">
+                <div id="prev" class="btn" ><i class="ri-arrow-left-line"></i></div>
+                <div id="month-year"></div>
+                <div id="next" class="btn"><i class="ri-arrow-right-line"></i></div>
+            </div>
+            <div class="weekdays">
+                <div>Sun</div>
+                <div>Mon</div>
+                <div>Tue</div>
+                <div>Wed</div>
+                <div>Thu</div>
+                <div>Fri</div>
+                <div>Sat</div>
+            </div>
+            <div class="days" id="days"></div>
+        </div>
+    <!-- CALENDAR END -->
+    
+    
+    
+
+    <!-- BOOKING SECTION END -->
+     <script src="/js/script.js"></script>
+
+
 </body>
 </html>

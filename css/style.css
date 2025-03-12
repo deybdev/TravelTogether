@@ -519,6 +519,16 @@
     color: #119396;
 }
 
+.default-card .place-category {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 5px;
+    margin-right: 20px;
+    font-size: 13px;
+    color: #119FA3;
+}
+
 .default-card .entrance-fee span{
     margin-left: 5px;
 }
@@ -1038,6 +1048,62 @@
 }
 /* MANILA END */
 
+/* BOOKING START */
+
+.destination-main.booking-main {
+    position: relative;
+    height: 300px;
+}
+
+.destination-main.booking-main::after {
+    background: linear-gradient(185deg, rgba(217, 217, 217, 0.00) 4.57%, #119396 94.11%);
+}
+
+.booking-search-container{
+    position: absolute;
+    top: 50%;
+    right: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: center;
+    gap: 1rem;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.checkin,
+.guests{
+    display: flex;
+    color: #119396;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 15px 100px 15px 15px;
+    border-radius: 10px;
+    background-color: #F2F2F2;
+    cursor: pointer;
+}
+
+.date-info,
+.user-room-info{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+}
+
+.search-hotel-btn{
+    padding: 22px;
+    font-size: 1rem;
+}
+
+
+/* BOOKING END */
 
 
 
@@ -1047,6 +1113,137 @@
 
 
 
+
+
+/* DEFAULT */
+
+
+/* CALENDAR DESIGN */
+
+.calendar {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    width: 560px;
+    height: 450px;
+    padding: 20px;
+    position: absolute;
+    top: 20%;
+    right: 30%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-out, visibility 0s ease-out 0.3s;
+}
+
+.calendar.show {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease-out, visibility 0s ease-out 0s;
+}
+
+.calendar .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 20px 20px;
+}
+
+.calendar .btn {
+    cursor: pointer;
+    color: #119FA3;
+    font-size: 25px;
+}
+
+#month-year {
+    font-weight: bold;
+    font-size: 20px;
+    color: #119FA3;
+    cursor: pointer;
+}
+
+.weekdays,
+.days {
+    display: flex;
+    flex-wrap: wrap;
+    color: #000;
+}
+
+.weekdays div,
+.days div {
+    width: 14.28%;
+    text-align: center;
+    padding: 10px 0;
+    margin: 4px 0;
+}
+
+.days div:hover:not(.disabled) {
+    color: #119FA3;
+}
+
+.days div {
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+.disabled {
+    color: #d3d3d3;
+    pointer-events: none;
+}
+
+.start-date {
+    background-color: #119FA3;
+    color: white;
+}
+
+.end-date {
+    background-color: #119FA3; /* Tomato red for end date */
+    color: white;
+}
+
+.in-range {
+    background-color: #dbfdff; /* Light turquoise for range dates */
+    color: #000;
+}
+
+.selected {
+    background-color: #119FA3; /* Blue for selected dates */
+    color: white;
+}
+
+input,
+select {
+    font-size: .9rem;
+    border-radius: 20px;
+    border: 1px solid #B2B2B2;
+    color: #4b4b4b;
+    position: relative;
+    appearance: none;
+}
+
+.custom-select{
+    position: relative;
+}
+
+.custom-select select{
+    width: 10rem;
+    cursor: pointer;
+}
+
+.custom-select i{
+    position: absolute;
+    color: #4b4b4b;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    pointer-events: none;
+}
+
+.flatpickr-calendar {
+    background-color: #c70f0f;
+}
 
 /* Responsive */
 @media screen and (max-width: 1100px){
@@ -1313,6 +1510,12 @@
         margin-bottom: -2px;
     }
 
+    .default-card .place-category p , .default-card .place-category i{
+        color: #119FA3;
+        font-size: 10px;
+        
+    }
+
     .default-card .location a{  
         font-size: .6rem;
         margin-left: -2px;
@@ -1454,38 +1657,46 @@
         font-size: 10px;
     }
 
+    .booking-main .destination-main-content{
+        margin-bottom: 6rem;
+    }
+
+    .booking-search-container{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        top: 30%;
+        right: 0%;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .checkin,
+    .guests{
+        gap: 5px;
+        border-radius: 5px;
+        width: 100%;
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .checkin i,
+    .guests i{
+        color: #119396;
+    }
+
+    .date-info,
+    .user-room-info{
+        font-size: 10px;
+    }
+
+    .search-hotel-btn{
+        font-size: .7rem;
+        width: 100%;
+        padding: 10px;
+    }
+
+
 
 
 }
-
-/* DEFAULT */
-
-input,
-select {
-    font-size: .9rem;
-    border-radius: 20px;
-    border: 1px solid #B2B2B2;
-    color: #4b4b4b;
-    position: relative;
-    appearance: none;
-}
-
-.custom-select{
-    position: relative;
-}
-
-.custom-select select{
-    width: 10rem;
-    cursor: pointer;
-}
-
-.custom-select i{
-    position: absolute;
-    color: #4b4b4b;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
-    pointer-events: none;
-}
-
