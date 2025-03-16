@@ -307,9 +307,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // SHOW FILTERS
 const filterBtn = document.querySelector('#show-filter');
+const closeFilterBtn = document.querySelector('.close-filter');
 
 filterBtn.addEventListener('click', () => {
   const filters = document.querySelector('.left-hotel');
   filters.style.display = 'flex';
 });
 
+closeFilterBtn.addEventListener('click', () => {
+  const filters = document.querySelector('.left-hotel');
+  filters.style.display = 'none';
+});
