@@ -10,10 +10,6 @@
 </head>
 <body>
 
-    <style>
-        
-    </style>
-
     <nav class="nav-container">
         <a href="#" class="nav-logo">TRAVEL TOGETHER</a>
 
@@ -101,14 +97,14 @@
             <h5>Check In & Check Out</h5>
             <div class="date-info">
                 <i class="ri-calendar-line"></i>
-                <p id="date-range-text">--/--/---- to --/--/----</p>
+                <p id="date-range-text" class="date-info">--/--/---- to --/--/----</p>
             </div>
         </div>
         <div class="guests">
             <h5>Guests and Rooms</h5>
             <div class="user-room-info">
                 <i class="ri-group-line"></i>
-                <p>2 Adults, 1 Room</p>
+                <p class="user-room-info">2 Adults, 1 Room</p>
             </div>
         </div>
         <button class="button-btn1 search-hotel-btn"><i class="ri-search-line"></i> Search</button>
@@ -135,12 +131,335 @@
             <div class="days" id="days"></div>
         </div>
     <!-- CALENDAR END -->
+
+    <div class="filter-icons">
+        <button class="filter-icon button-btn1" id="show-filter"><i class="ri-equalizer-line"></i> Filter By : </button>
+        <button class="filter-icon button-btn2"><i class="ri-sort-asc"></i> Sort By : </button>
+    </div>
+
+    <div class="hotel-booking-main">
+
+        <div class="left-hotel"> 
+            <div class="filter-hotel">
+                <div class="left-img">
+                    <img src="/assets/map-manila.png" alt="" class="manila-map">  
+                    <button class="map-btn button-btn3"  onclick="window.location.href='https://www.google.com/maps?q=Manila'">See Manila on Map</button>
+                </div>    
+                <h2 class="filter-heading">Filter Hotels:</h2>
+                <div class="by-filter">
+                        <h3>Rating</h3>
+                        <div class="filter">
+                            <input type="checkbox" name="rating" id="rating-5" value="5">
+                            <label for="rating-5">5 Stars</label>
+                        </div>
+
+                        <div class="filter">
+                            <input type="checkbox" name="rating" id="rating-4" value="4">
+                            <label for="rating-4">4 Stars</label>
+                        </div>
+
+                        <div class="filter">
+                            <input type="checkbox" name="rating" id="rating-3" value="3">
+                            <label for="rating-3">3 Stars</label>
+                        </div>
+
+                        <div class="filter">
+                            <input type="checkbox" name="rating" id="rating-2" value="2">
+                            <label for="rating-2">2 Stars</label>
+                        </div>
+
+                        <div class="filter">
+                            <input type="checkbox" name="rating" id="rating-1" value="1">
+                            <label for="rating-1">1 Stars</label>
+                        </div>                       
+                </div>
+
+                <div class="by-filter">
+                    <h3>Amenities</h3>
+                    <div class="filter">
+                        <input type="checkbox" name="ewan" id="ewan" value="ewan">
+                        <label for="rating-1">Free Wifi</label>
+                    </div>   
+                    <div class="filter">
+                        <input type="checkbox" name="ewan" id="ewan" value="ewan">
+                        <label for="rating-1">Swimming Pool</label>
+                    </div>   
+                    <div class="filter">
+                        <input type="checkbox" name="ewan" id="ewan" value="ewan">
+                        <label for="rating-1">Pet Friendly</label>
+                    </div>   
+                    <div class="filter">
+                        <input type="checkbox" name="ewan" id="ewan" value="ewan">
+                        <label for="rating-1">Airconditioning</label>
+                    </div>   
+                    <div class="filter">
+                        <input type="checkbox" name="ewan" id="ewan" value="ewan">
+                        <label for="rating-1">Non Smoking</label>
+                    </div>   
+                    <div class="filter">
+                        <input type="checkbox" name="ewan" id="ewan" value="ewan">
+                        <label for="rating-1">Free Parking</label>
+                    </div>   
+                    <div class="filter">
+                        <input type="checkbox" name="ewan" id="ewan" value="ewan">
+                        <label for="rating-1">Free Breakfast</label>
+                    </div>   
+                    <div class="filter">
+                        <input type="checkbox" name="ewan" id="ewan" value="ewan">
+                        <label for="rating-1">24 Hour Check In</label>
+                    </div>   
+                </div>
+                
+                <div class="by-filter">
+                    <h3>Neighbourhood</h3>
+                    <div class="filter">
+                        <input type="checkbox" name="neighborhood" id="binondo" value="Binondo">
+                        <label for="binondo">Binondo</label>
+                    </div>
+                
+                    <div class="filter">
+                        <input type="checkbox" name="neighborhood" id="ermita" value="Ermita">
+                        <label for="ermita">Ermita</label>
+                    </div>
+                
+                    <div class="filter">
+                        <input type="checkbox" name="neighborhood" id="malate" value="Malate">
+                        <label for="malate">Malate</label>
+                    </div>
+                
+                    <div class="filter">
+                        <input type="checkbox" name="neighborhood" id="paco" value="Paco">
+                        <label for="paco">Paco</label>
+                    </div>
+                
+                    <div class="filter">
+                        <input type="checkbox" name="neighborhood" id="pandacan" value="Pandacan">
+                        <label for="pandacan">Pandacan</label>
+                    </div>
+                
+                    <div class="filter">
+                        <input type="checkbox" name="neighborhood" id="port-area" value="Port Area">
+                        <label for="port-area">Port Area</label>
+                    </div>
+                
+                    <div class="filter">
+                        <input type="checkbox" name="neighborhood" id="quiapo" value="Quiapo">
+                        <label for="quiapo">Quiapo</label>
+                    </div>
+                
+                    <div class="filter">
+                        <input type="checkbox" name="neighborhood" id="san-andres" value="San Andres">
+                        <label for="san-andres">San Andres</label>
+                    </div>
+                
+                    <div class="filter">
+                        <input type="checkbox" name="neighborhood" id="san-miguel" value="San Miguel">
+                        <label for="san-miguel">San Miguel</label>
+                    </div>
+                
+                    <div class="filter">
+                        <input type="checkbox" name="neighborhood" id="san-nicolas" value="San Nicolas">
+                        <label for="san-nicolas">San Nicolas</label>
+                    </div>
+                
+                    <div class="filter">
+                        <input type="checkbox" name="neighborhood" id="santa-ana" value="Santa Ana">
+                        <label for="santa-ana">Santa Ana</label>
+                    </div>
+                
+                    <div class="filter">
+                        <input type="checkbox" name="neighborhood" id="santa-cruz" value="Santa Cruz">
+                        <label for="santa-cruz">Santa Cruz</label>
+                    </div>
+                
+                    <div class="filter">
+                        <input type="checkbox" name="neighborhood" id="santa-mesa" value="Santa Mesa">
+                        <label for="santa-mesa">Santa Mesa</label>
+                    </div>
+                
+                    <div class="filter">
+                        <input type="checkbox" name="neighborhood" id="tondo" value="Tondo">
+                        <label for="tondo">Tondo</label>
+                    </div>
+                
+                    <div class="filter">
+                        <input type="checkbox" name="neighborhood" id="sampaloc" value="Sampaloc">
+                        <label for="sampaloc">Sampaloc</label>
+                    </div>
+
+                </div>
+
+                <div class="filter-btn">
+                    <button class="button-btn1">Search Hotel</button>
+                </div>
+                
+            </div>
+        </div>
+        <div class="right-hotel">
+            
+            <div class="hotel-result-header">
+                <h3>Result: <span>2,424 properties</span></h3>
+            </div>
+
+            <div class="default-card hotel-result">
+                <img src="/assets/hotels/hotel2.jpg" alt="Hotel1">
+                <div class="saved-destination"><i class="ri-heart-line"></i></div>
+                <div class="card-content">
+                    <h4>Hotel 101</h4>
+                    <div class="average-hotel-rate">
+                        <p class="rate-count">7.3 </p>
+                        <div class="star-rates">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <span class="blank-star"><i class="ri-star-fill"></i><i class="ri-star-fill"></i></span>
+                        </div>
+                        <p class="rate-count">(4,872)</p>
+                    </div>
+                    <div class="hotel-desc">
+                        With the vision of being one of the top hotel brands in the world, Hotel101 promises to be a choice accommodation, with services and facilities that address the needs of a fast-paced leisure and business travelers.
+                    </div>
+                    <div class="location"><a href="https://www.google.com/maps/dir/?api=1&destination=RizalPark" target="_blank"><i class="ri-map-pin-line"></i> See in google maps</a></div>
+                    <div class="hotel-rate">
+                        <div class="price">
+                            <p>From <span>PHP 3,874</span></p>
+                        </div>
+                    </div>
+                    <div class="hotel-card-btn">
+                        <button class="button-btn2">More Info</button>
+                        <button class="button-btn1">Check Availability<p class="ri-arrow-right-double-fill"></p></button>
+                    </div>
+                </div>
+            </div>
+            <div class="default-card hotel-result">
+                <img src="/assets/hotels/hotel2.jpg" alt="Hotel1">
+                <div class="saved-destination"><i class="ri-heart-line"></i></div>
+                <div class="card-content">
+                    <h4>Hotel 101</h4>
+                    <div class="average-hotel-rate">
+                        <p class="rate-count">7.3 </p>
+                        <div class="star-rates">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <span class="blank-star"><i class="ri-star-fill"></i><i class="ri-star-fill"></i></span>
+                        </div>
+                        <p class="rate-count">(4,872)</p>
+                    </div>
+                    <div class="hotel-desc">
+                        With the vision of being one of the top hotel brands in the world, Hotel101 promises to be a choice accommodation, with services and facilities that address the needs of a fast-paced leisure and business travelers.
+                    </div>
+                    <div class="location"><a href="https://www.google.com/maps/dir/?api=1&destination=RizalPark" target="_blank"><i class="ri-map-pin-line"></i> See in google maps</a></div>
+                    <div class="hotel-rate">
+                        <div class="price">
+                            <p>From <span>PHP 3,874</span></p>
+                        </div>
+                    </div>
+                    <div class="hotel-card-btn">
+                        <button class="button-btn2">More Info</button>
+                        <button class="button-btn1">Check Availability<p class="ri-arrow-right-double-fill"></p></button>
+                    </div>
+                </div>
+            </div>
+            <div class="default-card hotel-result">
+                <img src="/assets/hotels/hotel2.jpg" alt="Hotel1">
+                <div class="saved-destination"><i class="ri-heart-line"></i></div>
+                <div class="card-content">
+                    <h4>Hotel 101</h4>
+                    <div class="average-hotel-rate">
+                        <p class="rate-count">7.3 </p>
+                        <div class="star-rates">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <span class="blank-star"><i class="ri-star-fill"></i><i class="ri-star-fill"></i></span>
+                        </div>
+                        <p class="rate-count">(4,872)</p>
+                    </div>
+                    <div class="hotel-desc">
+                        With the vision of being one of the top hotel brands in the world, Hotel101 promises to be a choice accommodation, with services and facilities that address the needs of a fast-paced leisure and business travelers.
+                    </div>
+                    <div class="location"><a href="https://www.google.com/maps/dir/?api=1&destination=RizalPark" target="_blank"><i class="ri-map-pin-line"></i> See in google maps</a></div>
+                    <div class="hotel-rate">
+                        <div class="price">
+                            <p>From <span>PHP 3,874</span></p>
+                        </div>
+                    </div>
+                    <div class="hotel-card-btn">
+                        <button class="button-btn2">More Info</button>
+                        <button class="button-btn1">Check Availability<p class="ri-arrow-right-double-fill"></p></button>
+                    </div>
+                </div>
+            </div>
+            <div class="default-card hotel-result">
+                <img src="/assets/hotels/hotel2.jpg" alt="Hotel1">
+                <div class="saved-destination"><i class="ri-heart-line"></i></div>
+                <div class="card-content">
+                    <h4>Hotel 101</h4>
+                    <div class="average-hotel-rate">
+                        <p class="rate-count">7.3 </p>
+                        <div class="star-rates">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <span class="blank-star"><i class="ri-star-fill"></i><i class="ri-star-fill"></i></span>
+                        </div>
+                        <p class="rate-count">(4,872)</p>
+                    </div>
+                    <div class="hotel-desc">
+                        With the vision of being one of the top hotel brands in the world, Hotel101 promises to be a choice accommodation, with services and facilities that address the needs of a fast-paced leisure and business travelers.
+                    </div>
+                    <div class="location"><a href="https://www.google.com/maps/dir/?api=1&destination=RizalPark" target="_blank"><i class="ri-map-pin-line"></i> See in google maps</a></div>
+                    <div class="hotel-rate">
+                        <div class="price">
+                            <p>From <span>PHP 3,874</span></p>
+                        </div>
+                    </div>
+                    <div class="hotel-card-btn">
+                        <button class="button-btn2">More Info</button>
+                        <button class="button-btn1">Check Availability<p class="ri-arrow-right-double-fill"></p></button>
+                    </div>
+                </div>
+            </div>
+            <div class="default-card hotel-result">
+                <img src="/assets/hotels/hotel2.jpg" alt="Hotel1">
+                <div class="saved-destination"><i class="ri-heart-line"></i></div>
+                <div class="card-content">
+                    <h4>Hotel 101</h4>
+                    <div class="average-hotel-rate">
+                        <p class="rate-count">7.3 </p>
+                        <div class="star-rates">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <span class="blank-star"><i class="ri-star-fill"></i><i class="ri-star-fill"></i></span>
+                        </div>
+                        <p class="rate-count">(4,872)</p>
+                    </div>
+                    <div class="hotel-desc">
+                        With the vision of being one of the top hotel brands in the world, Hotel101 promises to be a choice accommodation, with services and facilities that address the needs of a fast-paced leisure and business travelers.
+                    </div>
+                    <div class="location"><a href="https://www.google.com/maps/dir/?api=1&destination=RizalPark" target="_blank"><i class="ri-map-pin-line"></i> See in google maps</a></div>
+                    <div class="hotel-rate">
+                        <div class="price">
+                            <p>From <span>PHP 3,874</span></p>
+                        </div>
+                    </div>
+                    <div class="hotel-card-btn">
+                        <button class="button-btn2">More Info</button>
+                        <button class="button-btn1">Check Availability<p class="ri-arrow-right-double-fill"></p></button>
+                    </div>
+                </div>
+            </div>
+        </div>
     
     
     
 
     <!-- BOOKING SECTION END -->
      <script src="/js/script.js"></script>
+     
+
 
 
 </body>

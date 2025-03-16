@@ -305,3 +305,11 @@ document.addEventListener('DOMContentLoaded', () => {
   renderCalendar(currentDate);
 });
 
+// SHOW FILTERS
+const filterBtn = document.querySelector('#show-filter');
+
+filterBtn.addEventListener('click', () => {
+  const filters = document.querySelector('.left-hotel');
+  filters.style.display = 'flex';
+});
+

@@ -975,6 +975,10 @@
     gap: 1.5rem;
 }
 
+.destination-form input{
+    border-radius: 20px;
+}
+
 
 .destination-wrapper {
     display: flex;
@@ -1070,7 +1074,7 @@
     gap: 1rem;
     background-color: #ffffff;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    padding: 1rem;
+    padding: .5rem;
     border-radius: 10px;
 }
 
@@ -1082,10 +1086,11 @@
     flex-direction: column;
     justify-content: flex-start;
     gap: 10px;
-    padding: 15px 100px 15px 15px;
-    border-radius: 10px;
+    padding: 10px 70px 10px 15px;
+    border-radius: 5px;
     background-color: #F2F2F2;
     cursor: pointer;
+    font-size: 1;
 }
 
 .date-info,
@@ -1095,11 +1100,178 @@
     align-items: center;
     justify-content: flex-start;
     gap: 12px;
+    font-size: 15px;
 }
 
 .search-hotel-btn{
     padding: 22px;
-    font-size: 1rem;
+    font-size: .8rem;
+}
+
+.hotel-booking-main {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 3rem;
+    gap: 30px;
+    min-height: 100vh;
+}
+
+.left-hotel {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin: 20px 0 0 100px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: sticky;
+    top: 20px;
+    max-height: 590px;
+}
+
+.filter-heading{
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    font-size: 1.1rem;
+    padding: 10px 25px;
+    border-bottom: 1px solid #ddd;
+}
+
+.left-img{
+    width: 300px;
+    height: 150px;
+    overflow: hidden;
+    position: relative;
+}
+
+.map-btn{   
+    padding: 10px;
+    position: absolute;
+    top: 105px;
+    left: 20%;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+}
+
+.manila-map {
+    width: 100%;
+    height: 100%;
+}
+
+.left-img .manila-map{
+    transform: scale(2);
+}
+
+.right-hotel {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+}
+
+.right-hotel .hotel-result-header{
+    color: #119396;
+}
+
+.by-filter h3 {
+    font-size: .9rem;
+    margin-bottom: 5px;
+}
+
+.by-filter{
+   display: flex;
+   flex-direction: column;
+   font-size: .8rem;
+   font-weight: 300;
+   gap: 4px;
+   padding: 10px 25px;
+   border-bottom: 1px solid #ddd;
+    
+}
+
+.filter input {
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
+}
+
+
+.hotel-result{
+    display: flex;
+    width: 100%;
+    height: 230px;
+    padding: 0;
+}
+
+.hotel-result h4{
+    width: 100%;
+    color: #119396;
+    overflow: auto;
+    font-size: 1.4rem;
+}
+
+.hotel-result img{
+    width: 35%;
+    height: auto;
+    object-fit: cover;
+    margin: 0;
+}
+
+.card-content{
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: -10px;
+}
+
+.card-content .hotel-desc{
+    margin: 10px;
+    font-size: .85rem;
+    color: #464242;
+}
+
+.card-content .price p span{
+    margin: 10px;
+    font-size: 1.3rem;
+    color: #119396;
+}
+.hotel-result .hotel-card-btn{
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.hotel-result:hover {
+    transform: none;
+}
+
+.hotel-result .saved-destination i{
+    color: #119396;
+}
+
+.filter-btn{
+    display: none;
+}
+
+.filter-icons{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+    color: #119396;
+    gap: 10px;
+}
+
+.filter-icon{
+    border: 1px solid #119396;
+    padding: 10px 15px;
+    border-radius: 20px;
+}
+
+.filter-icon:last-child i{
+    color: #119396;
 }
 
 
@@ -1226,7 +1398,6 @@
     color: white;
 }
 
-input,
 select {
     font-size: .9rem;
     border-radius: 20px;
@@ -1255,9 +1426,9 @@ select {
     pointer-events: none;
 }
 
-.flatpickr-calendar {
-    background-color: #c70f0f;
-}
+
+
+
 
 /* Responsive */
 @media screen and (max-width: 1100px){
@@ -1683,6 +1854,7 @@ select {
         right: 0%;
         border-radius: 0;
         box-shadow: none;
+        z-index: 2;
     }
 
     .checkin,
@@ -1731,6 +1903,64 @@ select {
     .days {
         margin: 0;
     }
+
+    .hotel-booking-main {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .left-hotel{
+        display: none;
+        border-radius: 20px 20px 0 0;
+        border-top: 2px solid #119396;
+        position: fixed;
+        top: 32%;
+        right: 0;
+        width: 100%;
+        border: none;
+        background-color: #ffffff;
+        height: 430px;
+        margin: 0;
+        z-index: 3;
+    }
+
+    .by-filter{
+        width: 100%;
+        margin: 20px;
+        border: none;
+    }
+
+    .filter-btn {
+        position: fixed;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .filter-btn button{
+        font-size: 15px;
+        padding: 12px 50px;
+        border: 20px;
+        margin: 10px;
+    }
+
+    .left-img{
+        display: none;
+    }
+
+    .right-hotel{
+        display: none;
+    }
+
+    .filter-icons{
+        display: flex;
+    }
+
+
+
 
 
 
