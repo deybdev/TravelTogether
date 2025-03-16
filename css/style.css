@@ -1133,12 +1133,15 @@
 }
 
 .filter-heading{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     position: sticky;
     top: 0;
     background-color: #fff;
     font-size: 1.1rem;
-    padding: 10px 25px;
-    border-bottom: 1px solid #ddd;
+    padding: 5px 20px;
+    margin: 0;
 }
 
 .left-img{
@@ -1910,23 +1913,16 @@ select {
         justify-content: center;
     }
 
-    .close-filter{
-        position: absolute;
-        top: 0;
-        right: 0;
-        margin: 10px;
-    }
-
     .close-filter i{
         color: #000000;
     }
 
     .left-hotel{
-        display: none;
+        display: flex;
         border-radius: 20px 20px 0 0;
         border-top: 2px solid #119396;
         position: fixed;
-        top: 32%;
+        top: 40%;
         right: 0;
         width: 100%;
         border: none;
@@ -1934,7 +1930,7 @@ select {
         height: 430px;
         margin: 0;
         z-index: 3;
-        transition: 2s;
+        transform: translateY(0);
     }
 
     .by-filter{
@@ -1944,8 +1940,7 @@ select {
     }
 
     .filter-btn {
-        position: fixed;
-        bottom: 0;
+        bottom: 10;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -1954,7 +1949,7 @@ select {
 
     .filter-btn button{
         font-size: 15px;
-        padding: 12px 50px;
+        padding: 10px 40px;
         border: 20px;
         margin: 10px;
     }
