@@ -134,7 +134,7 @@
 
     <div class="filter-icons">
         <button class="filter-icon button-btn1" id="show-filter"><i class="ri-equalizer-line"></i> Filter By : </button>
-        <button class="filter-icon button-btn2"><i class="ri-sort-asc"></i> Sort By : </button>
+        <button class="filter-icon button-btn2" id="sort-by"><i class="ri-sort-asc"></i> Sort By : </button>
     </div>
 
     <div class="hotel-booking-main">
@@ -147,7 +147,7 @@
                 </div>    
                 
                 <div class="filter-heading">
-                    <h2 class="filter-heading">Filter Hotels:</h2>
+                    <h2>Filter Hotels:</h2>
                     <div class="close-filter">
                         <i class="ri-close-line"></i>
                     </div>
@@ -297,7 +297,7 @@
                 </div>
 
                 <div class="filter-btn">
-                    <button class="button-btn1">Search Hotel</button>
+                    <button class="button-btn1">Confirm</button>
                 </div>
                 
             </div>
@@ -306,13 +306,26 @@
             
             <div class="hotel-result-header">
                 <h3>Result: <span>2,424 properties</span></h3>
+                <button class="filter-sort filter-icon button-btn2"><i class="ri-sort-asc"></i> Sort by : <span>Top reviewed</span> <i class="ri-expand-up-down-line"></i></button>
+            </div>
+
+            <div class="sort-container">
+                <ol>
+                    <li>Top pick for solo travellers</li>
+                    <li>Price (lowest first)</li>
+                    <li>Price (highest first)</li>
+                    <li>Property Rating (high to low)</li>
+                    <li>Property Rating (low to high)</li>
+                    <li>Top viewed</li>
+                    <li>Best reviewed and lowest price</li>
+                </ol>
             </div>
 
             <div class="default-card hotel-result">
                 <img src="/assets/hotels/hotel2.jpg" alt="Hotel1">
                 <div class="saved-destination"><i class="ri-heart-line"></i></div>
                 <div class="card-content">
-                    <h4>Hotel 101</h4>
+                    <h4>Diamond Hotel Philippines</h4>
                     <div class="average-hotel-rate">
                         <p class="rate-count">7.3 </p>
                         <div class="star-rates">
@@ -323,130 +336,15 @@
                         </div>
                         <p class="rate-count">(4,872)</p>
                     </div>
+                    <div class="location"><a href="https://www.google.com/maps/dir/?api=1&destination=RizalPark" target="_blank"> See in google maps</a></div>
                     <div class="hotel-desc">
-                        With the vision of being one of the top hotel brands in the world, Hotel101 promises to be a choice accommodation, with services and facilities that address the needs of a fast-paced leisure and business travelers.
+                        <p>Superior Double or Twin Room</p>
+                        <ul>
+                            <li><i class="ri-check-line"></i> Pet Friendly</li>
+                            <li><i class="ri-check-line"></i> Parking</li>
+                            <li><i class="ri-check-line"></i> Swimming Pool</li>
+                        </ul>
                     </div>
-                    <div class="location"><a href="https://www.google.com/maps/dir/?api=1&destination=RizalPark" target="_blank"><i class="ri-map-pin-line"></i> See in google maps</a></div>
-                    <div class="hotel-rate">
-                        <div class="price">
-                            <p>From <span>PHP 3,874</span></p>
-                        </div>
-                    </div>
-                    <div class="hotel-card-btn">
-                        <button class="button-btn2">More Info</button>
-                        <button class="button-btn1">Check Availability<p class="ri-arrow-right-double-fill"></p></button>
-                    </div>
-                </div>
-            </div>
-            <div class="default-card hotel-result">
-                <img src="/assets/hotels/hotel2.jpg" alt="Hotel1">
-                <div class="saved-destination"><i class="ri-heart-line"></i></div>
-                <div class="card-content">
-                    <h4>Hotel 101</h4>
-                    <div class="average-hotel-rate">
-                        <p class="rate-count">7.3 </p>
-                        <div class="star-rates">
-                            <i class="ri-star-fill"></i>
-                            <i class="ri-star-fill"></i>
-                            <i class="ri-star-fill"></i>
-                            <span class="blank-star"><i class="ri-star-fill"></i><i class="ri-star-fill"></i></span>
-                        </div>
-                        <p class="rate-count">(4,872)</p>
-                    </div>
-                    <div class="hotel-desc">
-                        With the vision of being one of the top hotel brands in the world, Hotel101 promises to be a choice accommodation, with services and facilities that address the needs of a fast-paced leisure and business travelers.
-                    </div>
-                    <div class="location"><a href="https://www.google.com/maps/dir/?api=1&destination=RizalPark" target="_blank"><i class="ri-map-pin-line"></i> See in google maps</a></div>
-                    <div class="hotel-rate">
-                        <div class="price">
-                            <p>From <span>PHP 3,874</span></p>
-                        </div>
-                    </div>
-                    <div class="hotel-card-btn">
-                        <button class="button-btn2">More Info</button>
-                        <button class="button-btn1">Check Availability<p class="ri-arrow-right-double-fill"></p></button>
-                    </div>
-                </div>
-            </div>
-            <div class="default-card hotel-result">
-                <img src="/assets/hotels/hotel2.jpg" alt="Hotel1">
-                <div class="saved-destination"><i class="ri-heart-line"></i></div>
-                <div class="card-content">
-                    <h4>Hotel 101</h4>
-                    <div class="average-hotel-rate">
-                        <p class="rate-count">7.3 </p>
-                        <div class="star-rates">
-                            <i class="ri-star-fill"></i>
-                            <i class="ri-star-fill"></i>
-                            <i class="ri-star-fill"></i>
-                            <span class="blank-star"><i class="ri-star-fill"></i><i class="ri-star-fill"></i></span>
-                        </div>
-                        <p class="rate-count">(4,872)</p>
-                    </div>
-                    <div class="hotel-desc">
-                        With the vision of being one of the top hotel brands in the world, Hotel101 promises to be a choice accommodation, with services and facilities that address the needs of a fast-paced leisure and business travelers.
-                    </div>
-                    <div class="location"><a href="https://www.google.com/maps/dir/?api=1&destination=RizalPark" target="_blank"><i class="ri-map-pin-line"></i> See in google maps</a></div>
-                    <div class="hotel-rate">
-                        <div class="price">
-                            <p>From <span>PHP 3,874</span></p>
-                        </div>
-                    </div>
-                    <div class="hotel-card-btn">
-                        <button class="button-btn2">More Info</button>
-                        <button class="button-btn1">Check Availability<p class="ri-arrow-right-double-fill"></p></button>
-                    </div>
-                </div>
-            </div>
-            <div class="default-card hotel-result">
-                <img src="/assets/hotels/hotel2.jpg" alt="Hotel1">
-                <div class="saved-destination"><i class="ri-heart-line"></i></div>
-                <div class="card-content">
-                    <h4>Hotel 101</h4>
-                    <div class="average-hotel-rate">
-                        <p class="rate-count">7.3 </p>
-                        <div class="star-rates">
-                            <i class="ri-star-fill"></i>
-                            <i class="ri-star-fill"></i>
-                            <i class="ri-star-fill"></i>
-                            <span class="blank-star"><i class="ri-star-fill"></i><i class="ri-star-fill"></i></span>
-                        </div>
-                        <p class="rate-count">(4,872)</p>
-                    </div>
-                    <div class="hotel-desc">
-                        With the vision of being one of the top hotel brands in the world, Hotel101 promises to be a choice accommodation, with services and facilities that address the needs of a fast-paced leisure and business travelers.
-                    </div>
-                    <div class="location"><a href="https://www.google.com/maps/dir/?api=1&destination=RizalPark" target="_blank"><i class="ri-map-pin-line"></i> See in google maps</a></div>
-                    <div class="hotel-rate">
-                        <div class="price">
-                            <p>From <span>PHP 3,874</span></p>
-                        </div>
-                    </div>
-                    <div class="hotel-card-btn">
-                        <button class="button-btn2">More Info</button>
-                        <button class="button-btn1">Check Availability<p class="ri-arrow-right-double-fill"></p></button>
-                    </div>
-                </div>
-            </div>
-            <div class="default-card hotel-result">
-                <img src="/assets/hotels/hotel2.jpg" alt="Hotel1">
-                <div class="saved-destination"><i class="ri-heart-line"></i></div>
-                <div class="card-content">
-                    <h4>Hotel 101</h4>
-                    <div class="average-hotel-rate">
-                        <p class="rate-count">7.3 </p>
-                        <div class="star-rates">
-                            <i class="ri-star-fill"></i>
-                            <i class="ri-star-fill"></i>
-                            <i class="ri-star-fill"></i>
-                            <span class="blank-star"><i class="ri-star-fill"></i><i class="ri-star-fill"></i></span>
-                        </div>
-                        <p class="rate-count">(4,872)</p>
-                    </div>
-                    <div class="hotel-desc">
-                        With the vision of being one of the top hotel brands in the world, Hotel101 promises to be a choice accommodation, with services and facilities that address the needs of a fast-paced leisure and business travelers.
-                    </div>
-                    <div class="location"><a href="https://www.google.com/maps/dir/?api=1&destination=RizalPark" target="_blank"><i class="ri-map-pin-line"></i> See in google maps</a></div>
                     <div class="hotel-rate">
                         <div class="price">
                             <p>From <span>PHP 3,874</span></p>

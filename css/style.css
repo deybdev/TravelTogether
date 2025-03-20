@@ -1137,18 +1137,22 @@
     align-items: center;
     justify-content: space-between;
     position: sticky;
-    top: 0;
+    top: 25.5%;
     background-color: #fff;
-    font-size: 1.1rem;
     padding: 5px 20px;
     margin: 0;
+}
+
+.filter-heading h2{
+    font-size: 1.1rem;
 }
 
 .left-img{
     width: 300px;
     height: 150px;
     overflow: hidden;
-    position: relative;
+    position: sticky;
+    top: 0;
 }
 
 .map-btn{   
@@ -1176,7 +1180,15 @@
 }
 
 .right-hotel .hotel-result-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     color: #119396;
+    width: 100%;
+}
+
+.hotel-result-header .filter-sort{
+    padding: 5px 10px;
 }
 
 .by-filter h3 {
@@ -1187,7 +1199,8 @@
 .by-filter{
    display: flex;
    flex-direction: column;
-   font-size: .8rem;
+   justify-content: center;
+   font-size: .9rem;
    font-weight: 300;
    gap: 4px;
    padding: 10px 25px;
@@ -1195,17 +1208,27 @@
     
 }
 
+.filter{
+    display: flex;
+    align-items: center;
+    padding: .2rem;
+}
+
 .filter input {
-    width: 12px;
-    height: 12px;
+    width: 15px;
+    height: 15px;
     margin-right: 5px;
 }
 
+.close-filter{
+    display: none;
+}
 
 .hotel-result{
+    cursor: auto;
     display: flex;
     width: 100%;
-    height: 230px;
+    height: 280px;
     padding: 0;
 }
 
@@ -1213,7 +1236,47 @@
     width: 100%;
     color: #119396;
     overflow: auto;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
+    margin: 5px 5px 0;
+}
+
+.hotel-result .hotel-desc{
+    margin: 15px 20px;
+    max-height: 80px;
+    border-left: 2px solid #ddd;
+    padding-left: 7px;
+    font-size: 13px;
+    width: 80%;
+    overflow: hidden;
+}
+
+.hotel-result .hotel-desc p{
+    margin: 2px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.hotel-result .hotel-desc p i{
+    font-weight: normal;
+    font-size: 20px;
+}
+
+.hotel-result .hotel-desc li{
+    margin: 2px;
+    color: #333;
+}
+
+.hotel-result .hotel-desc h4{
+    color: #333;
+    font-size: .7rem;
+}
+
+.hotel-result h4:hover{
+    color: #000;
+}
+
+.hotel-result .average-hotel-rate{
+    margin: 5px 6px;
 }
 
 .hotel-result img{
@@ -1223,6 +1286,15 @@
     margin: 0;
 }
 
+.hotel-result .location{
+    margin: 0 5px;
+}
+
+.hotel-result .hotel-rate{
+    margin: -100px 5px;
+}
+
+
 .card-content{
     margin: 10px;
     display: flex;
@@ -1230,21 +1302,18 @@
     gap: -10px;
 }
 
-.card-content .hotel-desc{
-    margin: 10px;
-    font-size: .85rem;
-    color: #464242;
+.card-content .price p span{
+    font-size: 1.3rem;
 }
 
-.card-content .price p span{
-    margin: 10px;
-    font-size: 1.3rem;
-    color: #119396;
-}
 .hotel-result .hotel-card-btn{
     justify-content: flex-end;
-    gap: 10px;
 }
+
+.hotel-result .card-content{
+    width: 100%;
+}
+
 
 .hotel-result:hover {
     transform: none;
@@ -1262,24 +1331,115 @@
     display: none;
     align-items: center;
     justify-content: center;
-    margin-top: 60px;
+    margin-top: 80px;
     color: #119396;
     gap: 10px;
 }
 
 .filter-icon{
-    border: 1px solid #119396;
+    border: 2px solid #119396;
     padding: 10px 15px;
-    border-radius: 20px;
+    border-radius: 25px;
 }
 
 .filter-icon:last-child i{
     color: #119396;
 }
 
+.sort-container{
+    position: absolute;
+    z-index: 1;
+    opacity: 1;
+    transform: translateY(0);
+    right: 5%;
+    top: 72%;
+    background: #ffffff;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); 
+    transition: .4s ease;
+}
+
+.sort-container.show{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.sort-container li{
+    padding: 18px;
+    font-weight: 300;
+    font-size: .9rem;
+    cursor: pointer;
+}
+
+.sort-container li:hover{
+    background: #f0f0f0;
+}
+
+
+
 
 /* BOOKING END */
 
+/* FOOTER START */
+footer{
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    background: linear-gradient(0deg, #119FA3 0%, #119FA3 100%);
+    padding: 80px 40px;
+}
+
+.footer-list{
+    display: flex;
+    flex-direction: column;
+    color: #ffffff;
+}
+
+.footer-list li, .footer-list p{
+    margin: 5px 12px;
+    font-size: 1rem;
+}
+
+.footer-list li a{
+    text-decoration: none;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.footer-list li a:hover{
+    color: #000;
+}
+
+.footer-list h5{
+    font-size: 1.2rem;
+}
+
+.footer-list:last-child{
+    width: 30%;
+}
+
+.footer-list form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-list input{
+    width: 81%;
+    border-radius: 10px;
+    border: none;
+    position: relative;
+    padding: 8px 88px 8px 5px;
+    margin-right: 100px;
+}
+
+.footer-list .footer-btn{
+    position: absolute;
+    padding: 8px;
+    border-radius: 0 10px 10px 0;
+    right: 8%;
+}
+
+/* FOOTER END */
 
 
 
@@ -1308,6 +1468,7 @@
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease-out, visibility 0s ease-out 0.3s;
+    z-index: 100;
 }
 
 .calendar.show {
@@ -1913,6 +2074,10 @@ select {
         justify-content: center;
     }
 
+    .close-filter{
+        display: block;
+    }
+
     .close-filter i{
         color: #000000;
     }
@@ -1936,11 +2101,14 @@ select {
     .by-filter{
         width: 100%;
         margin: 20px;
-        border: none;
+    }
+
+    .filter-heading{
+        top: 0;
+        border-bottom: 1px solid #ddd;
     }
 
     .filter-btn {
-        bottom: 10;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -1951,20 +2119,57 @@ select {
         font-size: 15px;
         padding: 10px 40px;
         border: 20px;
-        margin: 10px;
+        margin: -10px 30px 10px;
+        width: 100% ;
     }
 
     .left-img{
         display: none;
     }
 
-    .right-hotel{
-        display: none;
-    }
-
     .filter-icons{
         display: flex;
     }
+
+    footer{
+        flex-wrap: wrap;
+    }
+
+
+    footer h5 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    .footer-list:last-child{
+        width: 100%;
+    }
+
+    .filter-sort{
+        display: none;
+    }
+
+    .sort-container{
+        position: fixed;
+        z-index: 100;
+        opacity: 1;
+        pointer-events: none;
+        transform: translateY(190px);
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .sort-container.show{
+        opacity: 1;
+        transform: translateY(-190px);
+    }
+
+    .hotel-result{
+        display: none;
+    }
+
 
 
 

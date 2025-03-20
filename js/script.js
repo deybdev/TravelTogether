@@ -257,10 +257,10 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const updateDateRangeText = () => {
-    // Function to format date as "Month 13, 2025"
+    // Function to format date
     const formatDate = (date) => {
-      const options = { year: 'numeric', month: 'long', day: 'numeric' };
-      return date.toLocaleDateString('en-US', options);  // Format as "March 13, 2025"
+      const options = { year: 'numeric', month: 'numeric', day: 'numeric' };
+      return date.toLocaleDateString('en-US', options);
     };
 
     if (selectedStartDate && selectedEndDate) {
@@ -270,7 +270,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const hideCalendar = () => {
-    showCalendar.classList.remove('show'); // Hide the calendar
+    showCalendar.classList.remove('show');
   };
 
   prevButton.addEventListener('click', () => {
@@ -318,3 +318,14 @@ closeFilterBtn.addEventListener('click', () => {
   const filters = document.querySelector('.left-hotel');
   filters.style.display = 'none';
 });
+
+// SELECT ELEMENTS
+const sortButton = document.querySelector('#sort-by'); 
+const sortContainer = document.querySelector('.sort-container');
+
+sortButton.addEventListener('click', () => {
+    sortContainer.classList.toggle('show');
+});
+
+
+
