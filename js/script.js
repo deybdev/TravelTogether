@@ -321,10 +321,20 @@ closeFilterBtn.addEventListener('click', () => {
 
 // SELECT ELEMENTS
 const sortButton = document.querySelector('#sort-by'); 
+const sortButton2 = document.querySelector('.filter-sort');
 const sortContainer = document.querySelector('.sort-container');
+const closeSortButton = document.querySelector('.close-sort');
 
 sortButton.addEventListener('click', () => {
     sortContainer.classList.toggle('show');
+});
+
+sortButton2.addEventListener('click', () => {
+    sortContainer.classList.toggle('show');
+});
+
+closeSortButton.addEventListener('click', () => {
+    sortContainer.classList.remove('show');
 });
 
 
