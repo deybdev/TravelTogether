@@ -133,8 +133,12 @@
     <!-- CALENDAR END -->
 
     <div class="filter-icons">
-        <button class="filter-icon button-btn1" id="show-filter"><i class="ri-equalizer-line"></i> Filter By : </button>
-        <button class="filter-icon button-btn2" id="sort-by"><i class="ri-sort-asc"></i> Sort By : </button>
+        <div class="filter-icon">
+            <button  id="sort-by"><i class="ri-sort-asc"></i> Sort By <i class="ri-arrow-down-line"></i></button>
+        </div>
+        <div class="filter-icon">
+            <button  id="show-filter"><i class="ri-equalizer-line"></i> Filter By <i class="ri-arrow-down-line"></i></button>
+        </div>
     </div>
 
     <div class="hotel-booking-main">
@@ -153,149 +157,130 @@
                     </div>
                 </div>
                 
-                <div class="by-filter">
-                        <h3>Rating</h3>
-                        <div class="filter">
-                            <input type="checkbox" name="rating" id="rating-5" value="5">
-                            <label for="rating-5">5 Stars</label>
-                        </div>
-
-                        <div class="filter">
-                            <input type="checkbox" name="rating" id="rating-4" value="4">
-                            <label for="rating-4">4 Stars</label>
-                        </div>
-
-                        <div class="filter">
-                            <input type="checkbox" name="rating" id="rating-3" value="3">
-                            <label for="rating-3">3 Stars</label>
-                        </div>
-
-                        <div class="filter">
-                            <input type="checkbox" name="rating" id="rating-2" value="2">
-                            <label for="rating-2">2 Stars</label>
-                        </div>
-
-                        <div class="filter">
-                            <input type="checkbox" name="rating" id="rating-1" value="1">
-                            <label for="rating-1">1 Stars</label>
-                        </div>                       
+                <div class="by-filter" data-category="Rating">
+                    <h3>Rating</h3>
+                    <div class="filter">
+                        <input type="checkbox" id="rating-5" value="5" data-category="Rating">
+                        <label for="rating-5">5 Stars</label>
+                    </div>
+                    <div class="filter">
+                        <input type="checkbox" id="rating-4" value="4" data-category="Rating">
+                        <label for="rating-4">4 Stars</label>
+                    </div>
+                    <div class="filter">
+                        <input type="checkbox" id="rating-3" value="3" data-category="Rating">
+                        <label for="rating-3">3 Stars</label>
+                    </div>
+                    <div class="filter">
+                        <input type="checkbox" id="rating-2" value="2" data-category="Rating">
+                        <label for="rating-2">2 Stars</label>
+                    </div>
+                    <div class="filter">
+                        <input type="checkbox" id="rating-1" value="1" data-category="Rating">
+                        <label for="rating-1">1 Star</label>
+                    </div>
                 </div>
-
-                <div class="by-filter">
+                
+                <div class="by-filter" data-category="Amenities">
                     <h3>Amenities</h3>
                     <div class="filter">
-                        <input type="checkbox" name="ewan" id="ewan" value="ewan">
-                        <label for="rating-1">Free Wifi</label>
-                    </div>   
+                        <input type="checkbox" id="free-wifi" value="Free Wifi" data-category="Amenities">
+                        <label for="free-wifi">Free Wifi</label>
+                    </div>
                     <div class="filter">
-                        <input type="checkbox" name="ewan" id="ewan" value="ewan">
-                        <label for="rating-1">Swimming Pool</label>
-                    </div>   
+                        <input type="checkbox" id="swimming-pool" value="Swimming Pool" data-category="Amenities">
+                        <label for="swimming-pool">Swimming Pool</label>
+                    </div>
                     <div class="filter">
-                        <input type="checkbox" name="ewan" id="ewan" value="ewan">
-                        <label for="rating-1">Pet Friendly</label>
-                    </div>   
+                        <input type="checkbox" id="pet-friendly" value="Pet Friendly" data-category="Amenities">
+                        <label for="pet-friendly">Pet Friendly</label>
+                    </div>
                     <div class="filter">
-                        <input type="checkbox" name="ewan" id="ewan" value="ewan">
-                        <label for="rating-1">Airconditioning</label>
-                    </div>   
+                        <input type="checkbox" id="airconditioning" value="Airconditioning" data-category="Amenities">
+                        <label for="airconditioning">Airconditioning</label>
+                    </div>
                     <div class="filter">
-                        <input type="checkbox" name="ewan" id="ewan" value="ewan">
-                        <label for="rating-1">Non Smoking</label>
-                    </div>   
+                        <input type="checkbox" id="non-smoking" value="Non-Smoking" data-category="Amenities">
+                        <label for="non-smoking">Non Smoking</label>
+                    </div>
                     <div class="filter">
-                        <input type="checkbox" name="ewan" id="ewan" value="ewan">
-                        <label for="rating-1">Free Parking</label>
-                    </div>   
+                        <input type="checkbox" id="free-parking" value="Free Parking" data-category="Amenities">
+                        <label for="free-parking">Free Parking</label>
+                    </div>
                     <div class="filter">
-                        <input type="checkbox" name="ewan" id="ewan" value="ewan">
-                        <label for="rating-1">Free Breakfast</label>
-                    </div>   
+                        <input type="checkbox" id="free-breakfast" value="Free-Breakfast" data-category="Amenities">
+                        <label for="free-breakfast">Free Breakfast</label>
+                    </div>
                     <div class="filter">
-                        <input type="checkbox" name="ewan" id="ewan" value="ewan">
-                        <label for="rating-1">24 Hour Check In</label>
-                    </div>   
+                        <input type="checkbox" id="24-hour-check-in" value="24 Hour" data-category="Amenities">
+                        <label for="24-hour-check-in">24 Hour Check In</label>
+                    </div>
                 </div>
                 
-                <div class="by-filter">
+                <div class="by-filter" data-category="Neighbourhood">
                     <h3>Neighbourhood</h3>
                     <div class="filter">
-                        <input type="checkbox" name="neighborhood" id="binondo" value="Binondo">
+                        <input type="checkbox" id="binondo" value="Binondo" data-category="Neighbourhood">
                         <label for="binondo">Binondo</label>
                     </div>
-                
                     <div class="filter">
-                        <input type="checkbox" name="neighborhood" id="ermita" value="Ermita">
+                        <input type="checkbox" id="ermita" value="Ermita" data-category="Neighbourhood">
                         <label for="ermita">Ermita</label>
                     </div>
-                
                     <div class="filter">
-                        <input type="checkbox" name="neighborhood" id="malate" value="Malate">
+                        <input type="checkbox" id="malate" value="Malate" data-category="Neighbourhood">
                         <label for="malate">Malate</label>
                     </div>
-                
                     <div class="filter">
-                        <input type="checkbox" name="neighborhood" id="paco" value="Paco">
+                        <input type="checkbox" id="paco" value="Paco" data-category="Neighbourhood">
                         <label for="paco">Paco</label>
                     </div>
-                
                     <div class="filter">
-                        <input type="checkbox" name="neighborhood" id="pandacan" value="Pandacan">
+                        <input type="checkbox" id="pandacan" value="Pandacan" data-category="Neighbourhood">
                         <label for="pandacan">Pandacan</label>
                     </div>
-                
                     <div class="filter">
-                        <input type="checkbox" name="neighborhood" id="port-area" value="Port Area">
+                        <input type="checkbox" id="port-area" value="Port Area" data-category="Neighbourhood">
                         <label for="port-area">Port Area</label>
                     </div>
-                
                     <div class="filter">
-                        <input type="checkbox" name="neighborhood" id="quiapo" value="Quiapo">
+                        <input type="checkbox" id="quiapo" value="Quiapo" data-category="Neighbourhood">
                         <label for="quiapo">Quiapo</label>
                     </div>
-                
                     <div class="filter">
-                        <input type="checkbox" name="neighborhood" id="san-andres" value="San Andres">
+                        <input type="checkbox" id="san-andres" value="San Andres" data-category="Neighbourhood">
                         <label for="san-andres">San Andres</label>
                     </div>
-                
                     <div class="filter">
-                        <input type="checkbox" name="neighborhood" id="san-miguel" value="San Miguel">
+                        <input type="checkbox" id="san-miguel" value="San Miguel" data-category="Neighbourhood">
                         <label for="san-miguel">San Miguel</label>
                     </div>
-                
                     <div class="filter">
-                        <input type="checkbox" name="neighborhood" id="san-nicolas" value="San Nicolas">
+                        <input type="checkbox" id="san-nicolas" value="San Nicolas" data-category="Neighbourhood">
                         <label for="san-nicolas">San Nicolas</label>
                     </div>
-                
                     <div class="filter">
-                        <input type="checkbox" name="neighborhood" id="santa-ana" value="Santa Ana">
+                        <input type="checkbox" id="santa-ana" value="Santa Ana" data-category="Neighbourhood">
                         <label for="santa-ana">Santa Ana</label>
                     </div>
-                
                     <div class="filter">
-                        <input type="checkbox" name="neighborhood" id="santa-cruz" value="Santa Cruz">
+                        <input type="checkbox" id="santa-cruz" value="Santa Cruz" data-category="Neighbourhood">
                         <label for="santa-cruz">Santa Cruz</label>
                     </div>
-                
                     <div class="filter">
-                        <input type="checkbox" name="neighborhood" id="santa-mesa" value="Santa Mesa">
+                        <input type="checkbox" id="santa-mesa" value="Santa Mesa" data-category="Neighbourhood">
                         <label for="santa-mesa">Santa Mesa</label>
                     </div>
-                
                     <div class="filter">
-                        <input type="checkbox" name="neighborhood" id="tondo" value="Tondo">
+                        <input type="checkbox" id="tondo" value="Tondo" data-category="Neighbourhood">
                         <label for="tondo">Tondo</label>
                     </div>
-                
                     <div class="filter">
-                        <input type="checkbox" name="neighborhood" id="sampaloc" value="Sampaloc">
+                        <input type="checkbox" id="sampaloc" value="Sampaloc" data-category="Neighbourhood">
                         <label for="sampaloc">Sampaloc</label>
                     </div>
-
                 </div>
-
+                
                 <div class="filter-btn">
                     <button class="button-btn1">Confirm</button>
                 </div>
@@ -303,10 +288,15 @@
             </div>
         </div>
         <div class="right-hotel">
+
+            <!-- CONTAINER TO DISPLAY SELECTED FILTERS -->
+            <div class="selected-filter-container">
+                <ol></ol>
+            </div>
             
             <div class="hotel-result-header">
                 <h3>Result: <span>2,424 properties</span></h3>
-                <button class="filter-sort filter-icon button-btn2"><i class="ri-sort-asc"></i> Sort by : <span>Top reviewed</span> <i class="ri-expand-up-down-line"></i></button>
+                <button class="filter-sort filter-icon button-btn2"><i class="ri-sort-asc"></i> Sort by : <span class="sorted">Top reviewed</span> <i class="ri-expand-up-down-line"></i></button>
             </div>
 
             <div class="sort-container">
@@ -315,13 +305,13 @@
                     <i class="ri-close-line"></i>
                 </div>
                 <ol>
-                    <li>Top pick for solo travellers</li>
-                    <li>Price (lowest first)</li>
-                    <li>Price (highest first)</li>
-                    <li>Property Rating (high to low)</li>
-                    <li>Property Rating (low to high)</li>
-                    <li>Top viewed</li>
-                    <li>Best reviewed and lowest price</li>
+                    <li><input type="radio" name="sortby" checked>Top viewed</li>
+                    <li><input type="radio" name="sortby">Top pick for solo travellers</li>
+                    <li><input type="radio" name="sortby">Price (lowest first)</li>
+                    <li><input type="radio" name="sortby">Price (highest first)</li>
+                    <li><input type="radio" name="sortby">Property Rating (high to low)</li>
+                    <li><input type="radio" name="sortby">Property Rating (low to high)</li>
+                    <li><input type="radio" name="sortby">Best reviewed and lowest price</li>
                 </ol>
             </div>
 
@@ -360,6 +350,7 @@
                     </div>
                 </div>
             </div>
+            
         </div>
     
     

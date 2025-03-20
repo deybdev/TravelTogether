@@ -19,9 +19,6 @@ function isInView(element) {
   );
 }
 
-
-
-
 //MENU BUTTON FOR MOBILE DEVICES
 const navMenu = document.querySelector('.nav-menu');
 const navToggle = document.querySelector('.toggle-menu');
@@ -319,7 +316,7 @@ closeFilterBtn.addEventListener('click', () => {
   filters.style.display = 'none';
 });
 
-// SELECT ELEMENTS
+// SORT FUNTION
 const sortButton = document.querySelector('#sort-by'); 
 const sortButton2 = document.querySelector('.filter-sort');
 const sortContainer = document.querySelector('.sort-container');
@@ -337,5 +334,130 @@ closeSortButton.addEventListener('click', () => {
     sortContainer.classList.remove('show');
 });
 
+document.querySelectorAll('.sort-container ol li').forEach(function(item) {
+  item.addEventListener('click', function() {
+      const radio = this.querySelector('input[type="radio"]');
+      if (radio) {
+          radio.checked = true;
+          const selectedSortText = this.textContent.trim();
+            document.querySelector('.selected-sort').textContent = selectedSortText;
+            document.querySelector('.sorted').textContent = selectedSortText;
+            sortContainer.classList.remove('show');
+      }
+  });
+});
 
+
+// DISPLAY SELECTED FILTERS
+document.querySelectorAll('.by-filter input[type="checkbox"]').forEach(checkbox => {
+  checkbox.addEventListener('change', function() {
+    const value = this.value;
+    const dataCategory = this.getAttribute('data-category');
+    const container = document.querySelector('.selected-filter-container ol');
+    let categoryGroup = container.querySelector(`.category-group[data-category="${dataCategory}"]`);
+
+    if (this.checked) {
+      // Add new category group or filter if it doesn't exist
+      if (!categoryGroup) {
+        container.insertAdjacentHTML('beforeend', 
+          `<li class="category-group" data-category="${dataCategory}">
+            <button class="selected-filter button-btn2">${dataCategory}: ${value} <i class="ri-close-line"></i></button>
+            <ul class="filters-list" style="display:none;">
+              <li data-value="${value}">${value}</li>
+            </ul>
+            <div class="expand-container" style="display:none;"></div>
+          </li>`
+        );
+      } else {
+        categoryGroup.querySelector('.filters-list').insertAdjacentHTML('beforeend', `<li data-value="${value}">${value}</li>`);
+      }
+    } else {
+      const filterItem = categoryGroup?.querySelector(`.filters-list li[data-value="${value}"]`);
+      filterItem?.remove();
+      if (!categoryGroup.querySelectorAll('.filters-list li').length) categoryGroup?.remove();
+    }
+
+    updateCategoryGroup(dataCategory);
+  });
+});
+
+function updateCategoryGroup(category) {
+  const categoryGroup = document.querySelector(`.category-group[data-category="${category}"]`);
+  if (!categoryGroup) return;
+
+  const filterCount = categoryGroup.querySelectorAll('.filters-list li').length;
+  const button = categoryGroup.querySelector('.selected-filter');
+  button.innerHTML = filterCount === 1 
+    ? `${category}: ${categoryGroup.querySelector('.filters-list li').textContent} <i class="ri-close-line"></i>`
+    : `${category} (${filterCount}) <i class="ri-expand-up-down-line"></i>`;
+}
+
+document.querySelector('.selected-filter-container').addEventListener('click', e => {
+  const categoryGroup = e.target.closest('.category-group');
+  if (!categoryGroup) return;
+
+  if (e.target.classList.contains('ri-expand-up-down-line')) {
+    const expandContainer = categoryGroup.querySelector('.expand-container');
+    expandContainer.style.display = expandContainer.style.display === 'none' ? 'block' : 'none';
+    if (expandContainer.style.display === 'block') {
+      expandContainer.innerHTML = getCategoryCheckboxes(categoryGroup.getAttribute('data-category'));
+      
+      expandContainer.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+          handleCheckboxChangeInExpandedContainer(checkbox, categoryGroup.getAttribute('data-category'));
+        });
+      });
+    }
+  }
+
+  if (e.target.classList.contains('ri-close-line')) {
+    categoryGroup.querySelectorAll('.filters-list li').forEach(item => {
+      const checkbox = document.querySelector(`input[value="${item.getAttribute('data-value')}"][data-category="${categoryGroup.getAttribute('data-category')}"]`);
+      checkbox.checked = false;
+    });
+    categoryGroup.remove();
+  }
+
+  
+});
+
+function handleCheckboxChangeInExpandedContainer(checkbox, category) {
+  const value = checkbox.value;
+  const categoryGroup = document.querySelector(`.category-group[data-category="${category}"]`);
+
+  const mainCheckbox = document.querySelector(`.by-filter[data-category="${category}"] input[value="${value}"]`);
+  if (mainCheckbox) {
+    mainCheckbox.checked = checkbox.checked;
+  }
+
+  if (checkbox.checked) {
+    categoryGroup.querySelector('.filters-list').insertAdjacentHTML('beforeend', `<li data-value="${value}">${value}</li>`);
+  } else {
+    const filterItem = categoryGroup.querySelector(`.filters-list li[data-value="${value}"]`);
+    filterItem?.remove();
+  }
+
+  updateCategoryGroup(category);
+}
+
+function getCategoryCheckboxes(category) {
+  return Array.from(document.querySelectorAll(`.by-filter[data-category="${category}"] input[type="checkbox"]:checked`))
+    .map(checkbox => {
+      const label = checkbox.nextElementSibling.textContent;
+      return `<div class="filter">
+                <input type="checkbox" value="${checkbox.value}" data-category="${category}" checked>
+                <label>${label}</label>
+              </div>`;
+    }).join('');
+}
+
+document.addEventListener('click', (e) => {
+  const allExpandContainers = document.querySelectorAll('.expand-container');
+  allExpandContainers.forEach(expandContainer => {
+    const categoryGroup = expandContainer.closest('.category-group');
+    if (!categoryGroup.contains(e.target) && expandContainer.style.display === 'block') {
+      expandContainer.style.display = 'none'; // Close the container
+    }
+  });
+});
 

@@ -1230,6 +1230,7 @@
     width: 100%;
     height: 280px;
     padding: 0;
+    z-index: 0;
 }
 
 .hotel-result h4{
@@ -1331,19 +1332,26 @@
     display: none;
     align-items: center;
     justify-content: center;
-    margin-top: 80px;
+    margin-top: 60px;
     color: #119396;
-    gap: 10px;
+    gap: 100px;
+    border: 1px solid #119396;
+
+}
+
+.filter-icons button{
+    border: none;
+    background-color: #ffffff;
+    color: #119396;
 }
 
 .filter-icon{
-    border: 2px solid #119396;
-    padding: 10px 15px;
-    border-radius: 25px;
-}
-
-.filter-icon:last-child i{
-    color: #119396;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 10px;
+    cursor: pointer;
 }
 
 .sort-container{
@@ -1378,6 +1386,9 @@
 }
 
 .sort-container li{
+    display: flex;
+    align-items: center;
+    gap: 5px;
     padding: 18px;
     font-weight: 300;
     font-size: .9rem;
@@ -1388,6 +1399,53 @@
     background: #f0f0f0;
 }
 
+.selected-filter-container ol{
+    display: flex;
+    margin: 10px 0;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.selected-filter-container ol button{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    z-index: 2;
+}
+
+.selected-filter-container ol button:hover{
+    background: none;
+    cursor: auto;
+}
+
+.selected-filter-container ol button i:hover{
+    color: #000;
+    cursor: pointer;
+}
+
+.expand-container{
+    padding: 5px;
+    position: absolute;
+    border-radius: 5px;
+    z-index: 1;
+    background-color: #fff;
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+.expand-container .filter {
+    padding: 8px 25px 10px 10px;
+    display: flex;
+}
+
+.expand-container .filter label {
+    font-size: 14px;
+    color: #333; /* Neutral text color */
+    line-height: 1.5; /* Improve line height for better readability */
+    font-weight: 400; /* Normal font weight */
+  }
 
 
 
@@ -1932,6 +1990,11 @@ select {
         height: 233px;
     }
 
+    .hotel-booking-main{
+        margin-top: 0;
+        min-height: 0;
+    }
+
     .hotel-card-btn{
         display: flex;
         flex-direction: column-reverse;
@@ -2144,6 +2207,10 @@ select {
         display: flex;
     }
 
+    #sort-by i{
+        color: #119396;
+    }
+
     footer{
         flex-wrap: wrap;
     }
@@ -2160,6 +2227,10 @@ select {
 
     .filter-sort{
         display: none;
+    }
+
+    .filter-icon i{
+        color: #119396;
     }
 
     .sort-container{
@@ -2182,6 +2253,21 @@ select {
 
     .hotel-result{
         display: none;
+    }
+
+    .right-hotel .hotel-result-header{
+        text-align: center;
+        display: block;
+    }
+
+    .selected-filter-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .selected-filter-container i{
+        color: #119396;
     }
 
 
