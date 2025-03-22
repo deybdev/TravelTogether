@@ -16,19 +16,16 @@
         <div class="nav-menu" id="nav-menu">
             <ul class="nav-list">
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Home</a>
+                    <a href="home.html" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="/manila.html" class="nav-link">Destinations</a>
+                    <a href="manila.html" class="nav-link">Destinations</a>
                 </li>
                 <li class="nav-item">
-                    <a href="booking.html" class="nav-link" style="font-weight: 800;">Booking</a>
+                    <a href="booking.html" class="nav-link active-nav">Hotels</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#reviews" class="nav-link">Reviews</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#contacts" class="nav-link">Contact</a>
+                    <a href="activities.html" class="nav-link">Activities</a>
                 </li>
             </ul>
 
@@ -46,6 +43,7 @@
                 <button class="searchbar-btn">Search</button>
                 <i class="ri-close-line close-search" id="closeSearch"></i>
             </div>
+            <button class="button-btn2 list-prop">List your property</button>
             <button class="button-btn1 login-btn">Sign In</button>
             <div class="user-logo"><i class="ri-user-line"></i></div>
             <div class="toggle-menu" id="toggle-menu"><i class="ri-menu-line"></i></div>
@@ -104,10 +102,44 @@
             <h5>Guests and Rooms</h5>
             <div class="user-room-info">
                 <i class="ri-group-line"></i>
-                <p class="user-room-info">2 Adults, 1 Room</p>
+                <p class="user-room-info">2 Adults, 5 Children, 1 Room</p>
             </div>
         </div>
         <button class="button-btn1 search-hotel-btn"><i class="ri-search-line"></i> Search</button>
+    </div>
+
+    <div class="guests-count">
+        <div class="count-column">
+            <p>Rooms :</p>
+            <div class="count">
+                <button class="room-btn button-btn3" id="room-minus"><i class="ri-subtract-fill"></i></button>
+                <p id="room-count">0</p>
+                <button class="room-btn button-btn3" id="room-plus"><i class="ri-add-fill"></i></button>
+            </div>
+        </div>
+        <div class="count-column">
+            <p>Adults :</p>
+            <div class="count">
+                <button class="room-btn button-btn3" id="adult-minus"><i class="ri-subtract-fill"></i></button>
+                <p id="adult-count">0</p>
+                <button class="room-btn button-btn3" id="adult-plus"><i class="ri-add-fill"></i></button>
+            </div>
+        </div>
+        <div class="count-column">
+            <p>Children :</p>
+            <div class="count">
+                <button class="room-btn button-btn3" id="child-minus"><i class="ri-subtract-fill"></i></button>
+                <p id="child-count">0</p>
+                <button class="room-btn button-btn3" id="child-plus"><i class="ri-add-fill"></i></button>
+            </div>
+        </div>
+
+        <div class="children-ages">
+            <div class="child-ages-container"></div>
+        </div>
+        
+        <button class="button-btn1 confirm-count">Confirm</button>
+        
     </div>
 
     <!-- CALENDAR START -->

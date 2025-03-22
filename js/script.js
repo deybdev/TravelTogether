@@ -150,7 +150,6 @@ function resetAutoSlide() {
   startAutoSlide();
 }
 
-// Initialize
 showImage(currentIndex);
 startAutoSlide();
 
@@ -340,13 +339,11 @@ document.querySelectorAll('.sort-container ol li').forEach(function(item) {
       if (radio) {
           radio.checked = true;
           const selectedSortText = this.textContent.trim();
-            document.querySelector('.selected-sort').textContent = selectedSortText;
-            document.querySelector('.sorted').textContent = selectedSortText;
-            sortContainer.classList.remove('show');
+          document.querySelector('.sorted').textContent = selectedSortText;
+          document.querySelector('.sort-container').classList.remove('show');
       }
   });
 });
-
 
 // DISPLAY SELECTED FILTERS
 document.querySelectorAll('.by-filter input[type="checkbox"]').forEach(checkbox => {
@@ -460,4 +457,106 @@ document.addEventListener('click', (e) => {
     }
   });
 });
+
+// ROOM COUNT SELECTORS
+const roomCountElement = document.getElementById("room-count");
+const adultCountElement = document.getElementById("adult-count");
+const childCountElement = document.getElementById("child-count");
+const childPlusButton = document.getElementById("child-plus");
+const childMinusButton = document.getElementById("child-minus");
+const roomPlusButton = document.getElementById("room-plus");
+const roomMinusButton = document.getElementById("room-minus");
+const adultPlusButton = document.getElementById("adult-plus");
+const adultMinusButton = document.getElementById("adult-minus");
+const userRoomInfoElement = document.querySelector(".user-room-info");
+const roomContainer = document.querySelector('.guests-count');
+const guestsButton = document.querySelector('.guests')
+const confirmGuests = document.querySelector('.confirm-count')
+const childrenAgesContainer = document.querySelector(".child-ages-container");
+
+confirmGuests.addEventListener('click', () => {
+  roomContainer.classList.remove('show');
+});
+
+guestsButton.addEventListener('click', () => {
+  roomContainer.classList.toggle('show');
+  sortContainer.classList.remove('show');
+});
+
+document.addEventListener('click', (event) => {
+  if (!roomContainer.contains(event.target) && !guestsButton.contains(event.target)) {
+    roomContainer.classList.remove('show');
+  }
+});
+
+
+// Function to update the user room info text
+function updateUserRoomInfo() {
+    const roomCount = roomCountElement.textContent;
+    const adultCount = adultCountElement.textContent;
+    const childCount = childCountElement.textContent;
+    userRoomInfoElement.textContent = `${adultCount} Adults, ${childCount} Children, ${roomCount} Room${roomCount > 1 ? 's' : ''}`;
+}
+
+// Function to update count (for rooms, adults, and children)
+function updateCount(element, delta) {
+    let count = parseInt(element.textContent);
+    count = Math.max(0, count + delta);
+    element.textContent = count;
+    return count;
+}
+
+// Event listeners for room, adult, and child buttons
+roomPlusButton.addEventListener('click', () => {
+    updateCount(roomCountElement, 1);
+    updateUserRoomInfo();
+});
+roomMinusButton.addEventListener('click', () => {
+    updateCount(roomCountElement, -1);
+    updateUserRoomInfo();
+});
+adultPlusButton.addEventListener('click', () => {
+    updateCount(adultCountElement, 1);
+    updateUserRoomInfo();
+});
+adultMinusButton.addEventListener('click', () => {
+    updateCount(adultCountElement, -1);
+    updateUserRoomInfo();
+});
+childPlusButton.addEventListener('click', () => {
+    updateCount(childCountElement, 1);
+    updateChildrenAgeSelectors();
+    updateUserRoomInfo();
+});
+childMinusButton.addEventListener('click', () => {
+    updateCount(childCountElement, -1);
+    updateChildrenAgeSelectors();
+    updateUserRoomInfo();
+});
+
+// Function to update the child age selectors based on the current child count
+function updateChildrenAgeSelectors() {
+    const childCount = parseInt(childCountElement.textContent);
+    childrenAgesContainer.innerHTML = '';
+
+    for (let i = 0; i < childCount; i++) {
+        const childAgeDiv = document.createElement('div');
+        childAgeDiv.classList.add('child-age');
+        
+        const selectElement = document.createElement('select');
+        selectElement.setAttribute('name', `child-age-${i + 1}`);
+        selectElement.setAttribute('id', `child-age-${i + 1}`);
+        
+        selectElement.innerHTML = `<option value="" disabled selected>Age Needed</option>
+            ${[...Array(18).keys()].map(i => 
+                `<option value="${i}">${i === 0 ? '0-11 months' : `${i} years old`}</option>`
+            ).join('')}`;
+        
+        childAgeDiv.appendChild(selectElement);
+        childrenAgesContainer.appendChild(childAgeDiv);
+    }
+}
+
+updateUserRoomInfo(); 
+updateChildrenAgeSelectors();
 
