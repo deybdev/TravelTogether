@@ -320,6 +320,7 @@ const sortButton = document.querySelector('#sort-by');
 const sortButton2 = document.querySelector('.filter-sort');
 const sortContainer = document.querySelector('.sort-container');
 const closeSortButton = document.querySelector('.close-sort');
+const redDot = document.querySelector('.sort-dot');
 
 sortButton.addEventListener('click', () => {
     sortContainer.classList.toggle('show');
@@ -341,9 +342,17 @@ document.querySelectorAll('.sort-container ol li').forEach(function(item) {
           const selectedSortText = this.textContent.trim();
           document.querySelector('.sorted').textContent = selectedSortText;
           document.querySelector('.sort-container').classList.remove('show');
+          
+          const topViewedRadio = document.querySelector('input[name="sortby"][value="Top viewed"]');
+          if (topViewedRadio && !topViewedRadio.checked) {
+              redDot.style.opacity = 1;
+          } else {
+              redDot.style.opacity = 0;
+          }
       }
   });
 });
+// SORT FUNCTION END
 
 // DISPLAY SELECTED FILTERS
 document.querySelectorAll('.by-filter input[type="checkbox"]').forEach(checkbox => {
@@ -375,6 +384,7 @@ document.querySelectorAll('.by-filter input[type="checkbox"]').forEach(checkbox 
     }
 
     updateCategoryGroup(dataCategory);
+    toggleFilterDot();
   });
 });
 
@@ -425,7 +435,9 @@ function handleCheckboxChangeInExpandedContainer(checkbox, category) {
   const mainCheckbox = document.querySelector(`.by-filter[data-category="${category}"] input[value="${value}"]`);
   if (mainCheckbox) {
     mainCheckbox.checked = checkbox.checked;
+
   }
+
 
   if (checkbox.checked) {
     categoryGroup.querySelector('.filters-list').insertAdjacentHTML('beforeend', `<li data-value="${value}">${value}</li>`);
@@ -435,6 +447,7 @@ function handleCheckboxChangeInExpandedContainer(checkbox, category) {
   }
 
   updateCategoryGroup(category);
+  toggleFilterDot();
 }
 
 function getCategoryCheckboxes(category) {
@@ -448,17 +461,28 @@ function getCategoryCheckboxes(category) {
     }).join('');
 }
 
+function toggleFilterDot() {
+  const anyChecked = document.querySelectorAll('.by-filter input[type="checkbox"]:checked').length > 0;
+  const filterDot = document.querySelector('.filter-dot');
+  if (filterDot) {
+    filterDot.style.opacity = anyChecked ? 1 : 0;
+  }
+}
+
 document.addEventListener('click', (e) => {
   const allExpandContainers = document.querySelectorAll('.expand-container');
   allExpandContainers.forEach(expandContainer => {
     const categoryGroup = expandContainer.closest('.category-group');
     if (!categoryGroup.contains(e.target) && expandContainer.style.display === 'block') {
-      expandContainer.style.display = 'none'; // Close the container
+      expandContainer.style.display = 'none';
     }
   });
 });
 
-// ROOM COUNT SELECTORS
+// FILTER FUNCTION END
+
+
+// GUESTS COUNT SELECTORS
 const roomCountElement = document.getElementById("room-count");
 const adultCountElement = document.getElementById("adult-count");
 const childCountElement = document.getElementById("child-count");
