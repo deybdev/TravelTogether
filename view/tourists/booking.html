@@ -355,7 +355,7 @@
                 <img src="/assets/hotels/hotel2.jpg" alt="Hotel1">
                 <div class="saved-hotel-booking"><i class="ri-heart-line"></i></div>
                 <div class="card-content">
-                    <p class="hotel-name">Diamond Hotel Philippines</p>
+                    <p class="hotel-name" id="locationName">Diamond Hotel Philippines</p>
                     <div class="average-hotel-rate">
                         <p class="rate-count">7.3 </p>
                         <div class="star-rates">
@@ -363,7 +363,10 @@
                         </div>
                         <p class="rate-count">(4,632)</p>
                     </div>
-                    <div class="location"><a href="https://www.google.com/maps/dir/?api=1&destination=RizalPark" target="_blank"> See in google maps</a></div>
+                    <div class="location"> 
+                        <p class="address" id="locationAddress">Roxas Boulevard, Corner Dr. J. Quintos Street, Manila, 1000 Metro Manila</p>
+                        <button class="showMapBtn">Show on map</button>
+                    </div>
                     <div class="hotel-desc">
                         <p>Superior Double or Twin Room</p>
                         <ul>
@@ -387,7 +390,7 @@
                 <img src="/assets/hotels/hotellist1.jpg" alt="Hotel1">
                 <div class="saved-hotel-booking"><i class="ri-heart-line"></i></div>
                 <div class="card-content">
-                    <p class="hotel-name">Belmont Hotel Manila</p>
+                    <p class="hotel-name" id="locationName">Belmont Hotel Manila</p>
                     <div class="average-hotel-rate">
                         <p class="rate-count">8.3 </p>
                         <div class="star-rates">
@@ -395,7 +398,10 @@
                         </div>
                         <p class="rate-count">(4,872)</p>
                     </div>
-                    <div class="location"><a href="https://www.google.com/maps/dir/?api=1&destination=BelmontHotelManila" target="_blank"> See in google maps</a></div>
+                    <div class="location"> 
+                        <p class="address" id="locationAddress"></p>
+                        <button class="showMapBtn">Show on map</button>
+                    </div>
                     <div class="hotel-desc">
                         <p>Twin Superior</p>
                         <ul>
@@ -419,7 +425,7 @@
                 <img src="/assets/hotels/hotellist2.jpg" alt="Hotel1">
                 <div class="saved-hotel-booking"><i class="ri-heart-line"></i></div>
                 <div class="card-content">
-                    <p class="hotel-name">Hilton Manila</p>
+                    <p class="hotel-name" id="locationName">Hilton Manila</p>
                     <div class="average-hotel-rate">
                         <p class="rate-count">8.8 </p>
                         <div class="star-rates">
@@ -427,7 +433,10 @@
                         </div>
                         <p class="rate-count">(1,406)</p>
                     </div>
-                    <div class="location"><a href="https://www.google.com/maps/dir/?api=1&destination=HiltonManila" target="_blank"> See in google maps</a></div>
+                    <div class="location"> 
+                        <p class="address" id="locationAddress">Plaza San Luis Complex, General Luna corner Real Streets, Intramuros, Manila</p>
+                        <button class="showMapBtn">Show on map</button>
+                    </div>
                     <div class="hotel-desc">
                         <p>Extra Large Double Bed</p>
                         <ul>
@@ -449,7 +458,21 @@
             
         </div>
     
-    
+    <!-- MAP POP UP START -->
+<div id="mapPopup" class="show-map-container">
+    <div class="close-map" id="closeMap">
+        <i class="ri-close-fill"></i>
+    </div>
+    <div class="show-map-wrapper">
+        <div class="location-info">
+            <img id="mapImage" src="" alt="Rizal Park">
+            <h2 id="mapTitle"></h2>
+            <p id="mapAddress"></p>
+        </div>
+        <div id="map"></div>
+    </div>
+</div>
+<!-- MAP POP UP END -->
     
 
     <!-- BOOKING SECTION END -->
