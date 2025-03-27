@@ -1821,7 +1821,6 @@ select {
     display: flex;
     height: 80%;
     width: 80%;
-    border-radius: 13px;
     background-color: #fff;
 }
 
@@ -1859,7 +1858,6 @@ select {
     background-color: #fff;
     overflow: hidden;
     z-index: 0;
-    border-radius: 0 11px 11px  0;
 }
 
 .close-map{
