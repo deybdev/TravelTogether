@@ -19,6 +19,41 @@ function isInView(element) {
   );
 }
 
+let map;
+
+function initializeMap(imageSrc, locationName, locationAddress) {
+  const apiKey = 'bf94dc68ddeb4233848df1c7e8b2b9c8';
+
+  function getCoordinates(query) {
+      return fetch(`https://api.opencagedata.com/geocode/v1/json?q=${encodeURIComponent(query)}&key=${apiKey}`)
+          .then(response => response.json())
+          .then(data => data.results[0]?.geometry);
+  }
+
+  if (map) {
+    map.remove();
+  }
+
+  getCoordinates(locationAddress)
+      .then(coords => coords || getCoordinates(locationName))
+      .then(coords => {
+          const { lat, lng } = coords;
+          
+          map = L.map('map').setView([lat, lng], 17);
+
+          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+              attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          }).addTo(map);
+
+          L.marker([lat, lng])
+              .addTo(map)
+              .bindPopup(`${locationName}`)
+              .openPopup();
+      })
+      .catch(() => alert('Error fetching location.'));
+}
+
+
 //MENU BUTTON FOR MOBILE DEVICES
 const navMenu = document.querySelector('.nav-menu');
 const navToggle = document.querySelector('.toggle-menu');
@@ -48,67 +83,6 @@ searchButton.addEventListener('click', () => {
 
 searchClose.addEventListener('click', () => {
   searchBar.classList.remove('show-search');
-});
-
-// LOGIN CONTAINER FUNCTION
-const signInBtn = document.querySelector('.login-btn');
-const signInBtn1 = document.querySelector('.user-logo');
-const loginContainer = document.querySelector('.login-container');
-const closeBtn = document.querySelector('.login-container-close');
-
-signInBtn1.addEventListener('click', () => {
-  loginContainer.classList.add('show-login-container');
-
-  setTimeout(() => {
-    loginContainer.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-    searchBar.classList.remove('show-search');
-
-  }, 750);
-});
-
-signInBtn.addEventListener('click', () => {
-  loginContainer.classList.add('show-login-container');
-
-  setTimeout(() => {
-    loginContainer.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-  }, 750);
-});
-
-closeBtn.addEventListener('click', () => {
-  loginContainer.classList.remove('show-login-container');
-  loginContainer.style.backgroundColor = 'transparent';
-});
-
-// READ MORE
-const readMoreBtns = document.querySelectorAll('.read-more, .review-read-more');
-
-readMoreBtns.forEach(button => {
-    button.addEventListener('click', function(event) {
-        event.stopPropagation();
-        
-        const isDestination = this.closest('.dest');
-        const isReview = this.closest('.review');
-        
-        if (isDestination) {
-            const destinationImg = isDestination;
-            destinationImg.classList.toggle('expanded');
-            
-            if (destinationImg.classList.contains('expanded')) {
-                this.innerHTML = '<div class="left-line"></div>Read Less <i class="ri-arrow-up-wide-line"></i><div class="right-line"></div>';
-            } else {
-                this.innerHTML = '<div class="left-line"></div>Read More <i class="ri-arrow-down-wide-line"></i><div class="right-line"></div>';
-            }
-        } else if (isReview) {
-            const reviewText = isReview.querySelector('.review-desc');
-            reviewText.classList.toggle('expanded');
-            
-            if (reviewText.classList.contains('expanded')) {
-                this.innerHTML = 'Read Less';
-            } else {
-                this.innerHTML = 'Read More';
-            }
-        }
-    });
 });
 
 // SLIDING IMAGES FUNCTION

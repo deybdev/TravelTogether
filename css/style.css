@@ -8,6 +8,9 @@
     list-style: none;
 }
 
+body.no-scroll{
+    overflow: hidden;
+}
 
 #home{
     height: 89vh;
@@ -526,34 +529,57 @@
     color: #119396;
 }
 
-.default-card .place-category {
-    display: flex;
+.default-card .place-categories {
+    display: none;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
     gap: 5px;
-    margin-right: 20px;
+    margin : 5px 10px;
     font-size: 13px;
     color: #119FA3;
 }
 
+.place-category{
+    display: flex;
+    align-items: center;
+    border: 1px solid #119FA3;
+    border-radius: 25px;
+    padding: 3px 12px;
+    gap: 5px;
+}
+
+.place-category p{
+    font-size: 12px;
+}
+
 .default-card .entrance-fee span{
-    margin-left: 5px;
+    margin-left: 1px;
 }
 
 .location{
-    margin: 0 10px;
+    display: flex;
+    align-items: center;
+    margin: 8px 10px;
+    gap: 5px;
+    color: #093435;
 }
 
-.location a, .location i{
-    color: #0056b3;
-    text-decoration: none;
-    font-size: 0.8rem;
+.location .address{
+    display: none;
 }
 
-.location:hover{
-    color: #0056b3;
+.location button{
+    background-color: transparent;
+    border: none;
+    color: #119396;
+    cursor: pointer;
+}
+
+.location button:hover{
     text-decoration: underline;
 }
+
 
 .review-desc,
 .destination-desc {
@@ -1777,9 +1803,80 @@ select {
     pointer-events: none;
 }
 
+.show-map-container {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
 
+.show-map-wrapper{
+    display: flex;
+    height: 80%;
+    width: 80%;
+    border-radius: 13px;
+    background-color: #fff;
+}
 
+.show-map-container .location-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 35%;
+    height: 100%;
+    text-align: center;
+}
 
+.show-map-container .location-info img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.show-map-container .location-info h2 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.show-map-container .location-info p {
+    font-size: 14px;
+    color: #555;
+}
+
+.show-map-container .location-info button:hover {
+    background-color: #ff1a1a;
+}
+
+#map {
+    width: 65%;
+    background-color: #fff;
+    overflow: hidden;
+    z-index: 0;
+    border-radius: 0 11px 11px  0;
+}
+
+.close-map{
+    position: absolute;
+    top: 7%;
+    right: 8.5%;
+    background-color: #fff;
+    padding: 7px 10px;
+    font-size: 25px ;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.leaflet-popup-close-button {
+    display: none;
+}
 
 /* Responsive */
 
@@ -2042,7 +2139,7 @@ select {
         margin-bottom: -2px;
     }
 
-    .default-card .place-category p , .default-card .place-category i{
+    .default-card .place-categories p , .default-card .place-categories i{
         color: #119FA3;
         font-size: 10px;
         
