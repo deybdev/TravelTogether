@@ -477,12 +477,10 @@
     justify-content: center;
     padding: 0 1rem;
     overflow: hidden;
-    transform: translateY(50px);
-    opacity: 0;
-    transition: 1s ease;
+
 }
 
-.default-container.show{
+.default-card.show{
     transform: translateY(0);
     opacity: 1;
 }
@@ -496,8 +494,10 @@
     position: relative;
     overflow: hidden;
     cursor: pointer;
-    transition: transform 0.3s ease;
     height: auto;
+    transform: translateY(30px);
+    opacity: 0;
+    transition: .5s ease;
 }
 
 .default-card:hover {
@@ -517,7 +517,8 @@
     white-space: nowrap;       
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 100%;            
+    max-width: 100%; 
+    color: #525252;           
 }
 
 .default-card .entrance-fee{
@@ -556,7 +557,7 @@
 
 .review-desc,
 .destination-desc {
-    font-size: .9rem;
+    font-size: .8rem;
     margin: 2px 10px;
     color: #464242;
     max-height: 50px;
@@ -598,15 +599,29 @@
     padding: 0.5rem 1.8rem;
 }
 
-.saved-destination {
+.saved-destination,
+.saved-hotel {
+   position: absolute;
+   top: 0;
+   right: 0;
+   margin: 10px;
+   background-color: rgba(0, 0, 0, 0.3);
+   border-radius: 50%;
+   padding: 3px;
+}
+
+.saved-hotel-booking {
    position: absolute;
    top: 0;
    right: 0;
    margin: 10px;
 }
 
+.saved-hotel-booking i{
+    color: #119396;
+    font-size: 25px;
+}
 .saved-destination i{
-    font-weight: 100;
     font-size: 25px;
     color: #ffffff;
     cursor: pointer;
@@ -826,14 +841,14 @@
 
 /* DESTINATION START */
 
-.destination{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;    
+.destination-main-slider {
+    position: relative;
+    width: 100%;
 }
 
 .dest-link{
+    position: absolute;
+    top:  12%;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
@@ -842,17 +857,7 @@
     margin: 10px 0;
     padding-left: 10px;
     width: 100%;
-}
-
-.dest-link a{
-    color: #465858;
-    font-size: 1rem;
-    font-weight: 500;
-    text-decoration: none;
-}
-.destination-main-slider {
-    position: relative;
-    width: 100%;
+    z-index: 2;
 }
 
 .destination-main {
@@ -1042,6 +1047,12 @@
     align-items: flex-start;
     width: 100%;
     padding: 4rem 0 4rem 4rem;
+}
+
+.top-manila-header{
+    margin: 0 0 .5rem 5rem;
+    font-size: 20px;
+    color: #119396;
 }
 
 .manila-desc-container h2{

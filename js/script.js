@@ -1,12 +1,12 @@
 // FADE IN SCROLL EFFECT FOR CONTAINERS
-const cont = document.querySelectorAll('.default-container, #section-title' );
+const cards = document.querySelectorAll('.default-card, #section-title');
 
 document.addEventListener('scroll', () => {
-  cont.forEach((container) => {
-    if (isInView(container) && !container.classList.contains('show')) {
-      container.classList.add('show');
-    }else if (!isInView(container) && container.classList.contains('show')) {
-      container.classList.remove('show');
+  cards.forEach((card) => {
+    if (isInView(card) && !card.classList.contains('show')) {
+      card.classList.add('show');
+    } else if (!isInView(card) && card.classList.contains('show')) {
+      card.classList.remove('show');
     }
   });
 });
