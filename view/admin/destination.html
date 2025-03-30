@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css">
+    <link rel="stylesheet" href="/css/admin.css">
+    <title>Destinations</title>
+
+</head>
+<body>
+
+    <div class="sidebar-container">
+        <div class="sidebar-logo">
+            <h2>Travel Together</h2>
+        </div>
+
+        <div class="sidebar-link-container">
+            <div class="close-sidebar sidebar-btn">
+                <button><i class="ri-close-line"></i></button>
+            </div>
+            <div class="open-sidebar sidebar-btn">
+                <button><i class="ri-menu-line"></i></button>
+            </div>
+
+            <ul>
+                <li>
+                    <a href="dashboard.html"><i class="ri-pie-chart-line"></i>Dashboard</a>
+                </li>
+                <li>
+                    <a href="users.html"><i class="ri-group-line"></i>Users</a>
+                </li>
+                <li>
+                    <a href="#"><i class="ri-calendar-line"></i>Bookings</a>
+                </li>
+                <li>
+                    <a href="destination.html" class="sidebar-active"><i class="ri-map-pin-line"></i>Destinations</a>
+                </li>
+                <li>
+                    <a href="#"><i class="ri-hotel-line"></i>Hotel and Deals</a>
+                </li>
+                <li>
+                    <a href="#"><i class="ri-star-line"></i>Reviews</a>
+                </li>
+            </ul> 
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="menu-profile">
+            <img src="/assets/admin-profile.jpg" alt="Sir Jack">
+            <p>Admin</p>
+        </div>
+        <div class="header-main">
+            <h2>Destinations</h2>
+        </div>
+
+        <div class="search-table destination">
+            <div class="search-table-bar">
+                <input type="text" placeholder="Search...">
+            </div>
+            <div class="filter-search">
+                <select name="filter by">
+                    <option value="" disabled selected>Category</option>
+                    <option value="1">Historical Sites</option>
+                    <option value="2">Theme Parks</option>
+                    <option value="3">Religious Sites</option>
+                    <option value="4">Siteseeing</option>
+                    <option value="5">Museum</option>
+                    <option value="6">Theater</option>
+                    <option value="7">Market</option>
+                </select>
+            </div>
+            <div class="sort-search">
+                <select name="filter by">
+                    <option value="" disabled selected>Sort By</option>
+                    <option value="name-asc">Name (A-Z)</option>
+                    <option value="name-desc">Name (Z-A)</option>
+                    <option value="price-asc">Price (Low to High)</option>
+                    <option value="price-desc">Price (High to Low)</option>
+                </select>
+            </div>
+            <div class="add-destination-btn">
+                <button><i class="ri-add-fill"></i> Add Destination</button>
+            </div>
+        </div>
+        
+        <div class="table-container">
+            <div class="table-wrapper">
+                <table class="main-table">
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Address</th>
+                        <th>Category</th>
+                        <th>Action</th>
+                    </tr>
+                    <tr>
+                        <td>001</td>
+                        <td>Fort Santiago</td>
+                        <td>&#8369 100</td>
+                        <td>Fort Santiago Barangay 650, Intramuros, Manila, 1002 Metro Manila, Philippines</td>
+                        <td>Tourist</td>
+                        <td>
+                            <button><i class="ri-edit-box-line"></i></button>
+                            <button><i class="ri-delete-bin-6-line"></i></button>
+                            <button><i class="ri-information-line"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>002</td>
+                        <td>San Agustin Church</td>
+                        <td>Free</td>
+                        <td>San Agustin Church, Gen. Luna Street, Intramuros, Manila, 1002 Metro Manila, Philippines</td>
+                        <td>Tourist</td>
+                        <td>
+                            <button><i class="ri-edit-box-line"></i></button>
+                            <button><i class="ri-delete-bin-6-line"></i></button>
+                            <button><i class="ri-information-line"></i></button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    
+    <script src="admin.js"></script>
+
+</body>
+</html>

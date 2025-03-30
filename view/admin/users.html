@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css">
+    <link rel="stylesheet" href="/css/admin.css">
+
+    <title>Users</title>
+</head>
+<body>
+
+    <div class="sidebar-container">
+        <div class="sidebar-logo">
+            <h2>Travel Together</h2>
+        </div>
+
+        <div class="sidebar-link-container">
+            <div class="close-sidebar sidebar-btn">
+                <button><i class="ri-close-line"></i></button>
+            </div>
+            <div class="open-sidebar sidebar-btn">
+                <button><i class="ri-menu-line"></i></button>
+            </div>
+
+            <ul>
+                <li>
+                    <a href="dashboard.html"><i class="ri-pie-chart-line"></i>Dashboard</a>
+                </li>
+                <li>
+                    <a href="users.html" class="sidebar-active"><i class="ri-group-line"></i>Users</a>
+                </li>
+                <li>
+                    <a href="#"><i class="ri-calendar-line"></i>Bookings</a>
+                </li>
+                <li>
+                    <a href="destination.html"><i class="ri-map-pin-line"></i>Destinations</a>
+                </li>
+                <li>
+                    <a href="#"><i class="ri-hotel-line"></i>Hotel and Deals</a>
+                </li>
+                <li>
+                    <a href="#"><i class="ri-star-line"></i>Reviews</a>
+                </li>
+            </ul> 
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="menu-profile">
+            <img src="/assets/admin-profile.jpg" alt="Sir Jack">
+            <p>Admin</p>
+        </div>
+
+        <div class="header-main">
+            <h2>Users</h2>
+        </div>
+
+        <div class="search-table user">
+            <div class="search-table-bar">
+                <input type="text" placeholder="Search...">
+            </div>
+            <div class="filter-search">
+                <select name="filter by">
+                    <option value="" disabled selected>Filter By</option>
+                    <option value="1">Tourists</option>
+                    <option value="2">Local Business</option>
+                </select>
+            </div>
+            <div class="sort-search">
+                <select name="filter by">
+                    <option value="" disabled selected>Sort By</option>
+                    <option value="1">Name (A-Z)</option>
+                    <option value="1">Name (Z-A)</option>
+                    <option value="2">Date Registered</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <div class="table-wrapper">
+                <table class="main-table">
+                    <tr>
+                        <th>User ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Actions</th>
+                    </tr>
+                    <tr>
+                        <td>001</td>
+                        <td>Jhoanna Gambalan</td>
+                        <td>gambalan.jhoanna@gmail.com</td>
+                        <td>Tourist</td>
+                        <td>
+                            <button><i class="ri-edit-box-line"></i></button>
+                            <button><i class="ri-delete-bin-6-line"></i></button>
+                            <button><i class="ri-information-line"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>002</td>
+                        <td>Levi Mangahas</td>
+                        <td>levi.mangahas@gmail.com</td>
+                        <td>Tourist</td>
+                        <td>
+                            <button><i class="ri-edit-box-line"></i></button>
+                            <button><i class="ri-delete-bin-6-line"></i></button>
+                            <button><i class="ri-information-line"></i></button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>            
+    </div>
+    <script src="admin.js"></script>
+</body>
+</html>
