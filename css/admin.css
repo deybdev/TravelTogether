@@ -133,6 +133,11 @@
     margin: 100px 0 30px;
 }
 
+.dashboard .header-main{
+    margin-right: auto;
+    margin-left: 2.5%;
+}
+
 /* DEFAULT TABLE START */
 .table-container {
     display: flex;
@@ -242,6 +247,44 @@
 .search-table button:hover{
     background-color: #0f7b7e;
 }
+
+/* DASHBOARD START */
+.first-dashboard{
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dashboard-info{
+    width: 23%;
+    background-color: #fff;
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #119396;
+    border-radius: 10px;
+}
+
+.dashboard-info .info-header{
+    display: flex;
+    font-size: 1rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dashboard-info .info-header i{
+    font-size: 1.5rem;
+}
+
+.user-count{
+    color: #3A94C8;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+/* DASHBOARD END */
 
 
 
