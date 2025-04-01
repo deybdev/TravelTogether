@@ -3,81 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="<?php echo $base_url;?>/assets/css/tourists.css">
+    <link rel="stylesheet" href="<?php echo $base_url;?>/styles.css">
     <title>TravelTogether</title>
-    <link rel="stylesheet" href="/css/tourists.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
-
 </head>
 <body>
+
+    <?php include "../includes/header.php"; ?>
+
     <!-- HOME SECTION START -->
-    <nav class="nav-container">
-        <a href="#" class="nav-logo">TRAVEL TOGETHER</a>
-
-        <div class="nav-menu" id="nav-menu">
-            <ul class="nav-list">
-                <li class="nav-item">
-                    <a href="/index.html" class="nav-link active-nav">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/view/tourists/manila.html" class="nav-link">Destinations</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/view/tourists/booking.html" class="nav-link">Hotels</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/view/tourists/activities.html" class="nav-link">Activities</a>
-                </li>
-            </ul>
-
-            <!--CLOSE BUTTON-->
-            <div class="nav-close">
-                <i class="ri-close-line"></i>
-            </div>
-        </div>
-        
-        <!--LOGIN, SIGNUP and Menu Buttons-->
-        <div class="nav-actions">
-            <div class="search-btn"><i class="ri-search-line"></i></div>
-            <div class="nav-search" id="navSearch">
-                <input type="text" id="navbarSearch" placeholder="Search Destinations, Hotels and Activities. . .">
-                <button class="searchbar-btn">Search</button>
-                <i class="ri-close-line close-search" id="closeSearch"></i>
-            </div>
-            <button class="button-btn2 list-prop">List your property</button>
-            <button class="button-btn1 login-btn">Sign In</button>
-            <div class="user-logo"><i class="ri-user-line"></i></div>
-            <div class="toggle-menu" id="toggle-menu"><i class="ri-menu-line"></i></div>
-        </div>
-
-        <!-- LOGIN CONTAINER -->
-        <div class="login-container">
-            <div class="login-content">
-                <div class="login-container-close">
-                    <i class="ri-close-line"></i>
-                </div>
-                <h2 class="login-title">Sign in or create an account</h2>
-                <form action="">
-                    <div class="login-input">
-                        <input type="email" name="email" id="email" placeholder="Please enter your email address" required>
-                        <button class="button-login" type="submit">Continue</button>
-                    </div>
-                    <div class="other-methods">
-                        <p><i class="left-line"></i>Other Methods<i class="right-line"></i></p>
-                        <div class="methods-icon">
-                            <button class="social-btn"><i class="ri-facebook-circle-fill"></i></button>
-                            <button class="social-btn"><i class="ri-google-fill"></i></button>
-                        </div>
-                    </div>
-                    <div class="terms">
-                        <p>By signing in or registering, you are deemed to have agreed to the Travel Together <a href="#">Terms and Conditions</a> and <a href="#">Privacy Statement</a></p>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </nav>
-    
     <section id="home">
         <div class="gradient-home">
             <div class="home-content">
@@ -106,7 +40,7 @@
 
             <div class="default-card dest">
                 <div class="saved-destination"><i class="ri-heart-line"></i></div>
-                <img src="/assets/destinations/casa.jpg" alt="">
+                <img src="<?php echo $base_url;?>/assets/images/destinations/casa.jpg" alt="">
                 <h4 id="locationName">Casa Manila</h4>
                 <p class="entrance-fee">₱<span>Free</span></p>
                 <div class="place-categories">
@@ -137,7 +71,7 @@
 
             <div class="default-card dest">
                 <div class="saved-destination"><i class="ri-heart-line"></i></div>
-                <img src="/assets/destinations/fort.jpg" alt="">
+                <img src="<?php echo $base_url;?>/assets/images/destinations/fort.jpg" alt="">
                 <h4 id="locationName">Fort Santiago</h4>
                 <p class="entrance-fee">₱<span>Free</span></p>
                 <div class="place-categories">
@@ -169,7 +103,7 @@
 
             <div class="default-card dest">
                 <div class="saved-destination"><i class="ri-heart-line"></i></div>
-                <img src="/assets/destinations/intra.jpg" alt="">
+                <img src="<?php echo $base_url;?>/assets/images/destinations/intra.jpg" alt="">
                 <h4 id="locationName">Intramuros</h4>
                 <p class="entrance-fee">₱<span>Free</span></p>
                 <div class="place-categories">
@@ -199,7 +133,7 @@
             </div>
             <div class="default-card dest">
                 <div class="saved-destination"><i class="ri-heart-line"></i></div>
-                <img src="/assets/destinations/luneta.jpg" alt="Rizal Park">
+                <img src="<?php echo $base_url;?>/assets/images/destinations/luneta.jpg" alt="Rizal Park">
                 <h4 id="locationName">Rizal Park</h4>
                 <p class="entrance-fee">₱<span>Free</span></p>
                 <div class="place-categories">
@@ -230,7 +164,7 @@
         <div class="default-container">
             <div class="default-card hotel">
                 <div class="saved-destination"><i class="ri-heart-line"></i></div>
-                <img src="/assets/hotels/hotel1.jpg" alt="Hotel1">
+                <img src="<?php echo $base_url;?>/assets/images/hotels/hotel1.jpg" alt="Hotel1">
                 <h4>Eton Tower Makati</h4>
                 <div class="average-hotel-rate">
                     <p class="rate-count">7.3 </p>
@@ -257,7 +191,7 @@
 
             <div class="default-card hotel">
                 <div class="saved-destination"><i class="ri-heart-line"></i></div>
-                <img src="/assets/hotels/hotel2.jpg" alt="Hotel1">
+                <img src="<?php echo $base_url;?>/assets/images/hotels/hotel2.jpg" alt="Hotel1">
                 <h4>Hotel 101</h4>
                 <div class="average-hotel-rate">
                     <p class="rate-count">7.3 </p>
@@ -281,7 +215,7 @@
 
             <div class="default-card hotel">
                 <div class="saved-destination"><i class="ri-heart-line"></i></div>
-                <img src="/assets/hotels/hotel3.jpg" alt="Hotel1">
+                <img src="<?php echo $base_url;?>/assets/images/hotels/hotel3.jpg" alt="Hotel1">
                 <h4>Lub d Philippines Makati</h4>
                 <div class="average-hotel-rate">
                     <p class="rate-count">7.3 </p>
@@ -304,14 +238,14 @@
             </div>
 
             <div class="hotel-card default-card">
-                <img src="/assets/hotels/hotel4.jpg" alt="Hotel Room">
+                <img src="<?php echo $base_url;?>/assets/images/hotels/hotel4.jpg" alt="Hotel Room">
                 <div class="hotel-card-content">
                     <h3>Discover great deals on hotels around manila</h3>
                     <button class="hotel-card-button button-btn3">GO NOW</button>
                 </div>
             </div>
         </div>
-     </section>
+        </section>
 
     <!-- HOTELS END -->
     <!-- REVIEWS START -->
@@ -323,7 +257,7 @@
         </div>
         <div class="default-container">
             <div class="default-card review">
-                <img src="/assets/reviews/review1.jpg" alt="Review">
+                <img src="<?php echo $base_url;?>/assets/images/reviews/review1.jpg" alt="Review">
                 <div class="review-date">
                     <p>Feb <br><span>17</span></p>
                 </div>
@@ -341,7 +275,7 @@
             </div>
 
             <div class="default-card review">
-                <img src="/assets/reviews/review2.jpg" alt="Review">
+                <img src="<?php echo $base_url;?>/assets/images/reviews/review2.jpg" alt="Review">
                 <div class="review-date">
                     <p>Dec <br><span>20</span></p>
                 </div>
@@ -358,7 +292,7 @@
             </div>
 
             <div class="default-card review">
-                <img src="/assets/reviews/review3.jpg" alt="Review">
+                <img src="<?php echo $base_url;?>/assets/images/reviews/review3.jpg" alt="Review">
                 <div class="review-date">
                     <p>Mar <br><span>12</span></p>
                 </div>
@@ -375,7 +309,7 @@
             </div>
 
             <div class="default-card review">
-                <img src="/assets/reviews/review4.jpg" alt="Review">
+                <img src="<?php echo $base_url;?>/assets/images/reviews/review4.jpg" alt="Review">
                 <div class="review-date">
                     <p>Jan <br><span>1</span></p>
                 </div>
@@ -393,89 +327,30 @@
             <button class="button-btn1 destination-btn">Read More Like This <i class="ri-arrow-right-long-line"></i></button>
         </div>
         
-     </section>
+        </section>
 
     <!-- REVIEWS END -->
-    
-<!-- MAP POP UP START -->
-<div id="mapPopup" class="show-map-container">
-    <div class="close-map" id="closeMap">
-        <i class="ri-close-fill"></i>
+
+    <!-- MAP POP UP START -->
+    <div id="mapPopup" class="show-map-container">
+        <div class="close-map" id="closeMap">
+            <i class="ri-close-fill"></i>
+        </div>
+        <div class="show-map-wrapper">
+            <div class="location-info">
+                <img id="mapImage" src="" alt="Rizal Park">
+                <h2 id="mapTitle"></h2>
+                <p id="mapAddress"></p>
+            </div>
+            <div id="map"></div>
+        </div>
     </div>
-    <div class="show-map-wrapper">
-        <div class="location-info">
-            <img id="mapImage" src="" alt="Rizal Park">
-            <h2 id="mapTitle"></h2>
-            <p id="mapAddress"></p>
-        </div>
-        <div id="map"></div>
-    </div>
-</div>
-<!-- MAP POP UP END -->
+    <!-- MAP POP UP END -->
 
-<style>
+    <?php include "../includes/footer.php"; ?>
+
+    <script src="<?php echo $base_url;?>/script.js"></script>
+    <script src="<?php echo $base_url;?>/assets/js/tourists.js"></script>
     
-</style>
-
-
-
-    <!-- SUBFOOTER START -->
-     <section class="section" id="subfooter">
-        <div id="section-title">
-            <h2 id="section-main-title">Your Next Adventure Starts Here!</h2>
-            <p id="section-sub-title">Uncover the hidden gems of Manila and beyond. From personalized itineraries to seamless bookings, we make every journey unforgettable. Your dream destination is just a click away,  let’s travel together!</p>
-        </div>
-
-        <div class="subfooter-container">
-            <img src="/assets/subfoot1.png" alt="">
-            <img src="/assets/subfoot2.png" alt="">
-        </div>
-     </section>
-    <!-- SUBFOOTER END -->
-
-    <!-- FOOTER START -->
-     <footer>
-        <div class="footer-list">
-            <h5>Contact Us</h5>
-            <ol>
-                <li><i class="ri-map-pin-line"></i> Address : 123 Adventure Lane, Manila, Philippines</li>
-                <li><i class="ri-mail-line"></i> Email : support@traveltogether.com</li>
-                <li><i class="ri-phone-line"></i> Phone : +639123456789</li>
-            </ol>
-        </div>
-
-        <div class="footer-list">
-            <h5>Quick Links</h5>
-            <ol>
-                <li><a href="">Home</a></li>
-                <li><a href="">Destination</a></li>
-                <li><a href="">Booking</a></li>
-                <li><a href="">Reviews</a></li>
-                <li><a href="">Contact Us</a></li>
-            </ol>
-        </div>
-
-        <div class="footer-list">
-            <h5>Follow Us</h5>
-            <ol>
-                <li><a href=""><i class="ri-facebook-box-line"></i> Facebook</a></li>
-                <li><a href=""><i class="ri-instagram-line"></i> Instagram</a></li>
-                <li><a href=""><i class="ri-twitter-line"></i> Twitter</a></li>
-                <li><a href=""><i class="ri-youtube-line"></i> Youtube</a></li>
-            </ol>
-        </div>
-
-        <div class="footer-list">
-            <h5>Newsletter</h5>
-            <p>Signup for exclusive travel trips, special offers, and the latest news</p>
-            <form action="">
-                <input type="text" name="email" id="email" placeholder="@gmail.com">
-                <button class="button-btn1 footer-btn">Subscribe Now</button>
-            </form>
-        </div>
-     </footer>
-    <!-- FOOTER END -->
-    <script src="/js/script.js"></script>
-    <script src="/view/tourists/tourists.js"></script>
 </body>
 </html>

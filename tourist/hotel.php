@@ -3,87 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/tourists.css">
+    <link rel="stylesheet" href="../../css/tourists.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
-    <title>Booking</title>
+    <title>Hotels</title>
 </head>
 <body>
 
-    <nav class="nav-container">
-        <a href="#" class="nav-logo">TRAVEL TOGETHER</a>
-
-        <div class="nav-menu" id="nav-menu">
-            <ul class="nav-list">
-                <li class="nav-item">
-                    <a href="/index.html" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/view/tourists/manila.html" class="nav-link">Destinations</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/view/tourists/booking.html" class="nav-link active-nav">Hotels</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/view/tourists/activities.html" class="nav-link">Activities</a>
-                </li>
-            </ul>
-
-            <!--CLOSE BUTTON-->
-            <div class="nav-close">
-                <i class="ri-close-line"></i>
-            </div>
-        </div>
-        
-        <!--LOGIN, SIGNUP and Menu Buttons-->
-        <div class="nav-actions">
-            <div class="search-btn"><i class="ri-search-line"></i></div>
-            <div class="nav-search" id="navSearch">
-                <input type="text" id="navbarSearch" placeholder="Search Destinations, Hotels and Activities. . .">
-                <button class="searchbar-btn">Search</button>
-                <i class="ri-close-line close-search" id="closeSearch"></i>
-            </div>
-            <button class="button-btn2 list-prop">List your property</button>
-            <button class="button-btn1 login-btn">Sign In</button>
-            <div class="user-logo"><i class="ri-user-line"></i></div>
-            <div class="toggle-menu" id="toggle-menu"><i class="ri-menu-line"></i></div>
-        </div>
-
-        <!-- LOGIN CONTAINER -->
-        <div class="login-container">
-            <div class="login-content">
-                <div class="login-container-close">
-                    <i class="ri-close-line"></i>
-                </div>
-                <h2 class="login-title">Sign in or create an account</h2>
-                <form action="">
-                    <div class="login-input">
-                        <input type="email" name="email" id="email" placeholder="Please enter your email address" required>
-                        <button class="button-login" type="submit">Continue</button>
-                    </div>
-                    <div class="other-methods">
-                        <p><i class="left-line"></i>Other Methods<i class="right-line"></i></p>
-                        <div class="methods-icon">
-                            <button class="social-btn"><i class="ri-facebook-circle-fill"></i></button>
-                            <button class="social-btn"><i class="ri-google-fill"></i></button>
-                        </div>
-                    </div>
-                    <div class="terms">
-                        <p>By signing in or registering, you are deemed to have agreed to the Travel Together <a href="#">Terms and Conditions</a> and <a href="#">Privacy Statement</a></p>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </nav>
+    <?php include "../includes/header.php"; ?>
 
     <!-- BOOKING SECTION START -->
-
     <div class="destination-main-slider">
         <div class="destination-main booking-main">
           <div class="image-slider">
-            <img src="/assets/hotel-img1.jpg" class="slider-image active" alt="">
+            <img src="<?php echo $base_url;?>/assets/images/hotel-img1.jpg" class="slider-image active" alt="">
           </div>
           <div class="destination-main-content">
             <h2></h2>
@@ -145,25 +80,24 @@
     </div>
 
     <!-- CALENDAR START -->
-
-        <div class="calendar" id="calendar">
-            <h2 class="main-header">CHECK IN - CHECK OUT DATES </h2>
-            <div class="header">
-                <div id="prev" class="btn" ><i class="ri-arrow-left-line"></i></div>
-                <div id="month-year"></div>
-                <div id="next" class="btn"><i class="ri-arrow-right-line"></i></div>
-            </div>
-            <div class="weekdays">
-                <div>Sun</div>
-                <div>Mon</div>
-                <div>Tue</div>
-                <div>Wed</div>
-                <div>Thu</div>
-                <div>Fri</div>
-                <div>Sat</div>
-            </div>
-            <div class="days" id="days"></div>
+    <div class="calendar" id="calendar">
+        <h2 class="main-header">CHECK IN - CHECK OUT DATES </h2>
+        <div class="header">
+            <div id="prev" class="btn" ><i class="ri-arrow-left-line"></i></div>
+            <div id="month-year"></div>
+            <div id="next" class="btn"><i class="ri-arrow-right-line"></i></div>
         </div>
+        <div class="weekdays">
+            <div>Sun</div>
+            <div>Mon</div>
+            <div>Tue</div>
+            <div>Wed</div>
+            <div>Thu</div>
+            <div>Fri</div>
+            <div>Sat</div>
+        </div>
+        <div class="days" id="days"></div>
+    </div>
     <!-- CALENDAR END -->
 
     <div class="filter-icons">
@@ -182,7 +116,7 @@
         <div class="left-hotel"> 
             <div class="filter-hotel">
                 <div class="left-img">
-                    <img src="/assets/map-manila.png" alt="" class="manila-map">  
+                    <img src="<?php echo $base_url;?>/assets/images/map-manila.png" alt="" class="manila-map">  
                     <button class="map-btn button-btn3"  onclick="window.location.href='https://www.google.com/maps?q=Manila'">See Manila on Map</button>
                 </div>    
                 
@@ -352,7 +286,7 @@
             </div>
 
             <div class="default-card hotel-result">
-                <img src="/assets/hotels/hotel2.jpg" alt="Hotel1">
+                <img src="<?php echo $base_url;?>/assets/images/hotels/hotel2.jpg" alt="Hotel1">
                 <div class="saved-hotel-booking"><i class="ri-heart-line"></i></div>
                 <div class="card-content">
                     <p class="hotel-name" id="locationName">Diamond Hotel Philippines</p>
@@ -387,7 +321,7 @@
             </div>
 
             <div class="default-card hotel-result">
-                <img src="/assets/hotels/hotellist1.jpg" alt="Hotel1">
+                <img src="<?php echo $base_url;?>/assets/images/hotels/hotellist1.jpg" alt="Hotel1">
                 <div class="saved-hotel-booking"><i class="ri-heart-line"></i></div>
                 <div class="card-content">
                     <p class="hotel-name" id="locationName">Belmont Hotel Manila</p>
@@ -422,7 +356,7 @@
             </div>
 
             <div class="default-card hotel-result">
-                <img src="/assets/hotels/hotellist2.jpg" alt="Hotel1">
+                <img src="<?php echo $base_url;?>/assets/images/hotels/hotellist2.jpg" alt="Hotel1">
                 <div class="saved-hotel-booking"><i class="ri-heart-line"></i></div>
                 <div class="card-content">
                     <p class="hotel-name" id="locationName">Hilton Manila</p>
@@ -458,29 +392,29 @@
             
         </div>
     
-    <!-- MAP POP UP START -->
-<div id="mapPopup" class="show-map-container">
-    <div class="close-map" id="closeMap">
-        <i class="ri-close-fill"></i>
-    </div>
-    <div class="show-map-wrapper">
-        <div class="location-info">
-            <img id="mapImage" src="" alt="Rizal Park">
-            <h2 id="mapTitle"></h2>
-            <p id="mapAddress"></p>
+        <!-- MAP POP UP START -->
+        <div id="mapPopup" class="show-map-container">
+            <div class="close-map" id="closeMap">
+                <i class="ri-close-fill"></i>
+            </div>
+            <div class="show-map-wrapper">
+                <div class="location-info">
+                    <img id="mapImage" src="" alt="Rizal Park">
+                    <h2 id="mapTitle"></h2>
+                    <p id="mapAddress"></p>
+                </div>
+                <div id="map"></div>
+            </div>
         </div>
-        <div id="map"></div>
     </div>
-</div>
-<!-- MAP POP UP END -->
-    
+    <!-- MAP POP UP END -->
+
+    <?php include "../includes/footer.php"; ?>
 
     <!-- BOOKING SECTION END -->
-    <script src="tourists.js"></script>
-    <script src="/js/script.js"></script>
-     
 
-
+    <script src="<?php echo $base_url;?>/script.js"></script>
+    <script src="<?php echo $base_url;?>/assets/js/tourists.js"></script>
 
 </body>
 </html>

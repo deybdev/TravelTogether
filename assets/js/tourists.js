@@ -1,34 +1,3 @@
-// LOGIN CONTAINER FUNCTION START
-const signInBtn = document.querySelector('.login-btn');
-const signInBtn1 = document.querySelector('.user-logo');
-const loginContainer = document.querySelector('.login-container');
-const closeBtn = document.querySelector('.login-container-close');
-
-signInBtn1.addEventListener('click', () => {
-  loginContainer.classList.add('show-login-container');
-
-  setTimeout(() => {
-    loginContainer.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-    searchBar.classList.remove('show-search');
-
-  }, 750);
-});
-
-signInBtn.addEventListener('click', () => {
-  loginContainer.classList.add('show-login-container');
-
-  setTimeout(() => {
-    loginContainer.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-  }, 750);
-});
-
-closeBtn.addEventListener('click', () => {
-  loginContainer.classList.remove('show-login-container');
-  loginContainer.style.backgroundColor = 'transparent';
-});
-// LOGIN CONTAINER FUNCTION END
-
-
 // READ MORE FUNCTION START
 const readMoreBtns = document.querySelectorAll('.read-more, .review-read-more');
 
