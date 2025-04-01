@@ -42,7 +42,7 @@
         </div>
         
         <!--LOGIN, SIGNUP and Menu Buttons-->
-        <div class="nav-actions">
+        <div class="nav-actions" style="display:none;">
             <div class="search-btn"><i class="ri-search-line"></i></div>
             <div class="nav-search" id="navSearch">
                 <input type="text" id="navbarSearch" placeholder="Search Destinations, Hotels and Activities. . .">
@@ -53,6 +53,57 @@
             <button class="button-btn1 login-btn">Sign In</button>
             <div class="user-logo"><i class="ri-user-line"></i></div>
             <div class="toggle-menu" id="toggle-menu"><i class="ri-menu-line"></i></div>
+        </div>
+
+        <div class="nav-actions logged-in">
+            <div class="user-cart">
+                <i class="ri-heart-fill"></i>
+                <span class="cart-badge">3</span>
+            </div>
+            <div class="user-saved-list">
+                <div class="saved-cont">
+                    <div class="saved-item">
+                        <img src="<?php echo $base_url;?>/assets/images/destinations/luneta.jpg" alt="Paris">
+                        <div class="saved-item-info">
+                            <h3>Paris, France</h3>
+                            <p>The museum is the imposing stone-and-wood structure c. 1850, one of the grand houses in Barrio San Luis (one of the four original villages of Intramuros) is located across historic San Agustin church and bounded by Calle Real, General Luna, Cabildo and Urdaneta streets. The other two are the Los Hidalgos, c. 1650 and Cuyugan Mansion, c. 1890.The museum is the imposing stone-and-wood structure c. 1850, one of the grand houses in Barrio San Luis (one of the four original villages of Intramuros) is located across historic San Agustin church and bounded by Calle Real, General Luna, Cabildo and Urdaneta streets. The other two are the Los Hidalgos, c. 1650 and Cuyugan Mansion, c. 1890.</p>
+                            <p class="price">₱1200</p>
+                        </div>
+                    </div>
+                    <div class="saved-item">
+                        <img src="<?php echo $base_url;?>/assets/images/destinations/fort.jpg" alt="Tokyo">
+                        <div class="saved-item-info">
+                            <h3>Tokyo, Japan</h3>
+                            <p>Blend of tradition and technology.</p>
+                            <p class="price">₱1500</p>
+                        </div>
+                    </div>
+                    <div class="saved-item">
+                        <img src="<?php echo $base_url;?>/assets/images/destinations/casa.jpg" alt="New York City">
+                        <div class="saved-item-info">
+                            <h3>New York City, USA</h3>
+                            <p>The city that never sleeps.</p>
+                            <p class="price">₱1300</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="saved-container-button">
+                    <button class="button-btn1 saved-button">Go to save</button>
+                </div>
+            </div>
+            <div class="user-profile">
+                <img src="../assets/images/admin-profile.jpg" alt="Profile">
+            </div>
+            <div class="user-menu">
+                <ul>
+                    <li><i class="ri-user-line"></i><a href="#">Profile</a></li>
+                    <li><i class="ri-calendar-line"></i><a href="#">Bookings</a></li>
+                    <li><i class="ri-wallet-2-line"></i><a href="#">Payment Methods</a></li>
+                    <li><i class="ri-star-line"></i><a href="#">Reviews</a></li>
+                    <li><i class="ri-file-list-3-line"></i><a href="#">Iteneries</a></li>
+                    <li><a href="#">Logout</a></li>
+                </ul>
+            </div>
         </div>
 
         <!-- LOGIN CONTAINER -->

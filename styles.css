@@ -10,7 +10,7 @@
 
 .nav-container{
     width: 100%;
-    padding: 1.3rem 6rem;
+    padding: 1rem 4rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -60,6 +60,56 @@
 
 .nav-actions i{
     color: #119396;
+}
+
+.user-cart {
+    position: relative;
+    cursor: pointer;
+}
+
+.user-cart i {
+    font-size: 30px;
+    color: #000;
+    transition: transform 0.2s ease-in-out;
+}
+
+.user-cart:hover i {
+    transform: scale(1.1);
+}
+
+.cart-badge {
+    position: absolute;
+    top: -2px;
+    right: -5px;
+    background: #119396;
+    color: white;
+    font-size: 12px;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.user-profile {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid #ddd;
+    transition: border 0.3s ease-in-out;
+}
+
+.user-profile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.user-profile:hover {
+    border-color: #119396;
 }
 
 .button-btn1{
@@ -130,12 +180,13 @@
 }
 
 .login-btn{
-    padding: 0.5rem 1.8rem;
+    font-size: .8rem;
+    padding: .9rem 2rem;;
 }
 
 .list-prop{
     font-size: .8rem;
-    padding: 0.5rem 1.5rem;
+    padding: .9rem 1.5rem;
     border-radius: 7px;
 }
 
@@ -408,3 +459,159 @@ footer{
 }
 
 /* FOOTER END */
+
+/* USER MENU START */
+
+.user-menu {
+    position: absolute;
+    top: 85px;
+    right: 5px;
+    background: white;
+    border-radius: 8px;
+    width: 220px;
+    overflow: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 1;
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+}
+
+.user-menu.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.user-menu ul li{
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.user-menu ul li:last-child {
+    border-top: 2px solid #ddd;
+    justify-content: center;
+    text-align: center;
+}
+
+.user-menu ul li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+
+.user-menu ul li i{
+    color: #333;
+    font-size: 20px;
+}
+
+.user-menu ul li:hover {
+    background: #f1f1f1;
+}
+/* USER MENU END */
+
+/* USER SAVED LIST START */
+.user-saved-list {
+    position: absolute;
+    top: 85px;
+    right: 100px;
+    background: #fff;
+    border-radius: 8px;
+    width: 320px;
+    max-height: 520px;
+    overflow: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 1;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.user-saved-list.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.saved-cont {
+    display: flex;
+    flex-direction: column;
+    max-height: 300px;
+    overflow-y: auto;
+    background: #fff;
+}
+
+.saved-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    text-align: left;
+    font-size: 14px;
+    color: #333;
+    border-bottom: 2px solid #ddd;
+    height: 300px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.saved-item:hover {
+    background: #f1f1f1;
+}
+
+.saved-item img {
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.saved-item-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.saved-item-info h3 {
+    margin: 0;
+    font-size: 16px;
+    color: #000;
+}
+
+.saved-item-info p {
+    margin: 2px 0;
+    font-size: 12px;
+    color: #555;
+    max-width: 200px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.saved-item-info .price {
+    font-weight: bold;
+    color: #000000;
+}
+
+.saved-container-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 0;
+}
+
+.saved-button{
+    width: 90%;
+    border-radius: 0;
+    padding: 5px 10px;
+    font-size: 15px;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+
+/* USER SAVED LIST END */

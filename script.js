@@ -1,3 +1,37 @@
+// USER MENU START AND SAVED
+document.addEventListener("DOMContentLoaded", function () {
+  const profile = document.querySelector(".user-profile");
+  const userMenu = document.querySelector(".user-menu");
+  const cart = document.querySelector(".user-cart");
+  const savedList = document.querySelector(".user-saved-list");
+
+  profile.addEventListener("click", function (event) {
+      event.stopPropagation();
+      userMenu.classList.toggle("active");
+      savedList.classList.remove("active");
+  });
+
+  cart.addEventListener("click", function (event) {
+      event.stopPropagation();
+      userMenu.classList.remove("active");
+      savedList.classList.toggle("active");
+  });
+
+  document.addEventListener("click", function (event) {
+      if (
+          !profile.contains(event.target) &&
+          !userMenu.contains(event.target) &&
+          !cart.contains(event.target) &&
+          !savedList.contains(event.target)
+      ) {
+          userMenu.classList.remove("active");
+          savedList.classList.remove("active");
+      }
+  });
+});
+
+// USER MENU END
+
 // LOCATE ACTIVE NAVIGATION LINK START
 document.addEventListener('DOMContentLoaded', () => {
   const currentPath = window.location.pathname;
